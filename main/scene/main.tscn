@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=12 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://bivkqh5nchqkh" path="res://assets/Imagem real mapa.png" id="2_u8c2d"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bveme6eus57s2" path="res://player/scene/player.tscn" id="4_yis4t"]
 [ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/Icon-kgem2.png" id="6_8k8il"]
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="8_ci4yx"]
+[ext_resource type="Texture2D" uid="uid://du3s83mdpsr5k" path="res://assets/WhiteCircle.png" id="10_1x1vj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(1, 1, 1, 0.164706)
@@ -30,7 +31,7 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 40.0
+wait_time = 10.0
 autostart = true
 
 [node name="Label-plane" type="Label" parent="."]
@@ -109,5 +110,12 @@ position = Vector2(338, 407)
 [node name="Painel" parent="." instance=ExtResource("8_ci4yx")]
 visible = false
 z_index = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(640, 640)
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("10_1x1vj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]

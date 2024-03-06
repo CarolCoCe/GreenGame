@@ -8,7 +8,7 @@ var csv_file_path_cities: String = "res://Data/Lista de atividades - Mapa.csv"
 
 		
 func _ready():
-	var worldMap = WorldMap.new()
+	var worldMap = $WorldMap
 	$"Label-plane".text = str(player._getflights())
 	$"Label-coins".text = str(player._getcoins())
 	$"Label-kgem".text = str(player._getknowledgeGems())
@@ -48,7 +48,6 @@ func _process(delta):
 
 
 func _on_timer_timeout_rodada():
-	print("acabou os 4 min")
 	
 	var valueplane = player._getflights() + 3
 	player._setflights(valueplane)

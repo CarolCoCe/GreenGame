@@ -16,10 +16,9 @@ func add_city( city : City):
 	circleCity.texture_normal = texture
 	circleCity.position = city.positionMap
 	circleCity.visible = true
-	circleCity.z_index= 1
+	circleCity.clip_contents = true
 	add_child(circleCity)
-	#print("uma cidade foi adicionada e desenhada")
-	#print(circleCity.is_visible_in_tree())
+
 	
 func add_city_connection (cityA : City, cityB : City):
 	if (cityA.connections.find(cityB) == -1):
@@ -32,8 +31,7 @@ func add_city_connection (cityA : City, cityB : City):
 			lineFlights.points = [cityA.positionMap, cityB.positionMap]
 			lineFlights.width = 2
 			add_child(lineFlights)
-			
-			print("desenhei linha")
+
 		else:
 			var lineFlights1 = Line2D.new()
 			var lineFlights2 = Line2D.new()
