@@ -1,0 +1,40 @@
+name,activities,conections,position x,position y
+Antártica,1,Buenos Aires;Cidade do cabo;Sydney,640,640
+Bagdá,2,Jerusalém;Moscou;Dubai,678,207
+Bali,3,Jacarta;Sydney,939,382
+Bangkok,4,Manila;Mumbai;Singapura,885,285
+Berlim,5;6,Paris;Roma;Moscou,563,147
+Bogotá,7,Manaus;Lima,271,327
+Brasília,8;9,Manaus;São Paulo,341,404
+Buenos Aires,10,São Paulo;Antártica,338,474
+Cairo,11,Casablanca;Jerusalém;Nairobi,626,234
+Casablanca,12,Cairo;Madri;Lagos,505,219
+Cidade do cabo,13,Luanda;Antártica,591,479
+Cidade do México,14;15,Nova York;Los Angeles;Bogotá,176,264
+Dubai,16,Bagdá;Mumbai,715,252
+Helsinque,17,Moscou,609,109
+Jacarta,18,Bali;Singapura,905,375
+Jerusalém,19;20,Cairo;Bagdá;Roma,648,213
+Lagos,21,Casablanca;Luanda,540,313
+Lima,22,Bogotá;Manaus,246,370
+Londres,23,Nova York;Paris,521,130
+Los Angeles,24,Cidade do México;Nova York;Tóquio,126,200
+Luanda,25;26,Lagos;Nairobi;Cidade do cabo;São Paulo,578,383
+Madri,27,Paris;Casablanca,511,185
+Manaus,28;29;30,Brasília;Bogotá;Lima,306,370
+Manila,31,Xangai;Bangkok,951,292
+Moscou,32,Berlim;Helsinque;Bagdá,659,140
+Mumbai,33;34,Dubai;Nova Delhi;Bangkok,786,283
+Nairobi,35,Luanda;Cairo;Singapura,668,335
+Nova Delhi,36,Pequim;Mumbai;Xangai,801,254
+Nova York,37;38,Toronto;Los Angeles;Cidade do México;Londres,270,198
+Paris,39,Londres;Berlim;Madri,539,157
+Pequim,40;41,Seul;Nova Delhi;Xangai,908,182
+Roma,42,Berlim;Jerusalém,575,180
+São Paulo,43,Brasília;Luanda;Buenos Aires,370,434
+Seul,44,Tóquio;Pequim,953,207
+Singapura,45,Bangkok;Nairobi;Jacarta,896,337
+Sydney,46,Antártica;Bali,1031,480
+Tóquio,47,Seul;Xangai;Los Angeles,994,205
+Toronto,48,Nova York,259,168
+Xangai,49;50,Manila;Pequim;Nova Delhi;Tóquio,933,232

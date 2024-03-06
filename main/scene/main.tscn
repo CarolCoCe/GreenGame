@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://bp2ppe726u58s"]
+
+[ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
+[ext_resource type="Texture2D" uid="uid://bivkqh5nchqkh" path="res://assets/Imagem real mapa.png" id="2_u8c2d"]
+[ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icon-airplane.png" id="3_30847"]
+[ext_resource type="PackedScene" uid="uid://dr5uqoyqrk4q3" path="res://main/scene/worldMap.tscn" id="3_hjb3d"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
+[ext_resource type="Texture2D" uid="uid://d3tr7dqg05im6" path="res://assets/Icon-coin.png" id="4_sdn36"]
+[ext_resource type="PackedScene" uid="uid://bveme6eus57s2" path="res://player/scene/player.tscn" id="4_yis4t"]
+[ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/Icon-kgem2.png" id="6_8k8il"]
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="8_ci4yx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
+bg_color = Color(1, 1, 1, 0.164706)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_nm1lt")
+
+[node name="JogoGsd" type="Sprite2D" parent="."]
+position = Vector2(580, 325)
+texture = ExtResource("2_u8c2d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
+offset_right = 1152.0
+offset_bottom = 74.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 40.0
+autostart = true
+
+[node name="Label-plane" type="Label" parent="."]
+offset_left = 666.0
+offset_top = 10.0
+offset_right = 726.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_rt5r6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0tia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon-plane" type="Sprite2D" parent="."]
+position = Vector2(754, 36)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_30847")
+
+[node name="Label-coins" type="Label" parent="."]
+offset_left = 803.0
+offset_top = 10.0
+offset_right = 882.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_rt5r6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0tia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon-coin" type="Sprite2D" parent="."]
+position = Vector2(913, 36)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_sdn36")
+
+[node name="Label-kgem" type="Label" parent="."]
+offset_left = 967.0
+offset_top = 10.0
+offset_right = 1027.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_rt5r6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0tia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon-kgem" type="Sprite2D" parent="."]
+position = Vector2(1056, 36)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_8k8il")
+
+[node name="Label -temp-max" type="Label" parent="."]
+offset_left = 475.0
+offset_top = 20.0
+offset_right = 569.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("3_rt5r6")
+theme_override_font_sizes/font_size = 36
+text = "+4ºC"
+
+[node name="Label -temp-min" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 20.0
+offset_right = 182.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("3_rt5r6")
+theme_override_font_sizes/font_size = 36
+text = "+1ºC"
+
+[node name="WorldMap" parent="." instance=ExtResource("3_hjb3d")]
+z_index = 1
+
+[node name="Player" parent="." instance=ExtResource("4_yis4t")]
+z_index = 1
+position = Vector2(338, 407)
+
+[node name="Painel" parent="." instance=ExtResource("8_ci4yx")]
+visible = false
+z_index = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://e41uscdwo833"]
+
+[ext_resource type="Texture2D" uid="uid://l2rfsemvk8pj" path="res://assets/arrow.png" id="1_h8erl"]
+[ext_resource type="Script" path="res://Painel - global/painel.gd" id="1_netya"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_5p6x3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpsti"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Painel" type="Panel"]
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_netya")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 104.0
+offset_right = 1056.0
+offset_bottom = 544.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mpsti")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 632.0
+offset_bottom = 632.0
+scale = Vector2(0.13, 0.13)
+texture_normal = ExtResource("1_h8erl")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = 130.0
+offset_right = 98.0
+offset_bottom = -472.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5p6x3")
+theme_override_font_sizes/font_size = 45
+text = "JORNAL
+"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
