@@ -25,7 +25,7 @@ func add_city( city : City):
 	circleCity.visible = true
 	circleCity.z_index = 1
 	circleCity.STRETCH_KEEP_CENTERED
-	circleCity.connect("pressed", on_circleCity_pressed)
+	#circleCity.connect("pressed", moving_player) #Como eu chamo essa func que tá na main???
 	
 	add_child(circleCity)
 
@@ -81,6 +81,6 @@ func get_random_city():
 	var randomCityName = cityWorldMap[randomKey]
 	return randomCityName
 	
-func on_circleCity_pressed():
-	return self
+#func on_circleCity_pressed():
+	#return self
 
