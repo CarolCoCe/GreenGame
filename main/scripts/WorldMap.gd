@@ -11,15 +11,22 @@ func add_city( city : City):
 	
 	#draw the city points
 	var circleCity = TextureButton.new()
-	var texture = load("res://assets/WhiteCircle.png")
-	#var textureHover = load("res://assets/Icon-kgem.png")
-	circleCity.scale = Vector2(0.13,0.13)
-	circleCity.size = (circleCity.scale * Vector2(150,150)) 
+	var texture = load("res://assets/white-button_0001.png")
+	var textureHover = load("res://assets/white-button_0002.png")
+	var texturePressed = load("res://assets/white-button_0003.png")
+	
+	circleCity.scale = Vector2(0.028,0.028)
+	circleCity.size = (circleCity.scale * Vector2(512,512)) 
+	# 512 is the size of the texture image!
 	circleCity.texture_normal = texture
-	#circleCity.texture_hover = textureHover
+	circleCity.texture_hover = textureHover
+	circleCity.texture_pressed = texturePressed
 	circleCity.position = city.positionMap - circleCity.size/2
 	circleCity.visible = true
+	circleCity.z_index = 1
 	circleCity.STRETCH_KEEP_CENTERED
+	circleCity.connect("pressed", on_circleCity_pressed)
+	
 	add_child(circleCity)
 
 	
@@ -69,6 +76,11 @@ func calc_distance_flights(origin: City, destiny: City):
 
 	return -1  # No path found
 	
-func _ready():
-	pass # Replace with function body.
+func get_random_city():
+	var randomKey = cityWorldMap.keys()[randi_range(1,cityWorldMap.size()-1)]
+	var randomCityName = cityWorldMap[randomKey]
+	return randomCityName
+	
+func on_circleCity_pressed():
+	return self
 

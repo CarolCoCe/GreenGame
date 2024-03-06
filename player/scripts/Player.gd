@@ -1,4 +1,7 @@
-extends Node2D
+extends CharacterBody2D
+
+
+const SPEED = 30.0
 
 var username
 var activityInProgress
@@ -32,15 +35,17 @@ func _getplayercurrentCity():
 	
 func _setplayercurrentCity(value):
 	playercurrentCity = value
+	self.position = playercurrentCity.positionMap
+	move_and_slide()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	flights = 3
 	coins = 15
 	knowledgeGems = 0
-	#self.position = playercurrentCity.position
 
+func _physics_process(delta):
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()

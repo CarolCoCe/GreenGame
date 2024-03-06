@@ -1,5 +1,5 @@
 name,activities,conections,position x,position y
-Antártica,1,Buenos Aires;Cidade do cabo;Sydney,640,640
+Antártica,1,Buenos Aires;Cidade do cabo;Sydney,640,630
 Bagdá,2,Jerusalém;Moscou;Dubai,678,207
 Bali,3,Jacarta;Sydney,939,382
 Bangkok,4,Manila;Mumbai;Singapura,885,285
@@ -16,7 +16,7 @@ Helsinque,17,Moscou,609,109
 Jacarta,18,Bali;Singapura,905,375
 Jerusalém,19;20,Cairo;Bagdá;Roma,648,213
 Lagos,21,Casablanca;Luanda,540,313
-Lima,22,Bogotá;Manaus,246,370
+Lima,22,Bogotá;Manaus,246,380
 Londres,23,Nova York;Paris,521,130
 Los Angeles,24,Cidade do México;Nova York;Tóquio,126,200
 Luanda,25;26,Lagos;Nairobi;Cidade do cabo;São Paulo,578,383

@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dr5uqoyqrk4q3" path="res://main/scene/worldMap.tscn" id="3_hjb3d"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
 [ext_resource type="Texture2D" uid="uid://d3tr7dqg05im6" path="res://assets/Icon-coin.png" id="4_sdn36"]
-[ext_resource type="PackedScene" uid="uid://bveme6eus57s2" path="res://player/scene/player.tscn" id="4_yis4t"]
 [ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/Icon-kgem2.png" id="6_8k8il"]
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="8_ci4yx"]
+[ext_resource type="PackedScene" uid="uid://bkqljm64dmb5f" path="res://player/scene/Player.tscn" id="8_kqbl1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(1, 1, 1, 0.164706)
@@ -103,12 +103,10 @@ text = "+1ºC"
 [node name="WorldMap" parent="." instance=ExtResource("3_hjb3d")]
 z_index = 1
 
-[node name="Player" parent="." instance=ExtResource("4_yis4t")]
-z_index = 1
-position = Vector2(338, 407)
+[node name="Player" parent="." instance=ExtResource("8_kqbl1")]
 
 [node name="Painel" parent="." instance=ExtResource("8_ci4yx")]
 visible = false
-z_index = 2
+z_index = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
