@@ -12,11 +12,14 @@ func add_city( city : City):
 	#draw the city points
 	var circleCity = TextureButton.new()
 	var texture = load("res://assets/WhiteCircle.png")
-	circleCity.scale = Vector2(0.1,0.1)
+	#var textureHover = load("res://assets/Icon-kgem.png")
+	circleCity.scale = Vector2(0.13,0.13)
+	circleCity.size = (circleCity.scale * Vector2(150,150)) 
 	circleCity.texture_normal = texture
-	circleCity.position = city.positionMap
+	#circleCity.texture_hover = textureHover
+	circleCity.position = city.positionMap - circleCity.size/2
 	circleCity.visible = true
-	circleCity.clip_contents = true
+	circleCity.STRETCH_KEEP_CENTERED
 	add_child(circleCity)
 
 	
