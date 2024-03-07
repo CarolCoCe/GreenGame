@@ -52,25 +52,26 @@ func find_city_by_name(cityName: String):
 	return cityWorldMap.get(cityName)
 		
 func calc_distance_flights(origin: City, destiny: City):
-	var visited_cities = []
-	var queue = [origin]
-	var distance = 0
+	var queue = [origin, 0]  # (city, distance) tuples
+	var visited = []
 
 	while queue.size() > 0:
-		var current_city = queue.pop_front()
+		var current_city = queue.pop_front() 
+		var current_distance = queue.pop_front() 
 
 		if current_city == destiny:
-			return distance
+			return current_distance
 
-		visited_cities.append(current_city)
+		visited.append(current_city)
 
 		for connection in current_city.connections:
-			if connection not in visited_cities and connection not in queue:
+			if connection not in visited:
 				queue.push_back(connection)
+				queue.push_back(current_distance + 1)
 
-		distance += 1
 
 	return -1  # No path found
+
 	
 func get_random_city():
 	var randomKey = cityWorldMap.keys()[randi_range(1,cityWorldMap.size()-1)]

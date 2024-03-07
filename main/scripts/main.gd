@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player = $Player
 @onready var worldMap = $WorldMap
+@onready var painel = $Painel
 
 
 var csv_file_path_cities: String = "res://Data/Lista de atividades - Mapa.csv"
@@ -46,23 +47,26 @@ func _ready():
 	player._setplayercurrentCity(worldMap.get_random_city())			
 
 func moving_player(cityDestiny : City):
-	print("entrou na movingplayer")
-	print(cityDestiny.nameCity)
 	var distance = worldMap.calc_distance_flights(player.playercurrentCity , cityDestiny)
 	var flightsAvailable = player._getflights()
-	if (distance <= flightsAvailable):
+	if (flightsAvailable >= distance and distance > -1):
 		player._setflights(flightsAvailable - distance)
+		$"Label-plane".text = str(player._getflights())
 		player._setplayercurrentCity(cityDestiny)
+	else:
+		painel._setTitle("Aviso!")
+		painel._setContentFull("Você não tem voos suficientes para ir para esta cidade ainda")
+		painel.visible = true
 		
 	
 func _on_timer_timeout_rodada():
 	
-	var valueplane = player._getflights() + 3
-	player._setflights(valueplane)
+	var flightsAvailable =  player._getflights() + 3
+	player._setflights(flightsAvailable)
 	$"Label-plane".text = str(player._getflights())
 	
 	var valuecoins = player._getcoins() + 7
 	player._setcoins(valuecoins)
 	$"Label-coins".text = str(player._getcoins())
 	
-	$Painel.visible = true
+	painel.visible = true

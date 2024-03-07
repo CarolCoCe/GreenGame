@@ -24,31 +24,54 @@ offset_right = 1056.0
 offset_bottom = 544.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mpsti")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 120.0
-offset_right = 632.0
-offset_bottom = 632.0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 536.0
+offset_bottom = 528.0
 scale = Vector2(0.13, 0.13)
 texture_normal = ExtResource("1_h8erl")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -97.0
-offset_top = 130.0
+offset_top = 26.0
 offset_right = 98.0
-offset_bottom = -472.0
+offset_bottom = -368.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5p6x3")
 theme_override_font_sizes/font_size = 45
-text = "JORNAL
+text = "
 "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="ContentFull" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -395.0
+offset_top = 134.0
+offset_right = 392.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5p6x3")
+theme_override_font_sizes/font_size = 30
+text = "
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]
