@@ -12,6 +12,9 @@ func _ready():
 	$"Label-plane".text = str(player._getflights())
 	$"Label-coins".text = str(player._getcoins())
 	$"Label-kgem".text = str(player._getknowledgeGems())
+	
+	worldMap.cityButtonPressed.connect(moving_player)
+	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
 	var fileData = []
 	if file == null:
@@ -42,11 +45,9 @@ func _ready():
 				worldMap.add_city_connection(cityA,cityB) 
 	player._setplayercurrentCity(worldMap.get_random_city())			
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func moving_player(cityDestiny : City):
+	print("entrou na movingplayer")
+	print(cityDestiny.nameCity)
 	var distance = worldMap.calc_distance_flights(player.playercurrentCity , cityDestiny)
 	var flightsAvailable = player._getflights()
 	if (distance <= flightsAvailable):

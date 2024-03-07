@@ -4,31 +4,27 @@ class_name WorldMap
 # Called when the node enters the scene tree for the first time.
 
 var cityWorldMap: Dictionary = {}
+var cityButtonScene = preload("res://main/scene/CityButton.tscn")
+#var cityArrumar : City
+
+signal cityButtonPressed (city: City)
 
 
 func add_city( city : City):
 	cityWorldMap[city.nameCity] = city
 	
 	#draw the city points
-	var circleCity = TextureButton.new()
-	var texture = load("res://assets/white-button_0001.png")
-	var textureHover = load("res://assets/white-button_0002.png")
-	var texturePressed = load("res://assets/white-button_0003.png")
-	
-	circleCity.scale = Vector2(0.028,0.028)
-	circleCity.size = (circleCity.scale * Vector2(512,512)) 
-	# 512 is the size of the texture image!
-	circleCity.texture_normal = texture
-	circleCity.texture_hover = textureHover
-	circleCity.texture_pressed = texturePressed
-	circleCity.position = city.positionMap - circleCity.size/2
-	circleCity.visible = true
-	circleCity.z_index = 1
-	circleCity.STRETCH_KEEP_CENTERED
-	#circleCity.connect("pressed", moving_player) #Como eu chamo essa func que tá na main???
-	
+	var circleCity = cityButtonScene.instantiate()
 	add_child(circleCity)
+	#this is for adjust the button position
+	circleCity.position = city.positionMap - ((circleCity.size * circleCity.scale)/2)
+	
+	circleCity.connect("pressed", _on_city_button_pressed.bind(city)) #for the extra argument
 
+		
+	
+func _on_city_button_pressed(city):
+	cityButtonPressed.emit(city)
 	
 func add_city_connection (cityA : City, cityB : City):
 	if (cityA.connections.find(cityB) == -1):
@@ -81,6 +77,3 @@ func get_random_city():
 	var randomCityName = cityWorldMap[randomKey]
 	return randomCityName
 	
-#func on_circleCity_pressed():
-	#return self
-

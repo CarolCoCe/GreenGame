@@ -34,9 +34,12 @@ func _getplayercurrentCity():
 	return playercurrentCity
 	
 func _setplayercurrentCity(value):
+	if self.playercurrentCity != null:
+		#move_toward(playercurrentCity.positionMap,value.positionMap,100)
+		move_and_slide()
 	playercurrentCity = value
 	self.position = playercurrentCity.positionMap
-	move_and_slide()
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
