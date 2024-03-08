@@ -44,6 +44,7 @@ func _ready():
 			for cityBName in connectionsf:
 				var cityB = worldMap.find_city_by_name(cityBName)
 				worldMap.add_city_connection(cityA,cityB) 
+				
 	player._setplayercurrentCity(worldMap.get_random_city())			
 
 func moving_player(cityDestiny : City):
@@ -69,4 +70,6 @@ func _on_timer_timeout_rodada():
 	player._setcoins(valuecoins)
 	$"Label-coins".text = str(player._getcoins())
 	
+	painel._setTitle("Jornal")
+	painel._setContentFull("O que aconteceu agora?")
 	painel.visible = true

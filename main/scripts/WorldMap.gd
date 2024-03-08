@@ -52,7 +52,7 @@ func find_city_by_name(cityName: String):
 	return cityWorldMap.get(cityName)
 		
 func calc_distance_flights(origin: City, destiny: City):
-	var queue = [origin, 0]  # (city, distance) tuples
+	var queue = [origin, 0]  # (city, distance) 
 	var visited = []
 
 	while queue.size() > 0:
@@ -67,7 +67,7 @@ func calc_distance_flights(origin: City, destiny: City):
 		for connection in current_city.connections:
 			if connection not in visited:
 				queue.push_back(connection)
-				queue.push_back(current_distance + 1)
+				queue.push_back(current_distance + 1) #this count levels, not nodes
 
 
 	return -1  # No path found
