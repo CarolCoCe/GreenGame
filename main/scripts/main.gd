@@ -3,9 +3,10 @@ extends Node2D
 @onready var player = $Player
 @onready var worldMap = $WorldMap
 @onready var painel = $Painel
+@onready var activityPainel = $Activitylists
 
 
-var csv_file_path_cities: String = "res://Data/Lista de atividades - Mapa.csv"
+var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
 
 		
@@ -55,8 +56,8 @@ func moving_player(cityDestiny : City):
 		$"Label-plane".text = str(player._getflights())
 		player._setplayercurrentCity(cityDestiny)
 	else:
-		painel._setTitle("Aviso!")
-		painel._setContentFull("Você não tem voos suficientes para ir para esta cidade ainda")
+		painel.setTitle("Aviso!")
+		painel.setContentFull("Você não tem voos suficientes para ir para esta cidade ainda")
 		painel.visible = true
 		
 	
@@ -70,6 +71,12 @@ func _on_timer_timeout_rodada():
 	player._setcoins(valuecoins)
 	$"Label-coins".text = str(player._getcoins())
 	
-	painel._setTitle("Jornal")
-	painel._setContentFull("O que aconteceu agora?")
+	painel.setTitle("Jornal")
+	painel.setContentFull("O que aconteceu agora?")
 	painel.visible = true
+
+
+func _on_activity_list_button_pressed():
+	print(activityPainel.visible)
+	activityPainel.visible = true
+	

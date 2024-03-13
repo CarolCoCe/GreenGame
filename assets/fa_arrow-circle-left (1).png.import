@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du3s83mdpsr5k"
-path="res://.godot/imported/WhiteCircle.png-3fab3ea375719f8ff739f6cb9bdadc1d.ctex"
+uid="uid://drj56q32l38uk"
+path="res://.godot/imported/fa_arrow-circle-left (1).png-384dfcf909da4f5a6f58c5093be35c2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WhiteCircle.png"
-dest_files=["res://.godot/imported/WhiteCircle.png-3fab3ea375719f8ff739f6cb9bdadc1d.ctex"]
+source_file="res://assets/fa_arrow-circle-left (1).png"
+dest_files=["res://.godot/imported/fa_arrow-circle-left (1).png-384dfcf909da4f5a6f58c5093be35c2c.ctex"]
 
 [params]
 

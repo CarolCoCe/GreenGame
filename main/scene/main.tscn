@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=13 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
-[ext_resource type="Texture2D" uid="uid://bivkqh5nchqkh" path="res://assets/Imagem real mapa.png" id="2_u8c2d"]
+[ext_resource type="Texture2D" uid="uid://diavdhlffhkbr" path="res://assets/Imagem real mapa azul.png" id="2_pjfc2"]
 [ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icon-airplane.png" id="3_30847"]
 [ext_resource type="PackedScene" uid="uid://dr5uqoyqrk4q3" path="res://main/scene/worldMap.tscn" id="3_hjb3d"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/Icon-kgem2.png" id="6_8k8il"]
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="8_ci4yx"]
 [ext_resource type="PackedScene" uid="uid://bkqljm64dmb5f" path="res://player/scene/Player.tscn" id="8_kqbl1"]
+[ext_resource type="Texture2D" uid="uid://80bww2vic8ri" path="res://assets/Rectangle 64.png" id="10_rc8e7"]
+[ext_resource type="PackedScene" uid="uid://cq4df83j3n7fy" path="res://activity/scenes/activitylists.tscn" id="11_sh6fk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(1, 1, 1, 0.164706)
@@ -22,7 +24,7 @@ script = ExtResource("1_nm1lt")
 
 [node name="JogoGsd" type="Sprite2D" parent="."]
 position = Vector2(580, 325)
-texture = ExtResource("2_u8c2d")
+texture = ExtResource("2_pjfc2")
 region_filter_clip_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -109,4 +111,16 @@ z_index = 1
 visible = false
 z_index = 3
 
+[node name="ActivityListButton" type="TextureButton" parent="."]
+offset_left = 136.0
+offset_top = 349.0
+offset_right = 191.0
+offset_bottom = 404.0
+texture_normal = ExtResource("10_rc8e7")
+
+[node name="Activitylists" parent="." instance=ExtResource("11_sh6fk")]
+visible = false
+z_index = 3
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
+[connection signal="pressed" from="ActivityListButton" to="." method="_on_activity_list_button_pressed"]

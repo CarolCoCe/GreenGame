@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cxph6p742gj22"
+
+[deps]
+
+files=["res://Data/Mapa/Lista de atividades - Mapa.activities.translation", "res://Data/Mapa/Lista de atividades - Mapa.conections.translation", "res://Data/Mapa/Lista de atividades - Mapa.position x.translation", "res://Data/Mapa/Lista de atividades - Mapa.position y.translation"]
+
+source_file="res://Data/Mapa/Lista de atividades - Mapa.csv"
+dest_files=["res://Data/Mapa/Lista de atividades - Mapa.activities.translation", "res://Data/Mapa/Lista de atividades - Mapa.conections.translation", "res://Data/Mapa/Lista de atividades - Mapa.position x.translation", "res://Data/Mapa/Lista de atividades - Mapa.position y.translation"]
+
+[params]
+
+compress=true
+delimiter=0

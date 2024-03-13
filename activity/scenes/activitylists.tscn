@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq4df83j3n7fy"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_2xkyx"]
+[ext_resource type="Script" path="res://activity/scripts/activitylists.gd" id="1_djurc"]
+[ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/Rectangle 65.png" id="2_kq0u6"]
+
+[node name="Activitylists" type="Node2D"]
+script = ExtResource("1_djurc")
+
+[node name="Painel" parent="." instance=ExtResource("1_2xkyx")]
+
+[node name="Rectangle65" type="Sprite2D" parent="Painel"]
+position = Vector2(432, 150)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_kq0u6")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Painel"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 248.0
+offset_right = 992.0
+offset_bottom = 545.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Painel/ScrollContainer"]
+custom_minimum_size = Vector2(0, 1000)
+layout_mode = 2

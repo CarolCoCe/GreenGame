@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwr3itgv8hj6"
-path="res://.godot/imported/Jogo GSD.png-21ef0b611d8d18ceacbbfccba93bb3df.ctex"
+uid="uid://chdudd6ypx4y"
+path="res://.godot/imported/Rectangle 65.png-0ee0d565bde8fd0213e27dd69649a6b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jogo GSD.png"
-dest_files=["res://.godot/imported/Jogo GSD.png-21ef0b611d8d18ceacbbfccba93bb3df.ctex"]
+source_file="res://assets/Rectangle 65.png"
+dest_files=["res://.godot/imported/Rectangle 65.png-0ee0d565bde8fd0213e27dd69649a6b7.ctex"]
 
 [params]
 
