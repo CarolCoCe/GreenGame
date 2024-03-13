@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var painel = $Painel
 @onready var vbox = $Painel/ScrollContainer/VBoxContainer
+@onready var activityRect = greenRectScene.instantiate()
 
 var greenRectScene = preload("res://activity/scenes/GreenRect.tscn")
 
@@ -13,6 +14,7 @@ func _ready():
 	var valuePressed = load("res://assets/fa_arrow-circle-left (1).png")
 	painel.setTextureButtonBack(valueNormal, valuePressed)
 	painel.setTitle("Atividades")
+	
 	
 	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (1).csv"
 
@@ -39,14 +41,31 @@ func _ready():
 				var activity = Activity.new(idf, titlef,priceCoinsf,numQuestActivityf,rewardCoinsf,rewardKnowledgeGemsf,temperatureRisef,timeToReadyf,rewardStoryf)
 				
 				allActivities.append(activity)
-				
-				var minready = timeToReadyf/60
-				var activityRect = greenRectScene.instantiate()
-				activityRect.setTitle(titlef)
-				activityRect.setPrice("Custo: " + line[3])
-				activityRect.setTime("Tempo de retorno: " + str(minready) + "Min")
-				activityRect.setQuestions("Perguntas: " + line[4])
-				vbox.add_child(activityRect)
+
 		file.close()
+	abaGlobal()
+
+func abaGlobal():
+	for activity in allActivities:
+		createRect(activity)
+
+func abaLocal(id1 : int, id2 : int = 0, id3 : int = 0):
+	var activity = allActivities[id1]
+	createRect(activity)
 	
+	if id2 != 0:
+		activity = allActivities[id2]
+		createRect(activity)
+	
+	if id3 != 0:
+		activity = allActivities[id1]
+		createRect(activity)
+
+func createRect(activity : Activity):
+	var minready = (activity.timeToReady)/60
+	activityRect.setTitle(activity.title)
+	activityRect.setPrice("Custo: " + str(activity.priceCoins))
+	activityRect.setTime("Tempo de retorno: " + str(minready) + "Min")
+	activityRect.setQuestions("Perguntas: " + str(activity.numQuestActivity))
+	vbox.add_child(activityRect)
 	
