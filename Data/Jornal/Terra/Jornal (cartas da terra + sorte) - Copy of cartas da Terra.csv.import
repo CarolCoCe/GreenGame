@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://do444aq53tlsk"
+
+[deps]
+
+files=["res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Story.translation", "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Consequence coins.translation", "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Condition coins current city.translation", "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Consequence temperature (for all).translation"]
+
+source_file="res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.csv"
+dest_files=["res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Story.translation", "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Consequence coins.translation", "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Condition coins current city.translation", "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.Consequence temperature (for all).translation"]
+
+[params]
+
+compress=true
+delimiter=0

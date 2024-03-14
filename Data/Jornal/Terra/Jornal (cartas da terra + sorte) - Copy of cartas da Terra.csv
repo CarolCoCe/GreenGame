@@ -1,0 +1,52 @@
+,Story,Consequence coins,Condition coins current city,Consequence temperature (for all)
+Categoria-Cor,História,Consequência,,
+Cinza,Ondas extremas de calor atingiram toda a região do Equador. Isso também contribuiu para incendios florestais e morte de corais.,-30,,0.75
+Cinza,O clima global está tão desequilibrado que pessoas em todo mundo estão morrendo ou tendo graves dificuldades com o calor e eventos ambientais extremos.,-40,,
+Cinza,Tufões e furacões estão mais intensos devido ao aumento da temperatura. Várias pessoas perderam suas vidas e cidades foram dizimadas.,-45,,
+Cinza,"Aquecimento global dificulta a plantação de vários alimentos, causando encarecimento absurdo de alimentos e fome global.",-40,,
+Cinza,"Devido as altas temperaturas, corais de todo o mundo estão embranquecendo causando um efeito em cadeia em toda vida marinha.",-25,,0.75
+Cinza,Geleiras enormes estão derretendo aos montes e com as altas temperaturas o nível do mar está aumentando rapidamente causando enchentes e um efeito em cadeia.,-32,,0.75
+Cinza,Viver em megalópoles está impossível com a temperatura tão elevada. A quantidade de imigrantes climáticos chegou a 350 milhões de pessoas.,-52,,
+Cinza,O derretimento das calotas polares está liberando uma grande quantidade de metano que se encontrava preso debaixo do mar do Ártico. O metano é um gás com um efeito estufa 20 vezes mais forte que o CO2.,,,0.75
+Cinza,"Incêndios massivos ocorrem em vários pontos ao redor do globo. Pessoas, animais e florestas estão sendo dizimados e outros muitos sendo seriamente ameaçados.",-30,,0.75
+Cinza,Secas de 10 meses dificultam a continuação de todas as atividades.,-50,,
+Cinza,"A acidificação dos oceanos causada pela imensa quantidade de CO2 na atmosfera está matando a vida marinhas. O mar, o verdadeiro pulmão do mundo, está perdendo sua capacidade de absorção de CO2. ",-20,,0.75
+Vermelho,"Graves secas em Bagdá, CasaBlanca, Jerusalém e Dubai.",-15,Jerusalém;Bagdá;Dubai;Casablanca,0.5
+Vermelho,Com o frio uma nuvem de poluição tóxica causa risco de vida em toda a Ásia e isso prejudicou também o comércio global.,-18,,0.75
+Vermelho,Enchente em todas as cidades da Europa.,-15,Londres;Berlim;Madri;Helsinque;Paris;Roma;Moscou,
+Vermelho,"O nível dos mares está aumentando, as ilhas maldivas, local onde os maiores CEO’s do mundo (os jogadores) marcaram de passar as férias, foi engolido pela água. ",-10,,
+Vermelho,"O mundo está tendo dificuldades com a agricultura por causa da mudança climática. Os jantares corporativos ficaram mais caros, todos devem pagar caro para comer um miojo.",-12,,0.5
+Vermelho,"Graves secas atingiram as cidades de Cairo, Luanda, Lagos e Nairóbi.",-15,Lagos;Nairobi;Luanda;Cairo;,0.5
+Vermelho,Várias espécies estão sendo ameaçadas com o aumento das temperaturas. Santuários de animais e ONG’s ambientais precisam de doações para salvar o máximo de vidas possível.,-12,,0.5
+Vermelho,Focos de incêndios em todo o hemisfério norte causam desespero global.,-12,,0.75
+Vermelho,Ondas de calor atingem 37% da população global. O preço do sorvete também aumentou demais.,-10,,0.5
+Vermelho,Recifes de corais estão perdendo suas vidas e deixando o ecossistema marinho sem cores e com menos organismos que capturam carbono da atmosfera.,-14,,0.75
+Vermelho,Toda a América do sul sofre com faltas de água limpa e racionamento.,-12,Brasília;Bogotá;Lima;Manaus;São Paulo;Buenos Aires,
+Vermelho,Todos os países com zona litorânea sofrem com o aumento do nível dos mares.,-18,,0.5
+Vermelho,"Derretimento de geleiras causam deslizamento e mortes em Lima, Paris, Berlim, Roma, Helsinque, Moscou, Seul,Tóquio e Xangai.",-15,Lima;Paris;Berlim;Roma;Helsinque;Moscou;Seul;Tóquio;Xangai,
+Laranja,Falta de água e por isso foi estabelecido racionamento em São Paulo.,-7,São Paulo,
+Laranja,Inundações deixam 800 desabrigados na Índia.,-7,Mumbai;Nova Delhi,
+Laranja,Todos os países com zona litorânea começaram a sofrer com o aumento do nível dos mares.,-10,,0.5
+Laranja,Incêndios na Austrália deixam milhões de animais desabrigados e o país em chamas. Fumaça se espalha para os países vizinhos.,-8,Jacarta;Sydney;Bali,0.5
+Laranja,Onda de calor anormal na Europa causa incêndios e racionamento de água.,-8,Londres;Berlim;Madri;Helsinque;Paris;Roma;Moscou,0.25
+Laranja,Incêndio violento na Califórnia causa comoção e esforço Nacional.,-8,Nova York;Los Angeles,0.5
+Laranja,Derretimento de geleira na Itália causa deslizamento e mortes.,-7,Roma,
+Laranja,Tempestade de areia em toda a China afeta toda a população.,-8,Pequim;Xangai,0.5
+Laranja,Nível elevado de poluição por ozônio no México impede pessoas de sair de casa.,-8,Cidade do México,0.5
+Laranja,Ondas de calor atingem 14% da população global.,-6,,0.25
+Laranja,"Recifes de Corais estão começando a perder suas vidas, deixando o ecossistema marinho sem cores e com menos organismos que capturam carbono da atmosfera.",,,0.5
+Laranja,Extinção em massa de espécies animais e vegetais se acelera devido às mudanças climáticas.,-8,,0.5
+Laranja,"Enchentes em Singapura, Bangkok, Sydney, Mumbai e Manila.",-7,Manila;Mumbai;Singapura;Sydney;Bangkok,
+Laranja,"Esgotamento dos recursos naturais, como água e alimentos, aumenta a insegurança global.",-8,,
+Laranja,Local onde os jogadores iriam fazer sua lendária partida de truco anual agora passa por ondas de calor extremas e falta da água.,-6,,
+Laranja,"Devido aos desastres ambientais, o preço dos alimentos subiu no mundo todo. A pipoca e água saborizada oferecidas pelas suas empresas agora estão mais caras.",-6,,
+Amarelo,A diminuição da temperatura global está deixando a população global mais satisfeita.,3,,
+Amarelo,O verão chegou.,,,0.25
+Amarelo,"Com o clima estabilizado, é o momento perfeito para férias na Cidade do Cabo.",2,,
+Amarelo,O clima estabilizado facilita a agricultura no mundo todo.,3,,
+Amarelo,"Mesmo com a diminuição da temperatura, o nível dos mares continuará subindo por centenas de anos, mesmo que bem mais devagar.",-7,,0.25
+Amarelo,Poluição do ar ainda causa 400 mil mortes prematuras na Europa.,-4,,0.25
+Amarelo,Os corais estão parando de se degradarem com a diminuição da temperatura. O turismo ecológico aumentou.,2,,
+Amarelo,"Incêndio no cerrado, apesar de feroz, foi contido com mais facilidade do que quando a temperatura global estava acima de 1ºC.",-4,Brasília;São Paulo;Manaus ,0.25
+Amarelo,Incêndio na Austrália foi menor que os registrados quando a temperatura global estava acima de 1ºC.,-4,Sydney,0.25
+Amarelo,"As monções, chuvas intensas na Índia, foram menos prejudiciais este ano.",-4,Mumbai;Nova Delhi,

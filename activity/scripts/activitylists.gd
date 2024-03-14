@@ -9,12 +9,10 @@ var allActivities = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var valueNormal = load("res://assets/fa_arrow-circle-left.png")
-	var valuePressed = load("res://assets/fa_arrow-circle-left (1).png")
+	
 	painel.setTitle("Atividades")
 	
-	
-	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (1).csv"
+	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).csv"
 
 	var file = FileAccess.open(csv_file_path_activities, FileAccess.READ)
 	if file == null:
@@ -35,8 +33,9 @@ func _ready():
 				var rewardCoinsf = int(line[6])
 				var rewardKnowledgeGemsf = int(line[7])
 				var temperatureRisef = float(line[8])
+				var cityf = line[9]
 				
-				var activity = Activity.new(idf, titlef,priceCoinsf,numQuestActivityf,rewardCoinsf,rewardKnowledgeGemsf,temperatureRisef,timeToReadyf,rewardStoryf)
+				var activity = Activity.new(idf, titlef,priceCoinsf,numQuestActivityf,rewardCoinsf,rewardKnowledgeGemsf,temperatureRisef,timeToReadyf,rewardStoryf, cityf)
 				
 				allActivities.append(activity)
 
@@ -67,7 +66,7 @@ func createRect(activity : Activity):
 	activityRect.setPrice("Custo: " + str(activity.priceCoins))
 	activityRect.setTime("Tempo de retorno: " + str(minready) + "Min")
 	activityRect.setQuestions("Perguntas: " + str(activity.numQuestActivity))
-
+	activityRect.setCity(activity.city)
 	 
 
 

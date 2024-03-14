@@ -1,0 +1,53 @@
+id,Atividade,"Tempo de Retorno 
+(em segundos)","Investimento 
+(em moedas)",# Perguntas de sustentabilidade,Recompensa História,Moedas,Token do conhecimento,Aumento de Temperatura,Local
+1,Pesquisa sobre microplásticos em ecossistemas próximos às geleiras,480,15,4,Parabéns! Você realizou uma pesquisa muito importante!,16,2,0,Antártica
+2,Instalação de parque eólico e solar no deserto,720,15,5,O seu projeto fez com que várias usinas de carvão fossem desativadas!,25,1,0,Bagdá
+3,Projeto de educação sobre lixo marinho para as escolas e para a comunidade de surf mundial,480,5,3,A Indonésia é o segundo país que mais produz lixos plásticos do mundo! As competições de surf no país passaram a ficam mais limpas desde que seu projeto começou! ,12,1,0,Bali
+4,Construção de cantina escolar feita com material reciclado,720,8,4,"Mais de 1,4 milhões de embalagens foram usadas. Isso passou incentivar não só as crianças a reciclarem mas outras instituições também.",12,1,0,Bangkok
+5,Construção de um código de ética de sustentabilidade em empresas de software,720,10,4,Parabéns! Agora as empresas de software sabem como agir em relação a produção de software sustentável! ,20,1,0,Berlim
+6,Mineração de criptomoedas,720,15,4,"Você fez muito dinheiro! Mas essa atividade demanda muita energia elétrica e, infelizmente, a  fonte de energia local é a base de combustíveis fósseis.",45,0,0.75,Berlim
+7,Criação de um app de brechó online internacional,480,8,3,As vendas estão um sucesso! A indústria da moda é muito poluente mas a economia circular fez você conquistar dinheiro e sustentabilidade!,18,1,0,Bogotá
+8,Desenvolvimento de jogo sobre sustentabilidade,480,5,5,"Parabéns, realizou um projeto muito importante!",7,2,0,Brasília
+9,Criação de mil cabeças de gado,720,15,3,Você fez muito dinheiro! Entretanto você desmatou muito o cerrado para abrir o pasto.,40,0,0.5,Brasília
+10,Projeto de horta comunitária realizada em pequenos espaços de grandes cidades,480,7,4,"Parabéns, realizou um projeto muito importante!",12,1,0,Buenos Aires
+11,Desenvolvimento de tijolos ecológicos feitos de materiais reciclados,720,7,3,"Parabéns, realizou um projeto muito importante!",14,1,0,Cairo
+12,Programa de reutilização e reciclagem de garrafas plásticas,480,4,3,"Parabéns, você evitou que ainda mais plástico poluísse o meio ambiente!",10,1,0,Casablanca
+13,Construção de casas de garrafa PET,720,8,3,O mar receberá menos plásticos e a comunidade receberá mais casas por causa de seu projeto! Parabéns pela iniciativa.,15,1,0,Cidade do cabo
+14,Projeto de conscientização ambiental por meio da arte,480,6,4,Parabéns! Muitas pessoas foram sensibilizadas sobre a urgência de se agir nas questões ambientais!,12,2,0,Cidade do México
+15,Projeto para o desenvolvimento de couro feito a base de cactos,480,8,4,"As vendas estão um sucesso! A produção de couro de animais pode ser muito cruel. Graças a sua invenção, muitas vidas foram salvas! ",28,1,0,Cidade do México
+16,Pesquisa de processo mais barato produção de petróleo,720,20,4,"A diminuição dos custos foi bem lucrativa, entretanto, o aumento do consumo de combustíveis fósseis fez a temperatura global aumentar.",60,0,0.75,Dubai
+17,Construção de ônibus e trens movidos a energia elétrica renovável,720,6,4,"Parabéns, realizou um projeto muito importante!",12,1,0,Helsinque
+18,Construção de usinas geotérmicas,720,10,4,A Indonésia é o país com o maior número de vulcões em atividade do mundo (129!). Usá-los para obter energia limpa foi muito bom!!,30,1,0,Jacarta
+19,Criação de máquina de aceleração de compostagem,480,10,3,"Parabéns, realizou um projeto muito importante!",15,1,0,Jerusalém
+20,Projeto para reflorestamento por inundações repentinas,720,12,4,Parabéns! Você conseguiu reflorestar uma área muito grande com esta técnica!,25,2,0,Jerusalém
+21,Programa de apoio de mulheres que empreenderem com projetos sustentáveis,240,5,4,"Parabéns, realizou um projeto muito importante!",15,1,0,Lagos
+22,Projeto para criação de uma cidade sustentável em área desértica,1200,15,5,"Parabéns, realizou um projeto muito importante!",35,1,0,Lima
+23,Leilão de obras de arte e peças históricas e doaçao de parte dos lucros para ONGs ambientais,480,6,3,Era greenwashing! As peças históricas na verdade foram roubadas de vários povos que protegem os biomas e deixam a floresta em pé.,10,0,0.5,Londres
+24,Produção de carros elétricos em todo EUA,1200,20,4,"Você fez muito dinheiro! Mas as 3 principais fontes de energia local são petróleo, gás e carvão.  De nada adiantaram os carros elétricos.",55,0,0.75,Los Angeles
+25,Desenvolvimento de uma plataforma de educação acessível sobre sustentabilidade,720,7,4,Parabéns! O conhecimento sobre sustentabilidade alcançará ainda mais pessoas!,8,2,0,Luanda
+26,Mostra de mais de 100 filmes sobre meio ambiente,240,5,4,"Parabéns, realizou um projeto muito importante!",7,1,0,Luanda
+27,Criação de selo rígido de sustentabilidade,720,10,4,"Parabéns, realizou um projeto muito importante! Com este selo, fica bem mais difícil para empresas que fazem greenwashing o adquirirem e, portanto, serem reconhecidas por sua sustentabilidade.",18,1,0,Madri
+28,"Projeto de proteção, apoio e formação de pesquisadoras e empreendedoras indígenas",720,10,3,"Parabéns, realizou um projeto muito importante!",20,3,0,Manaus
+29,Produção de um sistema para monitoramento da floresta amazônica.,720,7,4,Parabéns! Você realizou uma pesquisa muito importante! Isso está ajudando a diminuir o desmatamento.,12,2,0,Manaus
+30,"Produção de ferro, cobre e ouro para equippamentos eletrônicos",480,10,4,As atividades de mineração causaram danos terríveis ao ambiente e à população da amazônia.,20,0,0.75,Manaus
+31,Produção de transporte público elétrico,720,8,4,"Parabéns, realizou um projeto muito importante!",25,1,0,Manila
+32,Produção de embalagens biodegradáveis para empresas,480,6,4,"Embalagens biodegradáveis não são a solução para o problema do descarte global, mas são muito melhores que as outras alternativas só de plásticos!",11,1,0,Moscou
+33,Pesquisa sobre ações empresariais sustentáveis mais efetivas,720,10,4,Parabéns! Sua pesquisa deu um norte para as empresas e agora elas sabem o que podem fazer para agir a favor do meio ambiente!,28,2,0,Mumbai
+34,Produção de canudos de bambu,480,4,4,Uhul! Menos plástico! Mais tartarugas salvas!,9,1,0,Mumbai
+35,Construção de uma rede grande de transporte público eficiente e sustentável,960,12,4,"Parabéns, realizou um projeto muito importante!",20,1,0,Nairobi
+36,Produção de cromo,720,16,4,A mineração contaminou a população local. Você deverá pagar para as pessoas que foram contaminadas. ,20,0,0.75,Nova Delhi
+37,Programa para a compra de antigos aparelhos eletrônicos e reciclagem de lixo eletrônico,480,8,4,"Parabéns, realizou um programa muito importante!",10,1,0,Nova York
+38,Produçao de tecidos a base de fibra de bambu e livre de químicos nocivos,720,10,4,"Era greenwashing! Os tecidos nunca foram feitos de bambu, mas sim de rayon, que requer produtos químicos tóxicos e resulta na emissão de poluentes perigosos.  Você tomou uma multa!",15,0,0.5,Nova York
+39,Auditoria dos documentos de responsabilidade social de empresas,480,6,4,Você descobriu que muitas das empresas não realizam ações de sustentabilidade eficientes.,11,1,0,Paris
+40,Produção de baterias para carros elétricos,480,12,4,"Era greenwashing! O processo de produção da bateria exige a mineração de muitos metais e isso gasta muita energia, água e ainda polui os arredores, intoxicado todo um ecossistema. ",25,0,0.5,Pequim
+41,Desenvolvimento  de cidades-esponjas para conter enchentes,960,20,4,"Essa forma de escoamento de água permite a criação de áreas verdes nas cidades, além de ser um bom início para a adaptação de mudanças climáticas.",32,2,0,Pequim
+42,"Desenvolvimento de Diesel limpo, com melhor eficiência e amigo do ambiente",480,8,3,Era greenwashing! A empresa manipulou os softwares dos veículos para passar nos testes porque o diesel verde era tudo mentira! Você ganhou dinheiro mas tomou uma enorme multa.,32,0,0.75,Roma
+43,Projeto de tratamento da poluição das águas,720,12,4,O tratamento da qualidade da água melhorou a qualidade de vida e saúde da população.,20,1,0,São Paulo
+44,Plantação sob placas fotovoltaicas,720,15,3,"A plantação aproveita a sombra parcial das placas, assim utiliza menos água e espaço. Sua pesquisa foi um sucesso!",30,1,0,Seul
+45,Implementação de redes inteligentes de distribuição de energia,720,9,4,"Parabéns, realizou um programa muito importante!",20,1,0,Singapura
+46,Criação de berçários de Corais e regeneração dos corais existentes,720,7,4,Parabéns! Sua ação foi efetiva e protegeu a barreira de corais! Você ganhou dinheiro por causa do turismo ecológico também!,15,2,0,Sydney
+47,Pesca Sustentável em águas Estrangeiras,480,7,3,Era greenwashing! A empresa está usando métodos de pesca predatória que prejudicam gravemente os ecossistemas marinhos e as populações de peixes locais.,12,0,0.5,Tóquio
+48,Workshop de compartilhamento de conhecimentos indígenas com a comunidade e empresas de energia,240,5,4,"Parabéns, realizou um projeto muito importante! O conhecimento indígena foi compartilhado!",11,1,0,Toronto
+49,Plantio por jatos de água em área desertificada,480,8,4,"Parabéns, realizou um projeto muito importante! Você conseguiu reflorestar uma área muito grande com esta técnica!",20,2,0,Xangai
+50,Implantação de Frota de Ônibus de Hidrogênio Verde,720,10,4,"Parabéns, isso reduziu significativamente as emissões de poluentes locais e contribuiu para a melhoria da qualidade do ar na cidade!",15,1,0,Xangai

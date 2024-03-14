@@ -1,0 +1,21 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bpnly1xxyovee"
+
+[deps]
+
+files=["res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Atividade.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Tempo de Retorno 
+(em segundos).translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Investimento 
+(em moedas).translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).# Perguntas de sustentabilidade.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Recompensa História.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Moedas.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Token do conhecimento.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Aumento de Temperatura.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Local.translation"]
+
+source_file="res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).csv"
+dest_files=["res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Atividade.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Tempo de Retorno 
+(em segundos).translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Investimento 
+(em moedas).translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).# Perguntas de sustentabilidade.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Recompensa História.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Moedas.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Token do conhecimento.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Aumento de Temperatura.translation", "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).Local.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,52 @@
+Story,Consequence coins,Condition coins current city,Consequence temperature (for all)
+Governo Brasileiro cortou o financiamento para pesquisas. ,-4,Brasília;São Paulo;Manaus ,0
+EUA aprova projeto willow para exploração massiva de petróleo no Alasca,-3,Nova York;Los Angeles,0.5
+"Uma aldeia indígena foi dizimada. Todo conhecimento ancestral foi perdido, bem como uma população que protegia o bioma local.",-3,,0.25
+Foi celebrado às escuras um contrato entre EUA e Quênia para que todo lixo não reciclável do EUA seja enviado para Quênia.,-10,Nova York;Los Angeles;Nairobi,0.25
+A Google construiu um novo datacenter na Inglaterra e será demandando 7500 kWh anuais para mantê-lo em funcionamento. Infelizmente a fonte de energia local é carvão.,-6,Londres,0.25
+A quantidade de propaganda virtual recebida via internet está fora do controle! Estima-se um aumento energético de 50 KWh devido ao excesso dessas propagandas.,-2,,0.5
+O agrotóxico mais usado no Brasil eleva mortalidade de fauna endêmica e potencial biótico diminui drasticamente,-4,,0.5
+Líderes globais não cumprem o que prometem no acordo de Paris e continuam a mentir sobre ações sobre o aquecimento global.,-5,,0.75
+Ativistas ambientais brasileiros desaparecem e são encontrados mortos.,,,0.25
+Jovens ativistas ambientais indianos são presos pelo governo.,,,0.25
+Degradação da Mata Atlântica impacta na retenção de carbono do bioma.,,,0.25
+Desmatamento na Amazônia bate recorde.,-6,,0.75
+"Rompimento de barragem em Mariana e Brumadinho devido aos maus cuidados de empresa de mineração. Além de danos ambientais absurdos e em cadeia, muito conhecimento, história e vidas foram perdidas.",-4,Brasília;São Paulo;Manaus ,0.25
+Grandes incêndios florestais na Austrália.,-10,Sydney,0.25
+São flexibilizadas as regras de uso de agrotóxico ao redor do mundo.,-4,,0.5
+Reunião para discutir o clima em Tóquio.,,,0
+África do sul sofre com perda de biodiversidade causada pela caça e tráfico ilegal de animais.,-10,Cidade do cabo,0.25
+Japão quer liberar água contaminada de Fukushima no oceano.,-8,Seul;Xangai;Pequim;Tóquio,0.5
+Big techs e empresas italianas financiam compra de ouro ilegal da amazônia brasileira.,-6,,0.5
+"Jerusalém, Dubai e Bagdá abrem mais plataformas de exploração de petróleo.",-10,Jerusalém;Bagdá;Dubai,0.5
+"Turismo no Hawai está sendo muito prejudicial ao bioma, população e animais locais.",-9,Nova York;Los Angeles,0.25
+Produção têxtil em massa na indústria da moda gera grande quantidade de resíduos e poluição da água.,-4,,0.5
+"Expansão desenfreada da indústria de carvão na Ásia, intensificou a emissão de gases de efeito estufa.",-3,,0.5
+Desperdício de alimentos em grande escala contribui para o aquecimento global e o preço do seu lanchinho.,-4,,0.5
+Os impostos gerais aumentaram para que os países possam se adaptar às mudanças climáticas.,-8,,0
+Ativistas chineses são presos e silenciados pelo governo.,,,0.25
+Europa passa a investir em combustíveis fósseis depois que a Rússia cortou a exportação de gás.,-10,Londres;Berlim;Madri;Helsinque;Paris;Roma,0.5
+A lendária partida anual de truco dos jogadores aconteceu e todos se divertiram muito,4,,0
+"Turismo na Tailândia está sendo muito prejudicial ao bioma, população e elefantes locais.",-7,Bangkok,0.25
+"Índia vai investir 1,6 bilhão de dólares em projeto de petróleo no Brasil.",,,0.5
+União Europeia anuncia compra de mais de 20 milhões de barris de petróleo.,-10,Berlim;Madri;Helsinque;Paris;Roma,0.75
+Europa retoma o uso de carvão mineral.,-10,Londres;Berlim;Madri;Helsinque;Paris;Roma,0.5
+"Governo lança programa para estimular ‘mineração artesanal’ na Amazônia Legal, o que legaliza a invasão de garimpeiros em terras indígenas.",-8,Manaus,0.5
+Vulcão em Tonga entra em erupção e aquece todo o planeta.,-5,,0.75
+França faz o maior usina solar flutuante da Europa.,5,Paris,0
+Os negócios estão dando certo!,5,,0
+"Influenciadores indígenas viralizam e atraem a atenção do público para suas vivências, mudança climática e desmatamento.",3,,0
+Empresas multinacionais priorizam o lucro sobre a sustentabilidade ambiental geram impactos negativos em comunidades e ecossistemas.,-3,,0.5
+Consumo excessivo e descarte inadequado de produtos geram grande quantidade de lixo e contribuem para a poluição ambiental.,-3,,0.5
+Ativistas e conhecimentos indígenas da América do Sul ganharam destaque nos noticiários.,5,Brasília;Bogotá;Lima;Manaus;Buenos Aires;São Paulo,0
+China diminuiu os níveis de poluição do ar em 40% de 2013 até 2017.,3,Pequim;Xangai,0
+Foi desenvolvida uma tecnologia para extrair o plástico do mar.,5,,0
+Selo green para de software foi aprovado e passará a ser obrigatório para todas as empresas desenvolvedoras de software.,4,,0
+"Característica de sustentabilidade é adicionada ao modelo qualidade do produto de software, a ISO 25010.",6,,0
+"Falta de educação ambiental e conscientização da população sobre a importância da preservação ambiental dificultam a mudança de hábitos.
+",,,0.75
+Foi descoberto que o modo mais sustentável de pesquisar na internet é usando o Firefox e o Ecosia como máquina de busca.,3,,0
+A agência nacional de águas brasileira criou um programa de incentivo ao cuidado no trato com as águas.,4,Brasília;São Paulo;Manaus ,0
+Um professor de química decidiu nadar por toda extensão de um rio para atrair a atenção da mídia acerca de microplásticos e poluição de corpos das águas.,,,0
+"Bilionários fazem questão de andar de jatinho particular para todos os eventos, mesmo em meio ao esforço global para diminuir a emissão de gases de efeito estufa",-1,,0.75
+Vários governos estão dando incentivos para programas de sustentabilidade depois de manifestações recentes.,5,,0

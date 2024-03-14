@@ -11,6 +11,7 @@ var rewardKnowledgeGems : int
 var temperatureRise : float
 var timeToReady : int
 var rewardStory : String
+var city : String
 
 func _init(
 		p_idActivity : int,
@@ -22,6 +23,7 @@ func _init(
 		p_temperatureRise : float,
 		p_timeToReady : int,
 		p_rewardStory : String,
+		p_city : String,
 	):
 	self.idActivity = p_idActivity
 	self.title = p_title
@@ -32,6 +34,7 @@ func _init(
 	self.temperatureRise = p_temperatureRise
 	self.timeToReady = p_timeToReady
 	self.rewardStory = p_rewardStory
+	self.city = p_city
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icon-airplane.png" id="3_30847"]
 [ext_resource type="PackedScene" uid="uid://dr5uqoyqrk4q3" path="res://main/scene/worldMap.tscn" id="3_hjb3d"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
-[ext_resource type="Texture2D" uid="uid://d3tr7dqg05im6" path="res://assets/Icon-coin.png" id="4_sdn36"]
+[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/twemoji_coin.png" id="5_wpqkt"]
 [ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/Icon-kgem2.png" id="6_8k8il"]
 [ext_resource type="PackedScene" uid="uid://bkqljm64dmb5f" path="res://player/scene/Player.tscn" id="8_kqbl1"]
 [ext_resource type="Texture2D" uid="uid://80bww2vic8ri" path="res://assets/Rectangle 64.png" id="10_rc8e7"]
@@ -34,8 +34,18 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 240.0
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+process_callback = 1
+wait_time = 8.0
+one_shot = false
 autostart = true
+script = null
 
 [node name="Label-plane" type="Label" parent="."]
 offset_left = 666.0
@@ -66,8 +76,7 @@ vertical_alignment = 1
 
 [node name="icon-coin" type="Sprite2D" parent="."]
 position = Vector2(913, 36)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("4_sdn36")
+texture = ExtResource("5_wpqkt")
 
 [node name="Label-kgem" type="Label" parent="."]
 offset_left = 967.0

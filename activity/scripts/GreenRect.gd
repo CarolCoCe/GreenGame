@@ -12,3 +12,6 @@ func setTime (value):
 	
 func setQuestions (value):
 	$Panel/Numquestions.text = value
+	
+func setCity (value):
+	$Panel/City.text = value
