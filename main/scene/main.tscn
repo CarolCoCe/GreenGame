@@ -34,18 +34,8 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-process_callback = 1
-wait_time = 8.0
-one_shot = false
+wait_time = 240.0
 autostart = true
-script = null
 
 [node name="Label-plane" type="Label" parent="."]
 offset_left = 666.0

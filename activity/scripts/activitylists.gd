@@ -43,31 +43,41 @@ func _ready():
 	abaGlobal()
 
 func abaGlobal():
+	#The separation constant in vboxContainer is not working at all
+	#For now, I will set the green rectangles position manually :|
+	
+	var y = 0
 	for activity in allActivities:
-		createRect(activity)
+		createRect(activity,y)
+		y = y + 250 #setting the position
 
-func abaLocal(id1 : int, id2 : int = 0, id3 : int = 0):
-	var activity = allActivities[id1]
-	createRect(activity)
-	
-	if id2 != 0:
-		activity = allActivities[id2]
-		createRect(activity)
-	
-	if id3 != 0:
-		activity = allActivities[id1]
-		createRect(activity)
 
-func createRect(activity : Activity):
-	var minready = (activity.timeToReady)/60
+#func abaLocal(id1 : int, id2 : int = 0, id3 : int = 0):
+	#var activity = allActivities[id1]
+	#createRect(activity)
+	#
+	#if id2 != 0:
+		#activity = allActivities[id2]
+		#createRect(activity)
+	#
+	#if id3 != 0:
+		#activity = allActivities[id1]
+		#createRect(activity)
+
+
+func createRect(activity : Activity, y):
 	var activityRect = greenRectScene.instantiate()
+	var minready = (activity.timeToReady)/60
+	
 	vbox.add_child(activityRect)
 	activityRect.setTitle(activity.title)
 	activityRect.setPrice("Custo: " + str(activity.priceCoins))
 	activityRect.setTime("Tempo de retorno: " + str(minready) + "Min")
 	activityRect.setQuestions("Perguntas: " + str(activity.numQuestActivity))
 	activityRect.setCity(activity.city)
-	 
+	activityRect.position = Vector2(0,y) #setting the position
+	
+	print (activityRect.position)
 
 
 func _on_back_button_pressed():

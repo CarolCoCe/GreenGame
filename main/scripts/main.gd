@@ -74,6 +74,5 @@ func _on_timer_timeout_rodada():
 
 
 func _on_activity_list_button_pressed():
-	print(activityPainel.visible)
 	activityPainel.visible = true
 	

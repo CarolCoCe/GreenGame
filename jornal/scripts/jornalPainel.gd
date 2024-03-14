@@ -25,10 +25,18 @@ func _ready():
 			if len(line) >= 2:
 				var storyf = line[0]
 				var consequenceCoinsf = int (line[1])
-				var cityConsequencef = line[2].split(";")
-				var temIncreasef = int(line[3])
+				var temIncreasef
+				var cityConsequencef
+				var news
 				
-				var news = Jornal.new(storyf,consequenceCoinsf,temIncreasef, cityConsequencef)
+				if len(line) < 5: #consequece city is null. Valid for all players then
+					temIncreasef = int(line[2])
+					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef)
+				else:
+					cityConsequencef = line[2].split(";")
+					temIncreasef = int(line[3])
+					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef, cityConsequencef)
+				
 				
 				sorteNews.append(news)
 	#Terra
@@ -53,7 +61,9 @@ func _ready():
 				
 func show_jornal():
 	#Sorte 
-	var randomIndex = randi_range(0, sorteNews.size())
+	var randomIndex = randi_range(0, sorteNews.size()-1)
+	while (sorteNews.size() > 0 and sorteNews[randomIndex] == null):
+		randomIndex = randi_range(0, sorteNews.size()-1)
 	var randomNew = sorteNews[randomIndex]
 	sorteNews.pop_at(randomIndex)
 	
@@ -62,7 +72,9 @@ func show_jornal():
 	$"Painel/coins-Sorte".text = str(randomNew.coinsConsequence)
 	
 	#Terra
-	var randomIndexT = randi_range(0, terraNews.size())
+	var randomIndexT = randi_range(0, terraNews.size()-1)
+	while (terraNews.size() > 0 and terraNews[randomIndexT] == null):
+		randomIndexT = randi_range(0, terraNews.size()-1)
 	var randomNewT = terraNews[randomIndexT]
 	terraNews.pop_at(randomIndexT)
 	

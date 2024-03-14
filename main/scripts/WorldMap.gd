@@ -18,13 +18,8 @@ func add_city( city : City):
 	add_child(circleCity)
 	#this is for adjust the button position
 	circleCity.position = city.positionMap - ((circleCity.size * circleCity.scale)/2)
-	
 	circleCity.connect("pressed", _on_city_button_pressed.bind(city)) #for the extra argument
 
-	#var cityNameLabel = Label.new()
-	#cityNameLabel.text = city.nameCity
-	#cityNameLabel.position = circleCity.position + Vector2(-20, 10)
-	#add_child(cityNameLabel)
 	
 func _on_city_button_pressed(city):
 	cityButtonPressed.emit(city)

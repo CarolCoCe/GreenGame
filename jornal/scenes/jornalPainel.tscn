@@ -47,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_lqsr0")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -57,6 +57,7 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -0.5
 offset_top = 221.0
 offset_right = 393.0
 offset_bottom = -218.0
@@ -64,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_lqsr0")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -74,16 +75,15 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -408.0
-offset_top = 448.0
-offset_right = -296.0
-offset_bottom = -136.0
+offset_left = -368.0
+offset_top = 480.0
+offset_right = -288.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_lqsr0")
 theme_override_font_sizes/font_size = 22
-horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="coins-Sorte" type="Label" parent="Painel"]
@@ -92,16 +92,15 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -186.0
-offset_top = 448.0
-offset_right = -112.0
-offset_bottom = -136.0
+offset_left = -120.0
+offset_top = 480.0
+offset_right = -64.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_lqsr0")
 theme_override_font_sizes/font_size = 22
-horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="tempIncrease-Terra" type="Label" parent="Painel"]
@@ -111,15 +110,14 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 70.0
-offset_top = 448.0
-offset_right = 182.0
-offset_bottom = -136.0
+offset_top = 480.0
+offset_right = 160.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_lqsr0")
 theme_override_font_sizes/font_size = 22
-horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="coins-Terra" type="Label" parent="Painel"]
@@ -128,24 +126,23 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 304.0
-offset_top = 472.0
-offset_right = 356.0
-offset_bottom = -153.0
+offset_left = 366.0
+offset_top = 480.0
+offset_right = 414.0
+offset_bottom = -145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_lqsr0")
 theme_override_font_sizes/font_size = 22
-horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="TwemojiCoin" type="Sprite2D" parent="Painel"]
-position = Vector2(488, 488)
+position = Vector2(434, 492)
 texture = ExtResource("7_pju2t")
 
 [node name="TwemojiCoin2" type="Sprite2D" parent="Painel"]
-position = Vector2(976, 488)
+position = Vector2(920, 492)
 texture = ExtResource("7_pju2t")
 
 [connection signal="pressed" from="Painel/BackButton" to="." method="_on_back_button_pressed"]
