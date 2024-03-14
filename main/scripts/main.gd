@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var player = $Player
 @onready var worldMap = $WorldMap
-@onready var painel = $Painel
 @onready var activityPainel = $Activitylists
 @onready var jornalPainel = $JornalPainel
 @onready var planeAlert = $PlaneAlert
