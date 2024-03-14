@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq4df83j3n7fy"]
+[gd_scene load_steps=6 format=3 uid="uid://cq4df83j3n7fy"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_2xkyx"]
 [ext_resource type="Script" path="res://activity/scripts/activitylists.gd" id="1_djurc"]
 [ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/Rectangle 65.png" id="2_kq0u6"]
+[ext_resource type="Texture2D" uid="uid://jsxl7nbo8kix" path="res://assets/fa_arrow-circle-left.png" id="4_4bkew"]
+[ext_resource type="Texture2D" uid="uid://drj56q32l38uk" path="res://assets/fa_arrow-circle-left (1).png" id="5_pvlkf"]
 
 [node name="Activitylists" type="Node2D"]
 script = ExtResource("1_djurc")
@@ -25,3 +27,16 @@ horizontal_scroll_mode = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="Painel/ScrollContainer"]
 custom_minimum_size = Vector2(10, 1000)
 layout_mode = 2
+
+[node name="BackButton" type="TextureButton" parent="Painel"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 113.0
+offset_right = 182.0
+offset_bottom = 179.0
+texture_normal = ExtResource("4_4bkew")
+texture_pressed = ExtResource("4_4bkew")
+texture_hover = ExtResource("5_pvlkf")
+stretch_mode = 3
+
+[connection signal="pressed" from="Painel/BackButton" to="." method="_on_back_button_pressed"]

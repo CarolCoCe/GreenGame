@@ -2,9 +2,8 @@ extends Node2D
 
 @onready var painel = $Painel
 @onready var vbox = $Painel/ScrollContainer/VBoxContainer
-@onready var activityRect = greenRectScene.instantiate()
 
-var greenRectScene = preload("res://activity/scenes/GreenRect.tscn")
+var greenRectScene = load("res://activity/scenes/GreenRect.tscn")
 
 var allActivities = []
 
@@ -12,7 +11,6 @@ var allActivities = []
 func _ready():
 	var valueNormal = load("res://assets/fa_arrow-circle-left.png")
 	var valuePressed = load("res://assets/fa_arrow-circle-left (1).png")
-	painel.setTextureButtonBack(valueNormal, valuePressed)
 	painel.setTitle("Atividades")
 	
 	
@@ -63,9 +61,15 @@ func abaLocal(id1 : int, id2 : int = 0, id3 : int = 0):
 
 func createRect(activity : Activity):
 	var minready = (activity.timeToReady)/60
+	var activityRect = greenRectScene.instantiate()
+	vbox.add_child(activityRect)
 	activityRect.setTitle(activity.title)
 	activityRect.setPrice("Custo: " + str(activity.priceCoins))
 	activityRect.setTime("Tempo de retorno: " + str(minready) + "Min")
 	activityRect.setQuestions("Perguntas: " + str(activity.numQuestActivity))
-	vbox.add_child(activityRect)
-	
+
+	 
+
+
+func _on_back_button_pressed():
+	self.visible = false

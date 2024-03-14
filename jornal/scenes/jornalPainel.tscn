@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://rwvqap8fqn3u"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_uvslv"]
+[ext_resource type="Script" path="res://jornal/scripts/jornalPainel.gd" id="1_xidim"]
+[ext_resource type="Texture2D" uid="uid://b6c8e5ccwjbvb" path="res://assets/Rectangle 13.png" id="3_0pgv6"]
+[ext_resource type="Texture2D" uid="uid://b2v00qk50j1y" path="res://assets/fa_arrow-circle-left-red.png" id="4_61upd"]
+[ext_resource type="Texture2D" uid="uid://1oh2u46552p8" path="res://assets/fa_arrow-circle-left red-hover.png" id="5_ah130"]
+
+[node name="JornalPainel" type="Node2D"]
+script = ExtResource("1_xidim")
+
+[node name="Painel" parent="." instance=ExtResource("1_uvslv")]
+
+[node name="Rectangle13" type="Sprite2D" parent="Painel"]
+position = Vector2(412, 152)
+texture = ExtResource("3_0pgv6")
+
+[node name="Line2D" type="Line2D" parent="Painel"]
+points = PackedVector2Array(570, 215, 570, 520)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="BackButton" type="TextureButton" parent="Painel"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 113.0
+offset_right = 182.0
+offset_bottom = 179.0
+texture_normal = ExtResource("4_61upd")
+texture_pressed = ExtResource("4_61upd")
+texture_hover = ExtResource("5_ah130")
+stretch_mode = 3
+
+[connection signal="pressed" from="Painel/BackButton" to="." method="_on_back_button_pressed"]

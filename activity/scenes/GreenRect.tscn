@@ -29,6 +29,7 @@ theme_override_font_sizes/font_size = 22
 autowrap_mode = 3
 
 [node name="PriceCoins" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 75.0
 offset_right = 226.0
@@ -38,6 +39,7 @@ theme_override_font_sizes/font_size = 15
 autowrap_mode = 3
 
 [node name="TimeToReady" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 121.0
 offset_right = 278.0
@@ -47,6 +49,7 @@ theme_override_font_sizes/font_size = 15
 autowrap_mode = 3
 
 [node name="Numquestions" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 163.0
 offset_right = 194.0

@@ -4,7 +4,8 @@ extends Node2D
 @onready var worldMap = $WorldMap
 @onready var painel = $Painel
 @onready var activityPainel = $Activitylists
-
+@onready var jornalPainel = $JornalPainel
+@onready var planeAlert = $PlaneAlert
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
@@ -56,9 +57,7 @@ func moving_player(cityDestiny : City):
 		$"Label-plane".text = str(player._getflights())
 		player._setplayercurrentCity(cityDestiny)
 	else:
-		painel.setTitle("Aviso!")
-		painel.setContentFull("Você não tem voos suficientes para ir para esta cidade ainda")
-		painel.visible = true
+		planeAlert.show_alert()
 		
 	
 func _on_timer_timeout_rodada():
@@ -71,9 +70,8 @@ func _on_timer_timeout_rodada():
 	player._setcoins(valuecoins)
 	$"Label-coins".text = str(player._getcoins())
 	
-	painel.setTitle("Jornal")
-	painel.setContentFull("O que aconteceu agora?")
-	painel.visible = true
+	jornalPainel.show_jornal()
+
 
 
 func _on_activity_list_button_pressed():
