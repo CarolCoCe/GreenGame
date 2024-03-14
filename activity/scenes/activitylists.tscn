@@ -1,10 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq4df83j3n7fy"]
+[gd_scene load_steps=16 format=3 uid="uid://cq4df83j3n7fy"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_2xkyx"]
 [ext_resource type="Script" path="res://activity/scripts/activitylists.gd" id="1_djurc"]
 [ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/Rectangle 65.png" id="2_kq0u6"]
 [ext_resource type="Texture2D" uid="uid://jsxl7nbo8kix" path="res://assets/fa_arrow-circle-left.png" id="4_4bkew"]
 [ext_resource type="Texture2D" uid="uid://drj56q32l38uk" path="res://assets/fa_arrow-circle-left (1).png" id="5_pvlkf"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="6_mbt7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3blqi"]
+bg_color = Color(0.380392, 0.67451, 0.27451, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nitps"]
+bg_color = Color(0.482353, 0.784314, 0.34902, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcji8"]
+bg_color = Color(0.247059, 0.282353, 0.235294, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y84b6"]
+bg_color = Color(0.380392, 0.67451, 0.27451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imre0"]
+bg_color = Color(0.482353, 0.784314, 0.34902, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cr3g"]
+bg_color = Color(0.247059, 0.282353, 0.235294, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1rk0"]
+bg_color = Color(0.380392, 0.67451, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggicj"]
+bg_color = Color(0.482353, 0.784314, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7woww"]
+bg_color = Color(0.247059, 0.282353, 0.235294, 1)
 
 [node name="Activitylists" type="Node2D"]
 script = ExtResource("1_djurc")
@@ -25,7 +65,7 @@ offset_bottom = 545.0
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Painel/ScrollContainer"]
-custom_minimum_size = Vector2(10, 12500)
+custom_minimum_size = Vector2(10, 14500)
 layout_mode = 2
 
 [node name="BackButton" type="TextureButton" parent="Painel"]
@@ -38,5 +78,48 @@ texture_normal = ExtResource("4_4bkew")
 texture_pressed = ExtResource("4_4bkew")
 texture_hover = ExtResource("5_pvlkf")
 stretch_mode = 3
+
+[node name="Button-global" type="Button" parent="Painel"]
+offset_left = 407.0
+offset_top = 202.0
+offset_right = 517.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_mbt7v")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_3blqi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nitps")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bcji8")
+toggle_mode = true
+button_pressed = true
+text = "Global"
+
+[node name="Button-local" type="Button" parent="Painel"]
+offset_left = 627.0
+offset_top = 202.0
+offset_right = 737.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_mbt7v")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_y84b6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_imre0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cr3g")
+toggle_mode = true
+text = "Minhas"
+
+[node name="Button-minhas" type="Button" parent="Painel"]
+offset_left = 517.0
+offset_top = 202.0
+offset_right = 627.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_mbt7v")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b1rk0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ggicj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7woww")
+toggle_mode = true
+text = "Local"
 
 [connection signal="pressed" from="Painel/BackButton" to="." method="_on_back_button_pressed"]

@@ -66,6 +66,7 @@ vertical_alignment = 1
 
 [node name="icon-coin" type="Sprite2D" parent="."]
 position = Vector2(913, 36)
+scale = Vector2(0.17, 0.17)
 texture = ExtResource("5_wpqkt")
 
 [node name="Label-kgem" type="Label" parent="."]

@@ -49,7 +49,7 @@ func abaGlobal():
 	var y = 0
 	for activity in allActivities:
 		createRect(activity,y)
-		y = y + 250 #setting the position
+		y = y + 290 #setting the position
 
 
 #func abaLocal(id1 : int, id2 : int = 0, id3 : int = 0):
@@ -72,7 +72,7 @@ func createRect(activity : Activity, y):
 	vbox.add_child(activityRect)
 	activityRect.setTitle(activity.title)
 	activityRect.setPrice("Custo: " + str(activity.priceCoins))
-	activityRect.setTime("Tempo de retorno: " + str(minready) + "Min")
+	activityRect.setTime("Tempo: " + str(minready) + " Min")
 	activityRect.setQuestions("Perguntas: " + str(activity.numQuestActivity))
 	activityRect.setCity(activity.city)
 	activityRect.position = Vector2(0,y) #setting the position
