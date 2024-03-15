@@ -15,3 +15,6 @@ func setQuestions (value):
 	
 func setCity (value):
 	$Panel/City.text = value
+	
+func showButtonPlay():
+	$Panel/ButtonPlay.visible = true

@@ -85,6 +85,7 @@ func abaLocal():
 	for i in activitiesFromCity:
 		var activity = allActivities[int(i) - 1]
 		var activityRect = createRect(activity, y)
+		activityRect.showButtonPlay()
 		vboxLocal.add_child(activityRect)
 		y = y + 290
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://umhvunnf5ap3"]
+[gd_scene load_steps=9 format=3 uid="uid://umhvunnf5ap3"]
 
 [ext_resource type="Script" path="res://activity/scripts/GreenRect.gd" id="1_72a4m"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="1_dkued"]
 [ext_resource type="Texture2D" uid="uid://cx5vhbgqeyj1p" path="res://assets/Vector.png" id="3_p05h3"]
 [ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/twemoji_coin.png" id="4_hal3u"]
 [ext_resource type="Texture2D" uid="uid://cxn3wlqolwe71" path="res://assets/9004819_clock_time_alarm_schedule_icon.png" id="5_2ue70"]
+[ext_resource type="Texture2D" uid="uid://bxyebhvqsxay4" path="res://assets/Polygon 4.png" id="6_1hppx"]
 [ext_resource type="Texture2D" uid="uid://bl27468ai3pw0" path="res://assets/134192_information_question_icon.png" id="6_qjng1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa8tm"]
@@ -64,16 +65,16 @@ autowrap_mode = 3
 
 [node name="City" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 557.0
-offset_top = 120.0
-offset_right = 743.0
-offset_bottom = 143.0
+offset_left = 521.0
+offset_top = 97.0
+offset_right = 768.0
+offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("1_dkued")
 theme_override_font_sizes/font_size = 22
 autowrap_mode = 3
 
 [node name="Vector" type="Sprite2D" parent="Panel"]
-position = Vector2(518, 125)
+position = Vector2(482, 108)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_p05h3")
 
@@ -87,7 +88,21 @@ position = Vector2(46, 155)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("5_2ue70")
 
-[node name="134192InformationQuestionIcon" type="Sprite2D" parent="."]
+[node name="ButtonPlay" type="Button" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 160.0
+offset_right = 696.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_dkued")
+theme_override_font_sizes/font_size = 30
+text = "          FAZER"
+icon = ExtResource("6_1hppx")
+expand_icon = true
+
+[node name="134192InformationQuestionIcon" type="Sprite2D" parent="Panel"]
 position = Vector2(46, 203)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("6_qjng1")
