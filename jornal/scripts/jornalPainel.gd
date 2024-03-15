@@ -29,12 +29,12 @@ func _ready():
 				var cityConsequencef
 				var news
 				
-				if len(line) < 5: #consequece city is null. Valid for all players then
-					temIncreasef = int(line[2])
+				if len(line) < 3: #consequece city is null. Valid for all players then
+					temIncreasef = float(line[2])
 					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef)
 				else:
 					cityConsequencef = line[2].split(";")
-					temIncreasef = int(line[3])
+					temIncreasef = float(line[3])
 					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef, cityConsequencef)
 				
 				
@@ -47,15 +47,22 @@ func _ready():
 		print("consegui abrir o arquivo de jornal Terra")
 		var _header = fileT.get_csv_line()
 		while !fileT.eof_reached():
-			var line = fileT.get_csv_line()
-			if len(line) >= 2:
-				var categorief = line[0]
-				var storyf = line[1]
-				var consequenceCoinsf = int (line[2])
-				var cityConsequencef = line[3].split(";")
-				var temIncreasef = int(line[4])
+			var lineT = fileT.get_csv_line()
+			if len(lineT) >= 2:
+				var categorief = lineT[0]
+				var storyf = lineT[1]
+				var consequenceCoinsf = int (lineT[2])
+				var temIncreasef
+				var cityConsequencef
+				var news
 				
-				var news = Jornal.new(storyf,consequenceCoinsf,temIncreasef, cityConsequencef, categorief)
+				if len(lineT) < 4: #consequece city is null. Valid for all players then
+					temIncreasef = float(lineT[3])
+					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef,[], categorief)
+				else:
+					cityConsequencef = lineT[3].split(";")
+					temIncreasef = float(lineT[4])
+					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef, cityConsequencef, categorief)
 				
 				terraNews.append(news)
 				
@@ -68,8 +75,26 @@ func show_jornal():
 	sorteNews.pop_at(randomIndex)
 	
 	$"Painel/Sorte-Story".text = randomNew.story
-	$"Painel/tempIncrease-Sorte".text = str(randomNew.temperatureRise)
+	if randomNew.temperatureRise > 0:
+		$"Painel/temperature-icon-sorte".visible = true
+		$"Painel/tempIncrease-Sorte".text = "+ " + str(randomNew.temperatureRise)
+	else:
+		$"Painel/temperature-icon-sorte".visible = false
+		$"Painel/tempIncrease-Sorte".text = ""
+
 	$"Painel/coins-Sorte".text = str(randomNew.coinsConsequence)
+	$"Painel/City-consequence-sorte".text = str(randomNew.cityConsequence)
+	
+	var strCitySorte = "Isto se aplica para quem está nas seguintes cidades: "
+	
+	if (randomNew.cityConsequence.size() > 1):
+		for i in randomNew.cityConsequence:
+			strCitySorte = strCitySorte + str(i) + " ,"
+		#this is for taking the last "," out	
+		strCitySorte.erase((strCitySorte.length() - 3), 3)
+		$"Painel/City-consequence-sorte".text = strCitySorte
+	else:
+		$"Painel/City-consequence-sorte".text = ""
 	
 	#Terra
 	var randomIndexT = randi_range(0, terraNews.size()-1)
@@ -79,8 +104,25 @@ func show_jornal():
 	terraNews.pop_at(randomIndexT)
 	
 	$"Painel/Terra-Story".text = randomNewT.story
-	$"Painel/tempIncrease-Terra".text = str(randomNewT.temperatureRise)
+	if randomNewT.temperatureRise > 0:
+		$"Painel/temperature-icon-terra".visible = true
+		$"Painel/tempIncrease-Terra".text = "+ " + str(randomNewT.temperatureRise)
+	else:
+		$"Painel/temperature-icon-terra".visible = false
+		$"Painel/tempIncrease-Sorte".text = ""
+		
 	$"Painel/coins-Terra".text = str(randomNewT.coinsConsequence)
+	
+	var strCity = "Isto se aplica para quem está nas seguintes cidades: "
+	
+	if (randomNewT.cityConsequence.size() > 1):
+		for i in randomNewT.cityConsequence:
+			strCity = strCity + str(i) + " ,"
+		#this is for taking the last "," out	
+		strCity.erase((strCity.length() - 3), 3)
+		$"Painel/City-consequence-terra".text = strCity
+	else:
+		$"Painel/City-consequence-terra".text = ""
 	
 	self.visible = true
 

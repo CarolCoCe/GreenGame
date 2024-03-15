@@ -13,3 +13,5 @@ func _init(p_nameCity : String, p_activities : Array, p_positionMap: Vector2):
 	self.positionMap = p_positionMap
 	self.connections = []
 	
+func getCityActivities():
+	return activities

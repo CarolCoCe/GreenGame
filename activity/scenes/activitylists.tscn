@@ -22,6 +22,15 @@ bg_color = Color(0.247059, 0.282353, 0.235294, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1rk0"]
+bg_color = Color(0.380392, 0.67451, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggicj"]
+bg_color = Color(0.482353, 0.784314, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7woww"]
+bg_color = Color(0.247059, 0.282353, 0.235294, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y84b6"]
 bg_color = Color(0.380392, 0.67451, 0.27451, 1)
 corner_radius_top_right = 10
@@ -37,15 +46,6 @@ bg_color = Color(0.247059, 0.282353, 0.235294, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1rk0"]
-bg_color = Color(0.380392, 0.67451, 0.27451, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggicj"]
-bg_color = Color(0.482353, 0.784314, 0.34902, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7woww"]
-bg_color = Color(0.247059, 0.282353, 0.235294, 1)
-
 [node name="Activitylists" type="Node2D"]
 script = ExtResource("1_djurc")
 
@@ -56,15 +56,27 @@ position = Vector2(432, 150)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_kq0u6")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Painel"]
+[node name="ScrollContainerGlobal" type="ScrollContainer" parent="Painel"]
 layout_mode = 0
 offset_left = 175.0
 offset_top = 248.0
 offset_right = 992.0
-offset_bottom = 545.0
+offset_bottom = 538.0
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Painel/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Painel/ScrollContainerGlobal"]
+custom_minimum_size = Vector2(10, 14500)
+layout_mode = 2
+
+[node name="ScrollContainerLocal" type="ScrollContainer" parent="Painel"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 248.0
+offset_right = 992.0
+offset_bottom = 538.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Painel/ScrollContainerLocal"]
 custom_minimum_size = Vector2(10, 14500)
 layout_mode = 2
 
@@ -80,6 +92,7 @@ texture_hover = ExtResource("5_pvlkf")
 stretch_mode = 3
 
 [node name="Button-global" type="Button" parent="Painel"]
+layout_mode = 0
 offset_left = 407.0
 offset_top = 202.0
 offset_right = 517.0
@@ -95,20 +108,7 @@ button_pressed = true
 text = "Global"
 
 [node name="Button-local" type="Button" parent="Painel"]
-offset_left = 627.0
-offset_top = 202.0
-offset_right = 737.0
-offset_bottom = 237.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("6_mbt7v")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_y84b6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_imre0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6cr3g")
-toggle_mode = true
-text = "Minhas"
-
-[node name="Button-minhas" type="Button" parent="Painel"]
+layout_mode = 0
 offset_left = 517.0
 offset_top = 202.0
 offset_right = 627.0
@@ -122,4 +122,22 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7woww")
 toggle_mode = true
 text = "Local"
 
+[node name="Button-minhas" type="Button" parent="Painel"]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 202.0
+offset_right = 737.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_mbt7v")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_y84b6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_imre0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6cr3g")
+toggle_mode = true
+text = "Minhas"
+
 [connection signal="pressed" from="Painel/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Painel/Button-global" to="." method="_on_buttonglobal_pressed"]
+[connection signal="pressed" from="Painel/Button-local" to="." method="_on_buttonlocal_pressed"]
+[connection signal="pressed" from="Painel/Button-minhas" to="." method="_on_buttonminhas_pressed"]

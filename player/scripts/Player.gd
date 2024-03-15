@@ -11,35 +11,36 @@ var flights
 var knowledgeGems
 var temperatureInfluence: float
 
+signal playerChangedCity (currentCityPlayer: City)
 
-func _getflights():
+func getflights():
 	return flights
 	
-func _setflights(value):
+func setflights(value):
 	flights = value
 	
-func _getcoins():
+func getcoins():
 	return coins
 	
-func _setcoins(value):
+func setcoins(value):
 	coins = value
 	
-func _getknowledgeGems():
+func getknowledgeGems():
 	return knowledgeGems
 	
-func _setknowledgeGems(value):
+func setknowledgeGems(value):
 	knowledgeGems = value
 
-func _getplayercurrentCity():
+func getplayercurrentCity():
 	return playercurrentCity
 	
-func _setplayercurrentCity(value):
+func setplayercurrentCity(value):
 	if self.playercurrentCity != null:
 		#move_toward(playercurrentCity.positionMap,value.positionMap,100)
 		move_and_slide()
 	playercurrentCity = value
 	self.position = playercurrentCity.positionMap
-	
+	playerChangedCity.emit(playercurrentCity)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

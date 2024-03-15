@@ -34,7 +34,7 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 240.0
+wait_time = 230.0
 autostart = true
 
 [node name="Label-plane" type="Label" parent="."]
@@ -106,7 +106,7 @@ text = "+1ºC"
 [node name="WorldMap" parent="." instance=ExtResource("3_hjb3d")]
 z_index = 1
 
-[node name="Player" parent="." instance=ExtResource("8_kqbl1")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("8_kqbl1")]
 
 [node name="ActivityListButton" type="TextureButton" parent="."]
 offset_left = 136.0

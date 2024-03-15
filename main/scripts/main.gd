@@ -11,11 +11,13 @@ var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.c
 
 		
 func _ready():
-	$"Label-plane".text = str(player._getflights())
-	$"Label-coins".text = str(player._getcoins())
-	$"Label-kgem".text = str(player._getknowledgeGems())
+	$"Label-plane".text = str(player.getflights())
+	$"Label-coins".text = str(player.getcoins())
+	$"Label-kgem".text = str(player.getknowledgeGems())
 	
 	worldMap.cityButtonPressed.connect(moving_player)
+	
+	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
 	var fileData = []
@@ -46,28 +48,28 @@ func _ready():
 				var cityB = worldMap.find_city_by_name(cityBName)
 				worldMap.add_city_connection(cityA,cityB) 
 				
-	player._setplayercurrentCity(worldMap.get_random_city())			
+	player.setplayercurrentCity(worldMap.get_random_city())			
 
 func moving_player(cityDestiny : City):
 	var distance = worldMap.calc_distance_flights(player.playercurrentCity , cityDestiny)
-	var flightsAvailable = player._getflights()
+	var flightsAvailable = player.getflights()
 	if (flightsAvailable >= distance and distance > -1):
-		player._setflights(flightsAvailable - distance)
-		$"Label-plane".text = str(player._getflights())
-		player._setplayercurrentCity(cityDestiny)
+		player.setflights(flightsAvailable - distance)
+		$"Label-plane".text = str(player.getflights())
+		player.setplayercurrentCity(cityDestiny)
 	else:
 		planeAlert.show_alert()
 		
 	
 func _on_timer_timeout_rodada():
 	
-	var flightsAvailable =  player._getflights() + 3
-	player._setflights(flightsAvailable)
-	$"Label-plane".text = str(player._getflights())
+	var flightsAvailable =  player.getflights() + 3
+	player.setflights(flightsAvailable)
+	$"Label-plane".text = str(player.getflights())
 	
-	var valuecoins = player._getcoins() + 7
-	player._setcoins(valuecoins)
-	$"Label-coins".text = str(player._getcoins())
+	var valuecoins = player.getcoins() + 7
+	player.setcoins(valuecoins)
+	$"Label-coins".text = str(player.getcoins())
 	
 	jornalPainel.show_jornal()
 
