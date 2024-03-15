@@ -35,7 +35,7 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 230.0
+wait_time = 3.0
 autostart = true
 
 [node name="Label-plane" type="Label" parent="."]

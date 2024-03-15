@@ -67,64 +67,84 @@ func _ready():
 				terraNews.append(news)
 				
 func show_jornal():
-	#Sorte 
-	var randomIndex = randi_range(0, sorteNews.size()-1)
-	while (sorteNews.size() > 0 and sorteNews[randomIndex] == null):
-		randomIndex = randi_range(0, sorteNews.size()-1)
-	var randomNew = sorteNews[randomIndex]
-	sorteNews.pop_at(randomIndex)
-	
-	$"Painel/Sorte-Story".text = randomNew.story
-	if randomNew.temperatureRise > 0:
-		$"Painel/temperature-icon-sorte".visible = true
-		$"Painel/tempIncrease-Sorte".text = "+ " + str(randomNew.temperatureRise)
-	else:
-		$"Painel/temperature-icon-sorte".visible = false
-		$"Painel/tempIncrease-Sorte".text = ""
-
-	$"Painel/coins-Sorte".text = str(randomNew.coinsConsequence)
-	$"Painel/City-consequence-sorte".text = str(randomNew.cityConsequence)
-	
-	var strCitySorte = "Isto se aplica para quem está nas seguintes cidades: "
-	
-	if (randomNew.cityConsequence.size() > 1):
-		for i in randomNew.cityConsequence:
-			strCitySorte = strCitySorte + str(i) + " ,"
-		#this is for taking the last "," out	
-		strCitySorte.erase((strCitySorte.length() - 3), 3)
-		$"Painel/City-consequence-sorte".text = strCitySorte
-	else:
-		$"Painel/City-consequence-sorte".text = ""
-	
-	#Terra
-	var randomIndexT = randi_range(0, terraNews.size()-1)
-	while (terraNews.size() > 0 and terraNews[randomIndexT] == null):
-		randomIndexT = randi_range(0, terraNews.size()-1)
-	var randomNewT = terraNews[randomIndexT]
-	terraNews.pop_at(randomIndexT)
-	
-	$"Painel/Terra-Story".text = randomNewT.story
-	if randomNewT.temperatureRise > 0:
-		$"Painel/temperature-icon-terra".visible = true
-		$"Painel/tempIncrease-Terra".text = "+ " + str(randomNewT.temperatureRise)
-	else:
-		$"Painel/temperature-icon-terra".visible = false
-		$"Painel/tempIncrease-Sorte".text = ""
-		
-	$"Painel/coins-Terra".text = str(randomNewT.coinsConsequence)
-	
-	var strCity = "Isto se aplica para quem está nas seguintes cidades: "
-	
-	if (randomNewT.cityConsequence.size() > 1):
-		for i in randomNewT.cityConsequence:
-			strCity = strCity + str(i) + " ,"
-		#this is for taking the last "," out	
-		strCity.erase((strCity.length() - 3), 3)
-		$"Painel/City-consequence-terra".text = strCity
-	else:
-		$"Painel/City-consequence-terra".text = ""
-	
+	showSorte()
+	showTerra()
 	self.visible = true
+
 
 func _on_back_button_pressed():
 	self.visible = false
+
+func showSorte():
+	var randomIndexSorte = randi_range(0, sorteNews.size()-1)
+	while (sorteNews.size() > 0 and sorteNews[randomIndexSorte] == null):
+		randomIndexSorte = randi_range(0, sorteNews.size()-1)
+	var randomNewSorte = sorteNews[randomIndexSorte]
+	sorteNews.pop_at(randomIndexSorte)
+	
+	$"Painel/Sorte-Story".text = randomNewSorte.story
+	
+	if randomNewSorte.temperatureRise > 0:
+		$"Painel/temperature-icon-sorte".visible = true
+		$"Painel/tempIncrease-Sorte".text = "+ " + str(randomNewSorte.temperatureRise)
+	else:
+		$"Painel/temperature-icon-sorte".visible = false
+		$"Painel/tempIncrease-Sorte".text = " "
+		
+		
+	if randomNewSorte.coinsConsequence != 0:
+		$"Painel/TwemojiCoin-sorte".visible = true
+		$"Painel/coins-Sorte".text = str(randomNewSorte.coinsConsequence)
+	else:
+		$"Painel/TwemojiCoin-sorte".visible = false
+		$"Painel/coins-Sorte".text = " "
+		
+	var strCity = "Consequências se aplicam para quem está nas seguintes cidades: \n\n"
+	
+	if (randomNewSorte.cityConsequence[0] != ""):
+		for i in randomNewSorte.cityConsequence:
+			strCity = strCity + str(i) + ", "
+		var leng = strCity.length()
+		strCity = strCity.erase(leng-2)
+		$"Painel/City-consequence-sorte".text = strCity
+	else:
+		$"Painel/City-consequence-sorte".text = ""
+		
+		
+
+func showTerra():
+	var randomIndexTerra = randi_range(0, terraNews.size()-1)
+	while (terraNews.size() > 0 and terraNews[randomIndexTerra] == null):
+		randomIndexTerra = randi_range(0, terraNews.size()-1)
+	var randomNewTerra = terraNews[randomIndexTerra]
+	terraNews.pop_at(randomIndexTerra)
+	
+	$"Painel/Terra-Story".text = randomNewTerra.story
+	
+	if randomNewTerra.temperatureRise > 0:
+		$"Painel/temperature-icon-terra".visible = true
+		$"Painel/tempIncrease-Terra".text = "+ " + str(randomNewTerra.temperatureRise)
+	else:
+		$"Painel/temperature-icon-terra".visible = false
+		$"Painel/tempIncrease-Terra".text = " "
+		
+		
+	if randomNewTerra.coinsConsequence != 0:
+		$"Painel/TwemojiCoin2-terra".visible = true
+		$"Painel/coins-Terra".text = str(randomNewTerra.coinsConsequence)
+	else:
+		$"Painel/TwemojiCoin2-terra".visible = false
+		$"Painel/coins-Terra".text = " "
+		
+	var strCity = "Consequências se aplicam para quem está nas seguintes cidades: \n\n"
+	
+	if (randomNewTerra.cityConsequence[0] != ""):
+		for i in randomNewTerra.cityConsequence:
+			strCity = strCity + str(i) + ", "
+		var leng = strCity.length()
+		strCity = strCity.erase(leng-2)
+		$"Painel/City-consequence-terra".text = strCity
+	else:
+		$"Painel/City-consequence-terra".text = ""
+		
+		
