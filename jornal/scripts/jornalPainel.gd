@@ -5,6 +5,9 @@ extends Node2D
 var terraNews = []
 var sorteNews = []
 
+signal jornalConsequences (newJornal : Jornal)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	painel.setTitle("Jornal")
@@ -66,9 +69,9 @@ func _ready():
 				
 				terraNews.append(news)
 				
-func show_jornal():
+func show_jornal(globalTemperature : float):
 	showSorte()
-	showTerra()
+	showTerra(globalTemperature)
 	self.visible = true
 
 
@@ -81,6 +84,8 @@ func showSorte():
 		randomIndexSorte = randi_range(0, sorteNews.size()-1)
 	var randomNewSorte = sorteNews[randomIndexSorte]
 	sorteNews.pop_at(randomIndexSorte)
+	
+	jornalConsequences.emit(randomNewSorte)
 	
 	$"Painel/Sorte-Story".text = randomNewSorte.story
 	
@@ -112,12 +117,41 @@ func showSorte():
 		
 		
 
-func showTerra():
-	var randomIndexTerra = randi_range(0, terraNews.size()-1)
+func showTerra(globalTemperature : float):
+	#For eficiency i am picking the range of each categorie in the Jornal Terra csv
+	#I dont know if I do it because if I change the csv I will need to change this
+	#Efficient x Mannutenability
+	
+	var rangeMax
+	var rangeMin
+	
+	if (globalTemperature > 0 and globalTemperature <= 1):
+		#categorie : Amarelo / Yellow
+		rangeMin = 0
+		rangeMax = 10
+		
+	if (globalTemperature > 1 and globalTemperature <= 2):
+		#categorie : Laranja / Orange
+		rangeMin = 11
+		rangeMax = 23
+		
+	if (globalTemperature > 2 and globalTemperature <= 3):
+		#categorie :  Vermelho / Red
+		rangeMin = 24
+		rangeMax = 39
+	
+	if (globalTemperature > 3 and globalTemperature <= 4):
+		#categorie : Cinza / Grey
+		rangeMin = 42
+		rangeMax = 50
+		
+	var randomIndexTerra = randi_range(rangeMin, rangeMax)
 	while (terraNews.size() > 0 and terraNews[randomIndexTerra] == null):
-		randomIndexTerra = randi_range(0, terraNews.size()-1)
+		randomIndexTerra = randi_range(rangeMin, rangeMax)
 	var randomNewTerra = terraNews[randomIndexTerra]
 	terraNews.pop_at(randomIndexTerra)
+	
+	jornalConsequences.emit(randomNewTerra)
 	
 	$"Painel/Terra-Story".text = randomNewTerra.story
 	

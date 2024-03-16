@@ -6,23 +6,9 @@ var cityWorldMap: Dictionary = {}
 var cityButtonScene = preload("res://main/scene/CityButton.tscn")
 #var cityArrumar : City
 
-var globalTemperature : float = 1.25
-var communityKnowledgeGems : int
 
 signal cityButtonPressed (city: City)
 
-
-func getGlobalTemperature():
-	return globalTemperature
-
-func setGlobalTemperature(value):
-	globalTemperature = value
-	
-func getcommunityKnowledgeGems():
-	return communityKnowledgeGems
-
-func setcommunityKnowledgeGems(value):
-	communityKnowledgeGems = value
 
 func add_city( city : City):
 	cityWorldMap[city.nameCity] = city

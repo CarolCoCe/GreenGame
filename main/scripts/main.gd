@@ -9,8 +9,27 @@ extends Node2D
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
 
+var globalTemperature : float = 1.25
+var communityKnowledgeGems : int
+
+func getGlobalTemperature():
+	return globalTemperature
+
+func addGlobalTemperature(value : float):
+	globalTemperature = globalTemperature + value
+	$Termometro.value = globalTemperature
+	if (globalTemperature > 4):
+		get_tree().change_scene_to_file("res://GameOver/Lost.tscn")
+	
+func getcommunityKnowledgeGems():
+	return communityKnowledgeGems
+
+func setcommunityKnowledgeGems(value):
+	communityKnowledgeGems = value
 		
 func _ready():
+	load("res://GameOver/Lost.tscn")
+	
 	$"Label-plane".text = str(player.getflights())
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())
@@ -18,6 +37,8 @@ func _ready():
 	worldMap.cityButtonPressed.connect(moving_player)
 	
 	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)
+	
+	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
 	var fileData = []
@@ -71,9 +92,23 @@ func _on_timer_timeout_rodada():
 	player.setcoins(valuecoins)
 	$"Label-coins".text = str(player.getcoins())
 	
-	jornalPainel.show_jornal()
+	jornalPainel.show_jornal(globalTemperature)
 
-
+func dealJornalConsequences (jornal : Jornal):
+	var increaseTemp = jornal.temperatureRise
+	addGlobalTemperature(increaseTemp)
+	
+	if jornal.cityConsequence[0] == "":
+		var coins = player.getcoins()
+		coins = coins + jornal.coinsConsequence
+		player.setcoins(coins)
+	else:
+		for city in jornal.cityConsequence:
+			if player.playercurrentCity.nameCity == city:
+				var coins = player.getcoins()
+				coins = coins + jornal.coinsConsequence
+				player.setcoins(coins)
+	$"Label-coins".text = str(player.getcoins())
 
 func _on_activity_list_button_pressed():
 	activityPainel.visible = true

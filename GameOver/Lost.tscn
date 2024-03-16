@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw6ko2nht41d0"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_o52av"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_0srji"]
+
+[node name="Lost" type="Node2D"]
+
+[node name="Painel" parent="." instance=ExtResource("1_o52av")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 126.0
+offset_top = 252.0
+offset_right = 1026.0
+offset_bottom = 521.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0srji")
+theme_override_font_sizes/font_size = 30
+text = "Vocês vacilaram demais e agora o planeta tá pegando fogo e todo mundo perdeu e morreu!
+
+Independente de quem era a pessoa mais rica, nós não comemos ou respiramos dinheiro.
+
+Espero que isso não se repita na vida real, hein?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 326.0
+offset_top = 125.0
+offset_right = 826.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0srji")
+theme_override_font_sizes/font_size = 41
+text = "Game (and life) OVER"
+horizontal_alignment = 1
+autowrap_mode = 3
