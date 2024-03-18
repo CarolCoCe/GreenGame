@@ -28,7 +28,7 @@ func setcommunityKnowledgeGems(value):
 	communityKnowledgeGems = value
 		
 func _ready():
-	load("res://GameOver/Lost.tscn")
+	preload("res://GameOver/Lost.tscn")
 	
 	$"Label-plane".text = str(player.getflights())
 	$"Label-coins".text = str(player.getcoins())

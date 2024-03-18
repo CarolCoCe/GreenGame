@@ -2,7 +2,15 @@ extends Node2D
 
 @onready var painel = $Painel
 
-var terraNews = []
+var terraNewsGrey = []
+var terraNewsRed = []
+var terraNewsOrange = []
+var terraNewsYellow = []
+var usedterraNewsGrey = []
+var usedterraNewsRed = []
+var usedterraNewsOrange = []
+var usedterraNewsYellow = []
+
 var sorteNews = []
 
 signal jornalConsequences (newJornal : Jornal)
@@ -67,7 +75,14 @@ func _ready():
 					temIncreasef = float(lineT[4])
 					news = Jornal.new(storyf,consequenceCoinsf,temIncreasef, cityConsequencef, categorief)
 				
-				terraNews.append(news)
+				if (categorief == "Cinza"):
+					terraNewsGrey.append(news)
+				elif(news.categorieTerra == "Vermelho"):
+					terraNewsRed.append(news)
+				elif(news.categorieTerra == "Laranja"):
+					terraNewsOrange.append(news)
+				elif(news.categorieTerra == "Amarelo"):
+					terraNewsYellow.append(news)
 				
 func show_jornal(globalTemperature : float):
 	showSorte()
@@ -118,38 +133,54 @@ func showSorte():
 		
 
 func showTerra(globalTemperature : float):
-	#For eficiency i am picking the range of each categorie in the Jornal Terra csv
-	#I dont know if I do it because if I change the csv I will need to change this
-	#Efficient x Mannutenability
-	
-	var rangeMax
-	var rangeMin
-	
+	var randomNewTerra 
+	var randomIndexTerra
+
 	if (globalTemperature > 0 and globalTemperature <= 1):
 		#categorie : Amarelo / Yellow
-		rangeMin = 0
-		rangeMax = 10
 		
-	if (globalTemperature > 1 and globalTemperature <= 2):
+		if (usedterraNewsYellow.size() < terraNewsYellow.size()):
+			randomIndexTerra = randi_range(0, terraNewsYellow.size()-1)
+			while (usedterraNewsYellow.find(randomIndexTerra) != -1):
+				randomIndexTerra = randi_range(0, terraNewsYellow.size()-1)
+			randomNewTerra = terraNewsYellow[randomIndexTerra]
+			usedterraNewsYellow.append(randomIndexTerra)
+		else :
+			usedterraNewsYellow = []
+		
+	elif (globalTemperature > 1 and globalTemperature <= 2):
 		#categorie : Laranja / Orange
-		rangeMin = 11
-		rangeMax = 23
+		if (usedterraNewsOrange.size() < terraNewsOrange.size()):
+			randomIndexTerra = randi_range(0, terraNewsOrange.size()-1)
+			while (usedterraNewsOrange.find(randomIndexTerra) != -1):
+				randomIndexTerra = randi_range(0, terraNewsOrange.size()-1)
+			randomNewTerra = terraNewsOrange[randomIndexTerra]
+			usedterraNewsOrange.append(randomIndexTerra)
+		else :
+			usedterraNewsOrange = []
 		
-	if (globalTemperature > 2 and globalTemperature <= 3):
+	elif (globalTemperature > 2 and globalTemperature <= 3):
 		#categorie :  Vermelho / Red
-		rangeMin = 24
-		rangeMax = 39
+		if (usedterraNewsRed.size() < terraNewsRed.size()):
+			randomIndexTerra = randi_range(0, terraNewsRed.size()-1)
+			while (usedterraNewsRed.find(randomIndexTerra) != -1):
+				randomIndexTerra = randi_range(0, terraNewsRed.size()-1)
+			randomNewTerra = terraNewsRed[randomIndexTerra]
+			usedterraNewsRed.append(randomIndexTerra)
+		else :
+			usedterraNewsRed = []
 	
-	if (globalTemperature > 3 and globalTemperature <= 4):
+	elif (globalTemperature > 3 and globalTemperature <= 4):
 		#categorie : Cinza / Grey
-		rangeMin = 42
-		rangeMax = 50
+		if (usedterraNewsGrey.size() < terraNewsGrey.size()):
+			randomIndexTerra = randi_range(0, terraNewsGrey.size()-1)
+			while (usedterraNewsGrey.find(randomIndexTerra) != -1):
+				randomIndexTerra = randi_range(0, terraNewsGrey.size()-1)
+			randomNewTerra = terraNewsGrey[randomIndexTerra]
+			usedterraNewsGrey.append(randomIndexTerra)
+		else :
+			usedterraNewsGrey = []
 		
-	var randomIndexTerra = randi_range(rangeMin, rangeMax)
-	while (terraNews.size() > 0 and terraNews[randomIndexTerra] == null):
-		randomIndexTerra = randi_range(rangeMin, rangeMax)
-	var randomNewTerra = terraNews[randomIndexTerra]
-	terraNews.pop_at(randomIndexTerra)
 	
 	jornalConsequences.emit(randomNewTerra)
 	

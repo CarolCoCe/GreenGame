@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw6ko2nht41d0"]
+[gd_scene load_steps=4 format=3 uid="uid://dw6ko2nht41d0"]
 
+[ext_resource type="Texture2D" uid="uid://dlyf11seyhsvi" path="res://assets/fogo.png" id="1_hogop"]
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_o52av"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_0srji"]
 
 [node name="Lost" type="Node2D"]
+
+[node name="Fogo" type="Sprite2D" parent="."]
+position = Vector2(577, 323)
+texture = ExtResource("1_hogop")
 
 [node name="Painel" parent="." instance=ExtResource("1_o52av")]
 
