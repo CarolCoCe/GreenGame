@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxev0lslhlu4y"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_ja7aa"]
-[ext_resource type="Script" path="res://planeAlert/planeAlert.gd" id="1_ufg8w"]
+[ext_resource type="Script" path="res://Alerts/planeAlert.gd" id="1_ufg8w"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_4hegl"]
 [ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icon-airplane.png" id="4_1bcs4"]
 [ext_resource type="Texture2D" uid="uid://dipit73cjwmh5" path="res://assets/fa_arrow-circle-left grey.png" id="4_qodgx"]

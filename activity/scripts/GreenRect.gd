@@ -1,5 +1,8 @@
 extends Node2D
 
+var activityId
+
+signal activityPlay (activity)
 
 func setTitle (value):
 	$Panel/Title.text = value
@@ -16,5 +19,11 @@ func setQuestions (value):
 func setCity (value):
 	$Panel/City.text = value
 	
+func setActivityId (value):
+	activityId = value
+	
 func showButtonPlay():
 	$Panel/ButtonPlay.visible = true
+	
+func _on_button_play_pressed():
+	activityPlay.emit(activityId)

@@ -15,6 +15,8 @@ var playerActivities = []
 
 var playerCurrentCity
 
+signal activityPlayObject (activityId)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -104,11 +106,19 @@ func createRect(activity : Activity, y):
 	activityRect.setTime("Tempo: " + str(minready) + " Min")
 	activityRect.setQuestions("Perguntas: " + str(activity.numQuestActivity))
 	activityRect.setCity(activity.city)
+	activityRect.setActivityId(activity.idActivity)
 	activityRect.position = Vector2(0,y) #setting the position
+	
+	activityRect.connect("activityPlay", activityPlay)
 	
 	return activityRect
 
-
+func activityPlay(activityId):
+	var activity = allActivities[activityId-1]
+	activityPlayObject.emit(activity)
+	print("chegou na activity play")
+	 #colocar um signal aqui pra emitir pra deal da main
+	
 
 func _on_back_button_pressed():
 	self.visible = false

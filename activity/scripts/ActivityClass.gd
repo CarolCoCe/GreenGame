@@ -12,6 +12,7 @@ var temperatureRise : float
 var timeToReady : int
 var rewardStory : String
 var city : String
+var available : bool = true
 
 func _init(
 		p_idActivity : int,

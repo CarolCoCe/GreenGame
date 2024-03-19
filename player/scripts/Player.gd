@@ -48,9 +48,4 @@ func _ready():
 	coins = 15
 	knowledgeGems = 0
 
-func _physics_process(delta):
 
-	#velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-	#move_and_slide()
-	pass

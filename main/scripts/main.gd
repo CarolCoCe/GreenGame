@@ -5,6 +5,7 @@ extends Node2D
 @onready var activityPainel = $Activitylists
 @onready var jornalPainel = $JornalPainel
 @onready var planeAlert = $PlaneAlert
+@onready var NoMoneyActivityAlert = $NoMoneyActivity
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
@@ -35,6 +36,8 @@ func _ready():
 	$"Label-kgem".text = str(player.getknowledgeGems())
 	
 	worldMap.cityButtonPressed.connect(moving_player)
+	
+	activityPainel.connect("activityPlayObject",dealPlayActivity)
 	
 	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)
 	
@@ -109,6 +112,16 @@ func dealJornalConsequences (jornal : Jornal):
 				coins = coins + jornal.coinsConsequence
 				player.setcoins(coins)
 	$"Label-coins".text = str(player.getcoins())
+	
+func dealPlayActivity(activity : Activity):
+	print("chegou na deal")
+	if player.coins >= activity.priceCoins:
+		var newValue = player.getcoins() - activity.priceCoins
+		player.setcoins(newValue)
+		$"Label-coins".text = str(player.getcoins())
+		
+	else:
+		NoMoneyActivityAlert.show_alert()
 
 func _on_activity_list_button_pressed():
 	activityPainel.visible = true
