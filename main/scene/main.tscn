@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
-[ext_resource type="Texture2D" uid="uid://diavdhlffhkbr" path="res://assets/Imagem real mapa azul.png" id="2_pjfc2"]
+[ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/Imagem real mapa azul.png" id="2_tqvjy"]
 [ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icon-airplane.png" id="3_30847"]
 [ext_resource type="PackedScene" uid="uid://dr5uqoyqrk4q3" path="res://main/scene/worldMap.tscn" id="3_hjb3d"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
@@ -27,7 +27,7 @@ script = ExtResource("1_nm1lt")
 
 [node name="JogoGsd" type="Sprite2D" parent="."]
 position = Vector2(580, 325)
-texture = ExtResource("2_pjfc2")
+texture = ExtResource("2_tqvjy")
 region_filter_clip_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -140,6 +140,7 @@ value = 1.25
 texture_progress = ExtResource("13_ucqvj")
 
 [node name="NoMoneyActivity" parent="." instance=ExtResource("14_wisx2")]
+visible = false
 z_index = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
