@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://0hf5r3xns6vf"]
 
-[ext_resource type="Texture2D" uid="uid://ni7q01smjd5l" path="res://assets/white-button_0001.png" id="1_thrhq"]
-[ext_resource type="Texture2D" uid="uid://bninkufixdu44" path="res://assets/white-button_0003.png" id="2_kgole"]
-[ext_resource type="Texture2D" uid="uid://evjvfyuhijln" path="res://assets/white-button_0002.png" id="3_phg4j"]
+[ext_resource type="Texture2D" uid="uid://ni7q01smjd5l" path="res://assets/buttons/white-button_0001.png" id="1_thrhq"]
+[ext_resource type="Texture2D" uid="uid://bninkufixdu44" path="res://assets/buttons/white-button_0003.png" id="2_kgole"]
+[ext_resource type="Texture2D" uid="uid://evjvfyuhijln" path="res://assets/buttons/white-button_0002.png" id="3_phg4j"]
 
 [node name="CityButton" type="TextureButton"]
 z_index = 1

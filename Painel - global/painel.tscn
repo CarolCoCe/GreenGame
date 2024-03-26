@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://e41uscdwo833"]
+[gd_scene load_steps=6 format=3 uid="uid://e41uscdwo833"]
 
 [ext_resource type="Script" path="res://Painel - global/painel.gd" id="1_netya"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_5p6x3"]
+[ext_resource type="Texture2D" uid="uid://dipit73cjwmh5" path="res://assets/arrows buttons/fa_arrow-circle-left grey.png" id="3_ro0v2"]
+[ext_resource type="Texture2D" uid="uid://dyhw1xyeiiji5" path="res://assets/arrows buttons/fa_arrow-circle-left grey hover.png" id="4_w437g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpsti"]
 bg_color = Color(1, 1, 1, 1)
@@ -10,7 +12,9 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Painel" type="Panel"]
+[node name="PainelGeral" type="Panel"]
+visible = false
+z_index = 3
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_netya")
@@ -42,3 +46,16 @@ text = "
 "
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="BackButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 17.0
+offset_right = 89.0
+offset_bottom = 83.0
+texture_normal = ExtResource("3_ro0v2")
+texture_pressed = ExtResource("3_ro0v2")
+texture_hover = ExtResource("4_w437g")
+stretch_mode = 3
+
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

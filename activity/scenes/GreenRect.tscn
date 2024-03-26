@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://activity/scripts/GreenRect.gd" id="1_72a4m"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="1_dkued"]
-[ext_resource type="Texture2D" uid="uid://cx5vhbgqeyj1p" path="res://assets/Vector.png" id="3_p05h3"]
-[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/twemoji_coin.png" id="4_hal3u"]
-[ext_resource type="Texture2D" uid="uid://cxn3wlqolwe71" path="res://assets/9004819_clock_time_alarm_schedule_icon.png" id="5_2ue70"]
-[ext_resource type="Texture2D" uid="uid://bxyebhvqsxay4" path="res://assets/Polygon 4.png" id="6_1hppx"]
-[ext_resource type="Texture2D" uid="uid://bl27468ai3pw0" path="res://assets/134192_information_question_icon.png" id="6_qjng1"]
+[ext_resource type="Texture2D" uid="uid://cx5vhbgqeyj1p" path="res://assets/icons/Vector.png" id="3_p05h3"]
+[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="4_hal3u"]
+[ext_resource type="Texture2D" uid="uid://cxn3wlqolwe71" path="res://assets/icons/9004819_clock_time_alarm_schedule_icon.png" id="5_2ue70"]
+[ext_resource type="Texture2D" uid="uid://bxyebhvqsxay4" path="res://assets/icons/Polygon 4.png" id="6_1hppx"]
+[ext_resource type="Texture2D" uid="uid://bl27468ai3pw0" path="res://assets/icons/134192_information_question_icon.png" id="6_qjng1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa8tm"]
 bg_color = Color(0.380392, 0.67451, 0.266667, 1)

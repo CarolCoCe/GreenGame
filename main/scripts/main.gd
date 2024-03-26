@@ -2,13 +2,14 @@ extends Node2D
 
 @onready var player = $Player
 @onready var worldMap = $WorldMap
-@onready var activityPainel = $Activitylists
-@onready var jornalPainel = $JornalPainel
-@onready var planeAlert = $PlaneAlert
-@onready var NoMoneyActivityAlert = $NoMoneyActivity
+@onready var activityPainel = $painel_activity
+@onready var jornalPainel = $painel_jornal
+@onready var planeAlert = $painel_plane_alert
+@onready var NoMoneyActivityAlert = $Painel_no_money_to_activity
+
+#@onready var gameOverLostScene = load("res://GameOver/Lost.tscn")
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
-
 
 var globalTemperature : float = 1.25
 var communityKnowledgeGems : int
@@ -20,7 +21,7 @@ func addGlobalTemperature(value : float):
 	globalTemperature = globalTemperature + value
 	$Termometro.value = globalTemperature
 	if (globalTemperature > 4):
-		get_tree().change_scene_to_file("res://GameOver/Lost.tscn")
+		get_tree().change_scene_to_file.bind("res://GameOver/Lost.tscn").call_deferred()
 	
 func getcommunityKnowledgeGems():
 	return communityKnowledgeGems
@@ -29,8 +30,6 @@ func setcommunityKnowledgeGems(value):
 	communityKnowledgeGems = value
 		
 func _ready():
-	preload("res://GameOver/Lost.tscn")
-	
 	$"Label-plane".text = str(player.getflights())
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bemq4w1sjg5wy"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_hu8fd"]
+[ext_resource type="Script" path="res://Alerts/painel_no_money_to_activity.gd" id="2_bo8lu"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_n0uyo"]
+[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="3_jhhcd"]
+
+[node name="Painel_no_money_to_activity" instance=ExtResource("1_hu8fd")]
+script = ExtResource("2_bo8lu")
+
+[node name="alert" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -408.0
+offset_top = 177.0
+offset_right = 409.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n0uyo")
+theme_override_font_sizes/font_size = 36
+text = "Você não tem moedas suficientes para começar esta atividade ainda!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Icon-coins" type="Sprite2D" parent="." index="2"]
+position = Vector2(556, 437)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_jhhcd")

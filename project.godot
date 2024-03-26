@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="GreenGame"
+config/name="The GreenGame"
 run/main_scene="res://main/scene/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.png"
+boot_splash/image="res://assets/backgrounds/Splash.png"
+config/icon="res://assets/logo.png"
 
 [editor_plugins]
 

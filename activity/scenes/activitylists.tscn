@@ -1,11 +1,159 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq4df83j3n7fy"]
+[gd_scene load_steps=16 format=3 uid="uid://cmddku3xysbos"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_2xkyx"]
-[ext_resource type="Script" path="res://activity/scripts/activitylists.gd" id="1_djurc"]
-[ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/Rectangle 65.png" id="2_kq0u6"]
-[ext_resource type="Texture2D" uid="uid://jsxl7nbo8kix" path="res://assets/fa_arrow-circle-left.png" id="4_4bkew"]
-[ext_resource type="Texture2D" uid="uid://drj56q32l38uk" path="res://assets/fa_arrow-circle-left (1).png" id="5_pvlkf"]
+[ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/buttons/Rectangle 65.png" id="2_kq0u6"]
+[ext_resource type="Texture2D" uid="uid://jsxl7nbo8kix" path="res://assets/arrows buttons/fa_arrow-circle-left.png" id="4_4bkew"]
+[ext_resource type="Texture2D" uid="uid://drj56q32l38uk" path="res://assets/arrows buttons/fa_arrow-circle-left (1).png" id="5_pvlkf"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="6_mbt7v"]
+
+[sub_resource type="GDScript" id="GDScript_abjlr"]
+script/source = "extends Node2D
+
+@onready var painel = $Painel
+@onready var vboxGlobal = $Painel/ScrollContainerGlobal/VBoxContainer
+@onready var vboxLocal = $Painel/ScrollContainerLocal/VBoxContainer
+@onready var buttonGlobal = $\"Painel/Button-global\"
+@onready var buttonLocal = $\"Painel/Button-local\"
+@onready var buttonMinhas = $\"Painel/Button-minhas\"
+
+var greenRectScene = load(\"res://activity/scenes/GreenRect.tscn\")
+
+var allActivities = []
+var localActivities = []
+var playerActivities = []
+
+var playerCurrentCity
+
+signal activityPlayObject (activityId)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	painel.setTitle(\"Atividades\")
+	
+	var csv_file_path_activities: String = \"res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).csv\"
+
+	var file = FileAccess.open(csv_file_path_activities, FileAccess.READ)
+	if file == null:
+		print(\"erro ao abrir o arquivo de atividades\")
+	else:
+		print(\"consegui abrir o arquivo de atividades\")
+		var _header = file.get_csv_line()
+		while !file.eof_reached():
+			var line = file.get_csv_line()
+			if len(line) >= 2:
+				
+				var idf = int (line[0])
+				var titlef = line[1]
+				var timeToReadyf = int(line[2])
+				var priceCoinsf = int(line[3])
+				var numQuestActivityf = int(line[4])
+				var rewardStoryf = line[5]
+				var rewardCoinsf = int(line[6])
+				var rewardKnowledgeGemsf = int(line[7])
+				var temperatureRisef = float(line[8])
+				var cityf = line[9]
+				
+				var activity = Activity.new(idf, titlef,priceCoinsf,numQuestActivityf,rewardCoinsf,rewardKnowledgeGemsf,temperatureRisef,timeToReadyf,rewardStoryf, cityf)
+				
+				allActivities.append(activity)
+				
+				if buttonGlobal.button_pressed:
+					abaGlobal()
+
+		file.close()
+	
+func setPlayerCurrentCity (newCity : City):
+	playerCurrentCity = newCity
+
+func abaGlobal():
+	$Painel/ScrollContainerLocal.visible = false
+	$Painel/ScrollContainerGlobal.visible = true
+	vboxGlobal.custom_minimum_size = Vector2(10,14500)
+	
+	#The separation constant in vboxContainer is not working at all
+	#For now, I will set the green rectangles position manually :|
+	
+	var y = 0
+	for activity in allActivities:
+		var activityRect = createRect(activity,y)
+		vboxGlobal.add_child(activityRect)
+		y = y + 290 #setting the position
+
+
+#Como pegar o player? signal com argumento
+func abaLocal():
+	$Painel/ScrollContainerLocal.visible = true
+	$Painel/ScrollContainerGlobal.visible = false
+	var activitiesFromCity = playerCurrentCity.getCityActivities()
+	
+	#Defining the size of the page accordingly to the num of items
+	var sizeArray = activitiesFromCity.size()
+	var sizePag = sizeArray * 290
+	vboxLocal.custom_minimum_size = Vector2(10,sizePag)
+	
+	var y = 0
+	for i in activitiesFromCity:
+		var activity = allActivities[int(i) - 1]
+		var activityRect = createRect(activity, y)
+		activityRect.showButtonPlay()
+		vboxLocal.add_child(activityRect)
+		y = y + 290
+
+func abaMinhas():
+	$Painel/ScrollContainerLocal.visible = false
+	$Painel/ScrollContainerGlobal.visible = false
+	
+
+
+func createRect(activity : Activity, y):
+	var activityRect = greenRectScene.instantiate()
+	var minready = (activity.timeToReady)/60
+	
+	activityRect.setTitle(activity.title)
+	activityRect.setPrice(\"Custo: \" + str(activity.priceCoins))
+	activityRect.setTime(\"Tempo: \" + str(minready) + \" Min\")
+	activityRect.setQuestions(\"Perguntas: \" + str(activity.numQuestActivity))
+	activityRect.setCity(activity.city)
+	activityRect.setActivityId(activity.idActivity)
+	activityRect.position = Vector2(0,y) #setting the position
+	
+	activityRect.connect(\"activityPlay\", activityPlay)
+	
+	return activityRect
+
+func activityPlay(activityId):
+	var activity = allActivities[activityId-1]
+	activityPlayObject.emit(activity)
+	print(\"chegou na activity play\")
+	 #colocar um signal aqui pra emitir pra deal da main
+	
+
+func _on_back_button_pressed():
+	self.visible = false
+	buttonGlobal.button_pressed = true
+	buttonLocal.button_pressed = false
+	buttonMinhas.button_pressed = false
+	abaGlobal()
+
+
+func _on_buttonglobal_pressed():
+	buttonLocal.button_pressed = false
+	buttonMinhas.button_pressed = false
+	abaGlobal()
+	
+
+func _on_buttonlocal_pressed():
+	buttonGlobal.button_pressed = false
+	buttonMinhas.button_pressed = false
+	abaLocal()
+
+
+func _on_buttonminhas_pressed():
+	buttonLocal.button_pressed = false
+	buttonGlobal.button_pressed = false
+	abaMinhas()
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3blqi"]
 bg_color = Color(0.380392, 0.67451, 0.27451, 1)
@@ -47,7 +195,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
 [node name="Activitylists" type="Node2D"]
-script = ExtResource("1_djurc")
+script = SubResource("GDScript_abjlr")
 
 [node name="Painel" parent="." instance=ExtResource("1_2xkyx")]
 
