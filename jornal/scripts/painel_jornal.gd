@@ -23,10 +23,10 @@ func _ready():
 	var csv_file_path_sorte: String = "res://Data/Jornal/Sorte/Jornal (cartas da terra + sorte) - Copy of cartas da Sorte.csv"
 	var csv_file_path_terra: String = "res://Data/Jornal/Terra/Jornal (cartas da terra + sorte) - Copy of cartas da Terra.csv"
 	
-	data_extraction(csv_file_path_sorte, "Sorte")
-	data_extraction(csv_file_path_terra, "Terra")
+	_data_extraction(csv_file_path_sorte, "Sorte")
+	_data_extraction(csv_file_path_terra, "Terra")
 
-func data_extraction (csv_file_path : String , newsType):
+func _data_extraction (csv_file_path : String , newsType):
 	var file = FileAccess.open(csv_file_path, FileAccess.READ)
 	if file == null:
 		print("erro ao abrir o arquivo de jornal " + newsType)

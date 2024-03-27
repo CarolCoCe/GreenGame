@@ -20,9 +20,12 @@ signal activityPlayObject (activityId)
 func _ready():
 	self.visible = false
 	setTitle("Atividades")
-	
 	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).csv"
+	_data_extraction(csv_file_path_activities)
+	if buttonGlobal.button_pressed:
+		abaGlobal()
 
+func _data_extraction(csv_file_path_activities):
 	var file = FileAccess.open(csv_file_path_activities, FileAccess.READ)
 	if file == null:
 		print("erro ao abrir o arquivo de atividades")
@@ -32,7 +35,6 @@ func _ready():
 		while !file.eof_reached():
 			var line = file.get_csv_line()
 			if len(line) >= 2:
-				
 				var idf = int (line[0])
 				var titlef = line[1]
 				var timeToReadyf = int(line[2])
@@ -45,12 +47,7 @@ func _ready():
 				var cityf = line[9]
 				
 				var activity = Activity.new(idf, titlef,priceCoinsf,numQuestActivityf,rewardCoinsf,rewardKnowledgeGemsf,temperatureRisef,timeToReadyf,rewardStoryf, cityf)
-				
 				allActivities.append(activity)
-				
-				if buttonGlobal.button_pressed:
-					abaGlobal()
-
 		file.close()
 	
 func setPlayerCurrentCity (newCity : City):
