@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://kp3ag6exrchi"]
+[gd_scene load_steps=16 format=3 uid="uid://kp3ag6exrchi"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_p7imp"]
 [ext_resource type="Script" path="res://activity/scripts/painel_activity.gd" id="2_fqmtk"]
@@ -15,10 +15,17 @@ bg_color = Color(0.482353, 0.784314, 0.34902, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6d2b"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07uqu"]
 bg_color = Color(0.247059, 0.282353, 0.235294, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l355h"]
+bg_color = Color(0.247059, 0.282353, 0.235294, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eapo0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_un1wt"]
 bg_color = Color(0.380392, 0.67451, 0.27451, 1)
@@ -39,7 +46,7 @@ bg_color = Color(0.482353, 0.784314, 0.34902, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3h4i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6d2b"]
 bg_color = Color(0.247059, 0.282353, 0.235294, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -83,11 +90,14 @@ offset_top = 202.0
 offset_right = 517.0
 offset_bottom = 237.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.835294, 0.835294, 0.835294, 1)
 theme_override_fonts/font = ExtResource("6_rd41e")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_cx7jm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_c0ij6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_n6d2b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_07uqu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_l355h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eapo0")
 toggle_mode = true
 button_pressed = true
 text = "Global"
@@ -99,11 +109,14 @@ offset_top = 202.0
 offset_right = 627.0
 offset_bottom = 237.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.835294, 0.835294, 0.835294, 1)
 theme_override_fonts/font = ExtResource("6_rd41e")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_un1wt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ct5du")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jq2rx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jq2rx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eapo0")
 toggle_mode = true
 text = "Local"
 
@@ -114,11 +127,14 @@ offset_top = 202.0
 offset_right = 737.0
 offset_bottom = 237.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.835294, 0.835294, 0.835294, 1)
 theme_override_fonts/font = ExtResource("6_rd41e")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_wlsms")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ppcwp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b3h4i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n6d2b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n6d2b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eapo0")
 toggle_mode = true
 text = "Minhas"
 

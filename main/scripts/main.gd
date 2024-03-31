@@ -6,8 +6,9 @@ extends Node2D
 @onready var jornalPainel = $painel_jornal
 @onready var planeAlert = $painel_plane_alert
 @onready var NoMoneyActivityAlert = $Painel_no_money_to_activity
-
-#@onready var gameOverLostScene = load("res://GameOver/Lost.tscn")
+@onready var quizQuestions = $painel_questions
+@onready var quizWrongQuestion = $painel_wrong_question
+@onready var activityStarted = $painel_activity_started
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
@@ -34,13 +35,11 @@ func _ready():
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())
 	
-	worldMap.cityButtonPressed.connect(moving_player)
-	
-	activityPainel.connect("activityPlayObject",dealPlayActivity)
-	
-	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)
-	
+	worldMap.cityButtonPressed.connect(moving_player)	
+	activityPainel.connect("activityPlayObject",dealPlayActivity)	
+	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)	
 	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
+	quizQuestions.connect("quizEnded", dealEndQuiz)
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
 	var fileData = []
@@ -113,14 +112,20 @@ func dealJornalConsequences (jornal : Jornal):
 	$"Label-coins".text = str(player.getcoins())
 	
 func dealPlayActivity(activity : Activity):
-	print("chegou na deal")
 	if player.coins >= activity.priceCoins:
 		var newValue = player.getcoins() - activity.priceCoins
 		player.setcoins(newValue)
 		$"Label-coins".text = str(player.getcoins())
-		
+		quizQuestions.startQuiz(activity.numQuestActivity)
 	else:
 		NoMoneyActivityAlert.show_alert()
+		
+func dealEndQuiz(result):
+	quizQuestions.visible = false #trocar isso aqui na hora de colocar os ads
+	if result == "wrong":
+		quizWrongQuestion.show_alert()
+	elif result == "ok":
+		activityStarted.show_alert()
 
 func _on_activity_list_button_pressed():
 	activityPainel.visible = true

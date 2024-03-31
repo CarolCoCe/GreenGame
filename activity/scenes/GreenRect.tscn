@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://umhvunnf5ap3"]
+[gd_scene load_steps=10 format=3 uid="uid://umhvunnf5ap3"]
 
 [ext_resource type="Script" path="res://activity/scripts/GreenRect.gd" id="1_72a4m"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="1_dkued"]
@@ -14,6 +14,8 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8y1ty"]
 
 [node name="GreenRect" type="Node2D"]
 script = ExtResource("1_72a4m")
@@ -98,6 +100,7 @@ offset_bottom = 224.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_dkued")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8y1ty")
 text = "     FAZER"
 icon = ExtResource("6_1hppx")
 expand_icon = true

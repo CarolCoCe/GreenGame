@@ -110,6 +110,7 @@ func createRect(activity : Activity, y):
 	return activityRect
 
 func activityPlay(activityId):
+	self.visible = false
 	var activity = allActivities[activityId-1]
 	activityPlayObject.emit(activity)
 	print("chegou na activity play")
@@ -118,25 +119,31 @@ func activityPlay(activityId):
 
 func _on_back_button_pressed():
 	self.visible = false
-	buttonGlobal.button_pressed = true
-	buttonLocal.button_pressed = false
-	buttonMinhas.button_pressed = false
-	abaGlobal()
+	_on_buttonglobal_pressed()
 
 
 func _on_buttonglobal_pressed():
 	buttonLocal.button_pressed = false
 	buttonMinhas.button_pressed = false
+	buttonLocal.disabled = false
+	buttonMinhas.disabled = false
+	buttonGlobal.disabled = true
 	abaGlobal()
 	
 
 func _on_buttonlocal_pressed():
 	buttonGlobal.button_pressed = false
 	buttonMinhas.button_pressed = false
+	buttonLocal.disabled = true
+	buttonMinhas.disabled = false
+	buttonGlobal.disabled = false
 	abaLocal()
 
 
 func _on_buttonminhas_pressed():
 	buttonLocal.button_pressed = false
 	buttonGlobal.button_pressed = false
+	buttonLocal.disabled = false
+	buttonMinhas.disabled = true
+	buttonGlobal.disabled = false
 	abaMinhas()

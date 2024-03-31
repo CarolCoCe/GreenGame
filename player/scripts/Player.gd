@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-
+class_name Player
 const SPEED = 30.0
 
 var username
-var activityInProgress
+var activitiesPlayer = []
 var playercurrentCity 
 var coins
 var flights
@@ -45,7 +45,7 @@ func setplayercurrentCity(value):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	flights = 3
-	coins = 15
+	coins = 12
 	knowledgeGems = 0
 
 

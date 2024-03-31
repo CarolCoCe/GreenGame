@@ -160,8 +160,7 @@ func showSorte():
 
 func showTerra(globalTemperature : float):
 	var randomNewTerra 
-	var randomIndexTerra
-
+	
 	if (globalTemperature > 0 and globalTemperature <= 1): #categorie : Amarelo / Yellow
 		randomNewTerra = pickUpRandomNew(terraNewsYellow, usedterraNewsYellow)
 

@@ -7,6 +7,6 @@
 z_index = 2
 script = ExtResource("1_d748i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerEmoji" type="Sprite2D" parent="."]
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_oqn14")

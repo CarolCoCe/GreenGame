@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://e41uscdwo833"]
+[gd_scene load_steps=9 format=3 uid="uid://e41uscdwo833"]
 
 [ext_resource type="Script" path="res://Painel - global/painel.gd" id="1_netya"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_5p6x3"]
-[ext_resource type="Texture2D" uid="uid://dipit73cjwmh5" path="res://assets/arrows buttons/fa_arrow-circle-left grey.png" id="3_ro0v2"]
-[ext_resource type="Texture2D" uid="uid://dyhw1xyeiiji5" path="res://assets/arrows buttons/fa_arrow-circle-left grey hover.png" id="4_w437g"]
+[ext_resource type="Texture2D" uid="uid://bjgkjetnepanv" path="res://assets/arrows buttons/Left.png" id="5_8r0a5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpsti"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,6 +10,29 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lsjq"]
+bg_color = Color(0.54902, 0.54902, 0.54902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cswo"]
+bg_color = Color(0.709804, 0.709804, 0.709804, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihx68"]
+bg_color = Color(0.368627, 0.368627, 0.368627, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4ltj"]
 
 [node name="PainelGeral" type="Panel"]
 visible = false
@@ -35,7 +57,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -97.0
 offset_top = 26.0
-offset_right = 203.0
+offset_right = 287.0
 offset_bottom = -368.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -47,15 +69,19 @@ text = "
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="BackButton" type="TextureButton" parent="Panel"]
+[node name="BackButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 17.0
-offset_right = 89.0
-offset_bottom = 83.0
-texture_normal = ExtResource("3_ro0v2")
-texture_pressed = ExtResource("3_ro0v2")
-texture_hover = ExtResource("4_w437g")
-stretch_mode = 3
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 103.0
+offset_bottom = 87.0
+scale = Vector2(0.7, 0.7)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1lsjq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8cswo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihx68")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q4ltj")
+text = "   "
+icon = ExtResource("5_8r0a5")
+icon_alignment = 1
 
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

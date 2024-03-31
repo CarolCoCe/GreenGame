@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=19 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://kp3ag6exrchi" path="res://activity/scenes/painel_activity.tscn" id="14_crgxr"]
 [ext_resource type="PackedScene" uid="uid://d2if82ws416i5" path="res://Alerts/painel_plane_alert.tscn" id="14_nfkeb"]
 [ext_resource type="PackedScene" uid="uid://bcl7rinykxawp" path="res://jornal/scenes/painel_jornal.tscn" id="15_0ef5n"]
+[ext_resource type="PackedScene" uid="uid://d223mj1vryymg" path="res://questions/scenes/painel_questions.tscn" id="15_batjv"]
+[ext_resource type="PackedScene" uid="uid://bnl4jsjha071f" path="res://Alerts/painel_wrong_question.tscn" id="16_lbltt"]
+[ext_resource type="PackedScene" uid="uid://bwsrx51q8qjxp" path="res://Alerts/painel_activity_started.tscn" id="17_1b15v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(1, 1, 1, 0.164706)
@@ -132,10 +135,17 @@ texture_progress = ExtResource("13_ucqvj")
 [node name="painel_plane_alert" parent="." instance=ExtResource("14_nfkeb")]
 
 [node name="painel_activity" parent="." instance=ExtResource("14_crgxr")]
-visible = true
 
 [node name="Painel_no_money_to_activity" parent="." instance=ExtResource("14_aur3v")]
-visible = true
+
+[node name="painel_questions" parent="." instance=ExtResource("15_batjv")]
+visible = false
+
+[node name="painel_wrong_question" parent="." instance=ExtResource("16_lbltt")]
+visible = false
+
+[node name="painel_activity_started" parent="." instance=ExtResource("17_1b15v")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
 [connection signal="pressed" from="ActivityListButton" to="." method="_on_activity_list_button_pressed"]

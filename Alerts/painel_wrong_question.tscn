@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnl4jsjha071f"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_vhdha"]
+[ext_resource type="Script" path="res://Alerts/painel_wrong_question.gd" id="2_68efl"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_k5y7q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4sd4"]
+bg_color = Color(0.847059, 0.215686, 0.215686, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="painel_wrong_question" instance=ExtResource("1_vhdha")]
+visible = true
+script = ExtResource("2_68efl")
+
+[node name="Panel" type="Panel" parent="Panel" index="0"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 115.0
+offset_right = 880.0
+offset_bottom = 355.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l4sd4")
+
+[node name="Title" parent="Panel" index="1"]
+offset_left = -203.0
+offset_top = 41.0
+offset_right = 210.0
+offset_bottom = -351.0
+theme_override_font_sizes/font_size = 47
+text = "Foi por pouco!
+"
+
+[node name="alert" type="Label" parent="Panel" index="3"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -370.0
+offset_top = 134.0
+offset_right = 382.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k5y7q")
+theme_override_font_sizes/font_size = 33
+text = "Vai perder todas as moedas que investiu porque errou a pergunta! 
+Gostaria de assistir um anúncio e tentar outra vez?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cva5wb1hwym1y"
+
+[deps]
+
+files=["res://Data/Perguntas/Perguntas Sustentabilidade - Sheet1.Resposta.translation"]
+
+source_file="res://Data/Perguntas/Perguntas Sustentabilidade - Sheet1.csv"
+dest_files=["res://Data/Perguntas/Perguntas Sustentabilidade - Sheet1.Resposta.translation"]
+
+[params]
+
+compress=true
+delimiter=0

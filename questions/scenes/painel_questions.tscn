@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://d223mj1vryymg"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_k8x5q"]
+[ext_resource type="Script" path="res://questions/scripts/painel_questions.gd" id="2_fhxbh"]
+[ext_resource type="StyleBox" uid="uid://bliqds0mout3f" path="res://assets/Styles/GreenRect.tres" id="3_0yufn"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="4_oemrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qah4"]
+bg_color = Color(0.847059, 0.215686, 0.215686, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j712p"]
+bg_color = Color(0.996078, 0.286275, 0.286275, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssko4"]
+bg_color = Color(0.619608, 0.137255, 0.137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhxme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk7mj"]
+bg_color = Color(0.00784314, 0.384314, 0.545098, 0.988235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fyjp"]
+bg_color = Color(0.0156863, 0.576471, 0.815686, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frhwr"]
+bg_color = Color(0, 0.25098, 0.356863, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="painel_questions" instance=ExtResource("1_k8x5q")]
+visible = true
+script = ExtResource("2_fhxbh")
+
+[node name="Panel" type="Panel" parent="Panel" index="2"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 115.0
+offset_right = 880.0
+offset_bottom = 355.0
+theme_override_styles/panel = ExtResource("3_0yufn")
+
+[node name="questionText" type="Label" parent="Panel/Panel" index="0"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 19.0
+offset_right = 775.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_oemrr")
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonFalse" type="Button" parent="Panel/Panel" index="1"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 160.0
+offset_right = 364.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_oemrr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_4qah4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j712p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ssko4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dhxme")
+text = "Falso"
+
+[node name="ButtonTrue" type="Button" parent="Panel/Panel" index="2"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 160.0
+offset_right = 690.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_oemrr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kk7mj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fyjp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_frhwr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dhxme")
+text = "verdadeiro"
+
+[connection signal="pressed" from="Panel/Panel/ButtonFalse" to="." method="_on_button_false_pressed"]
+[connection signal="pressed" from="Panel/Panel/ButtonTrue" to="." method="_on_button_true_pressed"]

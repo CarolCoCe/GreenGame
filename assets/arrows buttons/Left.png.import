@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jsxl7nbo8kix"
-path="res://.godot/imported/fa_arrow-circle-left.png-5e51615010e54a3266514edc3d0baaaa.ctex"
+uid="uid://bjgkjetnepanv"
+path="res://.godot/imported/Left.png-4076fbe8f0100e795da7f1c737e7d28f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arrows buttons/fa_arrow-circle-left.png"
-dest_files=["res://.godot/imported/fa_arrow-circle-left.png-5e51615010e54a3266514edc3d0baaaa.ctex"]
+source_file="res://assets/arrows buttons/Left.png"
+dest_files=["res://.godot/imported/Left.png-4076fbe8f0100e795da7f1c737e7d28f.ctex"]
 
 [params]
 
