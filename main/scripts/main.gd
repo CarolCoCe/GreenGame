@@ -142,3 +142,7 @@ func _on_activity_list_button_pressed():
 
 func _on_buttonminitutorial_pressed():
 	$"Mini-tutorial".visible = true
+
+
+func _on_termometro_value_changed(value):
+	$"Label -temp".text = str(value) + " ºC"

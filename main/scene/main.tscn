@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=32 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dnnawuio3n54y" path="res://assets/termometro.png" id="13_ucqvj"]
 [ext_resource type="PackedScene" uid="uid://bemq4w1sjg5wy" path="res://Alerts/painel_no_money_to_activity.tscn" id="14_aur3v"]
 [ext_resource type="PackedScene" uid="uid://kp3ag6exrchi" path="res://activity/scenes/painel_activity.tscn" id="14_crgxr"]
+[ext_resource type="Texture2D" uid="uid://s2l2lovcexa1" path="res://assets/backgrounds/under-bar.png" id="14_ffqmr"]
 [ext_resource type="PackedScene" uid="uid://d2if82ws416i5" path="res://Alerts/painel_plane_alert.tscn" id="14_nfkeb"]
 [ext_resource type="PackedScene" uid="uid://bcl7rinykxawp" path="res://jornal/scenes/painel_jornal.tscn" id="15_0ef5n"]
 [ext_resource type="PackedScene" uid="uid://d223mj1vryymg" path="res://questions/scenes/painel_questions.tscn" id="15_batjv"]
@@ -24,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d3ntdeuer32wg" path="res://assets/buttons/icon-chat.png" id="20_gtdvr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
-bg_color = Color(1, 1, 1, 0.164706)
+bg_color = Color(0.85098, 0.85098, 0.85098, 0.380392)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -58,7 +59,7 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 230.0
+wait_time = 2.0
 autostart = true
 
 [node name="Label-plane" type="Label" parent="."]
@@ -109,23 +110,16 @@ position = Vector2(1053, 36)
 scale = Vector2(0.148047, 0.118359)
 texture = ExtResource("6_8k8il")
 
-[node name="Label -temp-max" type="Label" parent="."]
-offset_left = 475.0
-offset_top = 22.0
-offset_right = 569.0
-offset_bottom = 59.0
+[node name="Label -temp" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 137.0
+offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("3_rt5r6")
-theme_override_font_sizes/font_size = 36
-text = "+4ºC"
-
-[node name="Label -temp-min" type="Label" parent="."]
-offset_left = 63.0
-offset_top = 20.0
-offset_right = 136.0
-offset_bottom = 57.0
-theme_override_fonts/font = ExtResource("3_rt5r6")
-theme_override_font_sizes/font_size = 36
-text = "0ºC"
+theme_override_font_sizes/font_size = 30
+text = "1.25 ºC"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Button-mini-tutorial" type="Button" parent="."]
 offset_left = 1098.0
@@ -209,6 +203,7 @@ offset_bottom = 62.0
 max_value = 4.0
 step = 0.125
 value = 1.25
+texture_under = ExtResource("14_ffqmr")
 texture_progress = ExtResource("13_ucqvj")
 
 [node name="painel_jornal" parent="." instance=ExtResource("15_0ef5n")]
@@ -238,3 +233,4 @@ offset_bottom = 652.0
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
 [connection signal="pressed" from="Button-mini-tutorial" to="." method="_on_buttonminitutorial_pressed"]
 [connection signal="pressed" from="Button-activity" to="." method="_on_activity_list_button_pressed"]
+[connection signal="value_changed" from="Termometro" to="." method="_on_termometro_value_changed"]
