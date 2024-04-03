@@ -11,10 +11,12 @@ config_version=5
 [application]
 
 config/name="The GreenGame"
-run/main_scene="res://main/scene/main.tscn"
+run/main_scene="res://Menu/Scenes/menu_start.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+run/max_fps=70
 boot_splash/image="res://assets/backgrounds/Splash.png"
 config/icon="res://assets/logo.png"
+boot_splash/minimum_display_time=2000
 
 [editor_plugins]
 

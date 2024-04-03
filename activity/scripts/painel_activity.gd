@@ -22,8 +22,7 @@ func _ready():
 	setTitle("Atividades")
 	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).csv"
 	_data_extraction(csv_file_path_activities)
-	if buttonGlobal.button_pressed:
-		abaGlobal()
+	_on_buttonglobal_pressed()
 
 func _data_extraction(csv_file_path_activities):
 	var file = FileAccess.open(csv_file_path_activities, FileAccess.READ)
@@ -67,8 +66,6 @@ func abaGlobal():
 		vboxGlobal.add_child(activityRect)
 		y = y + 290 #setting the position
 
-
-#Como pegar o player? signal com argumento
 func abaLocal():
 	$ScrollContainerLocal.visible = true
 	$ScrollContainerGlobal.visible = false
@@ -83,7 +80,11 @@ func abaLocal():
 	for i in activitiesFromCity:
 		var activity = allActivities[int(i) - 1]
 		var activityRect = createRect(activity, y)
-		activityRect.showButtonPlay()
+		
+		if not activity.available:
+			activityRect.activityUnavailable()
+		else:
+			activityRect.showButtonPlay()
 		vboxLocal.add_child(activityRect)
 		y = y + 290
 
@@ -93,7 +94,7 @@ func abaMinhas():
 	
 
 
-func createRect(activity : Activity, y):
+func createRect(activity : Activity, y : int):
 	var activityRect = greenRectScene.instantiate()
 	var minready = (activity.timeToReady)/60
 	
@@ -104,7 +105,7 @@ func createRect(activity : Activity, y):
 	activityRect.setCity(activity.city)
 	activityRect.setActivityId(activity.idActivity)
 	activityRect.position = Vector2(0,y) #setting the position
-	
+		
 	activityRect.connect("activityPlay", activityPlay)
 	
 	return activityRect

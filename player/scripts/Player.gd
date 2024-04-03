@@ -45,7 +45,7 @@ func setplayercurrentCity(value):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	flights = 3
-	coins = 12
+	coins = 120
 	knowledgeGems = 0
 
 

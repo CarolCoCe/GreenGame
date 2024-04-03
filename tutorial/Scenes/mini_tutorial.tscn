@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://5vm8fci5y83u"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_uwd2v"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_tggi3"]
+
+[node name="Mini-tutorial" instance=ExtResource("1_uwd2v")]
+visible = true
+
+[node name="Title" parent="Panel" index="0"]
+offset_left = -154.0
+offset_top = -7.0
+offset_right = 167.0
+offset_bottom = -370.0
+text = "
+Mini-tutorial"
+
+[node name="Label" type="Label" parent="Panel" index="2"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 97.0
+offset_right = 936.0
+offset_bottom = 444.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_tggi3")
+theme_override_font_sizes/font_size = 21
+text = "O jogo acaba quando:
+A temperatura global alcança 4 ºC. Todos perdem.
+A temperatura global alcança 0 ºC. o ganhador é o jogador mais rico.
+
+Para fazer uma atividade, você primeiro precisa ir até a cidade onde ela está, depois clicar no botão de atividades -> Local e clicar em fazer!
+
+ VocÊ deve ter moedas suficientes para pagar e depois responder corretamente as perguntas. 
+
+se você não está conseguindo ir para uma cidade, provavelmente está sem aviões, espere ganhar mais ou compre na loja.
+
+"
+horizontal_alignment = 1
+autowrap_mode = 3

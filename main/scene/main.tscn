@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=31 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
@@ -7,7 +7,10 @@
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
 [ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="5_wpqkt"]
 [ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/icons/Icon-kgem2.png" id="6_8k8il"]
+[ext_resource type="Texture2D" uid="uid://db2ayu2hawd7a" path="res://assets/icons/info-mini-tutorial.png" id="7_gf3sv"]
 [ext_resource type="PackedScene" uid="uid://bkqljm64dmb5f" path="res://player/scene/Player.tscn" id="8_kqbl1"]
+[ext_resource type="Texture2D" uid="uid://bcpvrq0f5x76n" path="res://assets/buttons/icon-community.png" id="9_s6gus"]
+[ext_resource type="Texture2D" uid="uid://pnqwurhc8457" path="res://assets/buttons/icon-store.png" id="10_jiup2"]
 [ext_resource type="Texture2D" uid="uid://80bww2vic8ri" path="res://assets/buttons/Rectangle 64.png" id="10_rc8e7"]
 [ext_resource type="Texture2D" uid="uid://dnnawuio3n54y" path="res://assets/termometro.png" id="13_ucqvj"]
 [ext_resource type="PackedScene" uid="uid://bemq4w1sjg5wy" path="res://Alerts/painel_no_money_to_activity.tscn" id="14_aur3v"]
@@ -17,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://d223mj1vryymg" path="res://questions/scenes/painel_questions.tscn" id="15_batjv"]
 [ext_resource type="PackedScene" uid="uid://bnl4jsjha071f" path="res://Alerts/painel_wrong_question.tscn" id="16_lbltt"]
 [ext_resource type="PackedScene" uid="uid://bwsrx51q8qjxp" path="res://Alerts/painel_activity_started.tscn" id="17_1b15v"]
+[ext_resource type="PackedScene" uid="uid://5vm8fci5y83u" path="res://tutorial/Scenes/mini_tutorial.tscn" id="19_iqwgw"]
+[ext_resource type="Texture2D" uid="uid://d3ntdeuer32wg" path="res://assets/buttons/icon-chat.png" id="20_gtdvr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(1, 1, 1, 0.164706)
@@ -25,11 +30,25 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gadrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p87m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46ken"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fo5b1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l51ge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewvpg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3imrm"]
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nm1lt")
 
 [node name="JogoGsd" type="Sprite2D" parent="."]
-position = Vector2(580, 325)
+position = Vector2(576, 324)
 texture = ExtResource("2_tqvjy")
 region_filter_clip_enabled = true
 
@@ -86,8 +105,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon-kgem" type="Sprite2D" parent="."]
-position = Vector2(1056, 36)
-scale = Vector2(0.1, 0.1)
+position = Vector2(1053, 36)
+scale = Vector2(0.148047, 0.118359)
 texture = ExtResource("6_8k8il")
 
 [node name="Label -temp-max" type="Label" parent="."]
@@ -108,17 +127,79 @@ theme_override_fonts/font = ExtResource("3_rt5r6")
 theme_override_font_sizes/font_size = 36
 text = "0ºC"
 
+[node name="Button-mini-tutorial" type="Button" parent="."]
+offset_left = 1098.0
+offset_top = 15.0
+offset_right = 1138.0
+offset_bottom = 55.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gadrj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2p87m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_46ken")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fo5b1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l51ge")
+icon = ExtResource("7_gf3sv")
+expand_icon = true
+
+[node name="Button-chat" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 387.0
+offset_right = 99.0
+offset_bottom = 457.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gadrj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2p87m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_46ken")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fo5b1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l51ge")
+icon = ExtResource("20_gtdvr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button-community" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 479.0
+offset_right = 102.0
+offset_bottom = 549.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gadrj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2p87m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_46ken")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fo5b1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l51ge")
+icon = ExtResource("9_s6gus")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button-store" type="Button" parent="."]
+offset_left = 126.0
+offset_top = 384.0
+offset_right = 196.0
+offset_bottom = 454.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gadrj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2p87m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_46ken")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fo5b1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l51ge")
+icon = ExtResource("10_jiup2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button-activity" type="Button" parent="."]
+offset_left = 127.0
+offset_top = 478.0
+offset_right = 197.0
+offset_bottom = 548.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gadrj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ewvpg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3imrm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fo5b1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l51ge")
+icon = ExtResource("10_rc8e7")
+icon_alignment = 1
+expand_icon = true
+
 [node name="WorldMap" parent="." instance=ExtResource("3_hjb3d")]
 z_index = 1
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("8_kqbl1")]
-
-[node name="ActivityListButton" type="TextureButton" parent="."]
-offset_left = 136.0
-offset_top = 349.0
-offset_right = 191.0
-offset_bottom = 404.0
-texture_normal = ExtResource("10_rc8e7")
 
 [node name="Termometro" type="TextureProgressBar" parent="."]
 offset_left = 145.0
@@ -147,5 +228,13 @@ visible = false
 [node name="painel_activity_started" parent="." instance=ExtResource("17_1b15v")]
 visible = false
 
+[node name="Mini-tutorial" parent="." instance=ExtResource("19_iqwgw")]
+visible = false
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1153.0
+offset_bottom = 652.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
-[connection signal="pressed" from="ActivityListButton" to="." method="_on_activity_list_button_pressed"]
+[connection signal="pressed" from="Button-mini-tutorial" to="." method="_on_buttonminitutorial_pressed"]
+[connection signal="pressed" from="Button-activity" to="." method="_on_activity_list_button_pressed"]

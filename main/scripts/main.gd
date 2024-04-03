@@ -10,6 +10,7 @@ extends Node2D
 @onready var quizWrongQuestion = $painel_wrong_question
 @onready var activityStarted = $painel_activity_started
 
+
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
 var globalTemperature : float = 1.25
@@ -113,10 +114,13 @@ func dealJornalConsequences (jornal : Jornal):
 	
 func dealPlayActivity(activity : Activity):
 	if player.coins >= activity.priceCoins:
-		var newValue = player.getcoins() - activity.priceCoins
-		player.setcoins(newValue)
-		$"Label-coins".text = str(player.getcoins())
-		quizQuestions.startQuiz(activity.numQuestActivity)
+		if activity.available:
+			activity.available = false
+			var newValue = player.getcoins() - activity.priceCoins
+			player.setcoins(newValue)
+			$"Label-coins".text = str(player.getcoins())
+			quizQuestions.startQuiz(activity.numQuestActivity)
+		
 	else:
 		NoMoneyActivityAlert.show_alert()
 		
@@ -126,7 +130,15 @@ func dealEndQuiz(result):
 		quizWrongQuestion.show_alert()
 	elif result == "ok":
 		activityStarted.show_alert()
+		#colocar a atividade em minhas do player
+		# soltar o timer da recompensa
+		#a Minhas atividades puxa de player
 
 func _on_activity_list_button_pressed():
 	activityPainel.visible = true
+	activityPainel._on_buttonlocal_pressed()
 	
+
+
+func _on_buttonminitutorial_pressed():
+	$"Mini-tutorial".visible = true
