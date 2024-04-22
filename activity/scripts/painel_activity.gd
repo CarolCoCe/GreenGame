@@ -20,7 +20,7 @@ signal activityPlayObject (activityId)
 func _ready():
 	self.visible = false
 	setTitle("Atividades")
-	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - Copy of ALL (2).csv"
+	var csv_file_path_activities: String = "res://Data/Lista de atividades/Lista de atividades - ALL.csv"
 	_data_extraction(csv_file_path_activities)
 	_on_buttonglobal_pressed()
 

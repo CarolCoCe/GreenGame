@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bb06gw3o3a8l6"
+
+[deps]
+
+files=["res://Data/Lista de atividades/Lista de atividades - ALL.482.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.120.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.1009.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.51.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.7.translation"]
+
+source_file="res://Data/Lista de atividades/Lista de atividades - ALL.csv"
+dest_files=["res://Data/Lista de atividades/Lista de atividades - ALL.482.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.120.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.1009.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.51.translation", "res://Data/Lista de atividades/Lista de atividades - ALL.7.translation"]
+
+[params]
+
+compress=true
+delimiter=0
