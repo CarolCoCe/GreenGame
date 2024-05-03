@@ -4,6 +4,7 @@ var allQuestions = []
 var usedQuestions = []
 var answerExpected
 var numQuestionsLeft
+var resultQuiz = 0
 
 signal quizEnded (quizResult)
 
@@ -12,6 +13,10 @@ func _ready():
 	setTitle("Perguntas")
 	var csv_file_path_questions: String = "res://Data/Perguntas/Perguntas Sustentabilidade - Sheet1.csv"
 	_data_extraction(csv_file_path_questions)
+	$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
+
+func _process(delta):
+	$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
 
 func _data_extraction(csv_file_path_activities):
 	var file = FileAccess.open(csv_file_path_activities, FileAccess.READ)
@@ -48,28 +53,36 @@ func startQuiz (numberQuestions : int):
 	show_alert()
 	numQuestionsLeft = numberQuestions
 	nextQuestion()
+	#como fazer o return esperar o valor mudar para retorna-lo
+	return resultQuiz
 
 func nextQuestion():
 	if numQuestionsLeft > 0:
+		$"Panel/Timer-questions".start(11)
 		var questionChosen = pickUpRandomQuestion(allQuestions,usedQuestions)
 		$Panel/Panel/questionText.text = questionChosen.question
 		answerExpected = questionChosen.answer
 	else :
 		quizEnded.emit("ok")
+		resultQuiz = 1
 
 func _on_button_false_pressed():
+	$"Panel/Timer-questions".stop()
 	if answerExpected == "F":
 		numQuestionsLeft = numQuestionsLeft - 1
 		nextQuestion()
 	else:
-		numQuestionsLeft = 0
-		quizEnded.emit("wrong")
-	
+		wrong()
 
 func _on_button_true_pressed():
+	$"Panel/Timer-questions".stop()
 	if answerExpected == "V":
 		numQuestionsLeft = numQuestionsLeft - 1
 		nextQuestion()
 	else:
-		numQuestionsLeft = 0
-		quizEnded.emit("wrong")
+		wrong()
+		
+func wrong():
+	numQuestionsLeft = 0
+	quizEnded.emit("wrong")
+	resultQuiz = -1

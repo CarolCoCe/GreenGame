@@ -59,7 +59,7 @@ offset_right = 1152.0
 offset_bottom = 74.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 60.0
 autostart = true
 
 [node name="Label-plane" type="Label" parent="."]
@@ -214,12 +214,16 @@ texture_under = ExtResource("14_ffqmr")
 texture_progress = ExtResource("13_ucqvj")
 
 [node name="painel_jornal" parent="." instance=ExtResource("15_0ef5n")]
+visible = false
 
 [node name="painel_plane_alert" parent="." instance=ExtResource("14_nfkeb")]
+visible = false
 
 [node name="painel_activity" parent="." instance=ExtResource("14_crgxr")]
+visible = false
 
 [node name="Painel_no_money_to_activity" parent="." instance=ExtResource("14_aur3v")]
+visible = false
 
 [node name="painel_questions" parent="." instance=ExtResource("15_batjv")]
 visible = false

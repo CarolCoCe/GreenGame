@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_tggi3"]
 
 [node name="Mini-tutorial" instance=ExtResource("1_uwd2v")]
-visible = true
 
 [node name="Title" parent="Panel" index="0"]
 offset_left = -154.0

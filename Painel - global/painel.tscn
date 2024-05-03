@@ -35,7 +35,6 @@ corner_radius_bottom_left = 30
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4ltj"]
 
 [node name="PainelGeral" type="Panel"]
-visible = false
 z_index = 3
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -71,10 +70,11 @@ autowrap_mode = 3
 
 [node name="BackButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 15.0
-offset_right = 103.0
-offset_bottom = 87.0
+offset_left = 934.0
+offset_top = 78.0
+offset_right = 1012.0
+offset_bottom = 150.0
+rotation = 3.14159
 scale = Vector2(0.7, 0.7)
 theme_override_styles/normal = SubResource("StyleBoxFlat_1lsjq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8cswo")

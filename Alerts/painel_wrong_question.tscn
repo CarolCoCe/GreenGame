@@ -12,7 +12,6 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="painel_wrong_question" instance=ExtResource("1_vhdha")]
-visible = true
 script = ExtResource("2_68efl")
 
 [node name="Panel" type="Panel" parent="Panel" index="0"]
@@ -46,8 +45,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_k5y7q")
-theme_override_font_sizes/font_size = 33
-text = "Vai perder todas as moedas que investiu porque errou a pergunta! 
+theme_override_font_sizes/font_size = 30
+text = "Vai perder todas as moedas que investiu porque não respondeu a pergunta corretamente! 
 Gostaria de assistir um anúncio e tentar outra vez?"
 horizontal_alignment = 1
 vertical_alignment = 1

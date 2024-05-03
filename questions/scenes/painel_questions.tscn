@@ -50,7 +50,6 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="painel_questions" instance=ExtResource("1_k8x5q")]
-visible = true
 script = ExtResource("2_fhxbh")
 
 [node name="Panel" type="Panel" parent="Panel" index="2"]
@@ -103,5 +102,30 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_frhwr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dhxme")
 text = "verdadeiro"
 
+[node name="Timer-questions" type="Timer" parent="Panel" index="3"]
+wait_time = 11.0
+
+[node name="time left" type="Label" parent="Panel" index="4"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 387.0
+offset_right = 607.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_oemrr")
+theme_override_font_sizes/font_size = 22
+text = "Segundos restantes:"
+
+[node name="timer-label" type="Label" parent="Panel" index="5"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 387.0
+offset_right = 682.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_oemrr")
+theme_override_font_sizes/font_size = 22
+
 [connection signal="pressed" from="Panel/Panel/ButtonFalse" to="." method="_on_button_false_pressed"]
 [connection signal="pressed" from="Panel/Panel/ButtonTrue" to="." method="_on_button_true_pressed"]
+[connection signal="timeout" from="Panel/Timer-questions" to="." method="wrong"]

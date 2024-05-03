@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://umhvunnf5ap3"]
+[gd_scene load_steps=11 format=3 uid="uid://umhvunnf5ap3"]
 
 [ext_resource type="Script" path="res://activity/scripts/GreenRect.gd" id="1_72a4m"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="1_dkued"]
@@ -16,6 +16,13 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8y1ty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3ah4"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 0.568627)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="GreenRect" type="Node2D"]
 script = ExtResource("1_72a4m")
@@ -109,5 +116,11 @@ expand_icon = true
 position = Vector2(46, 203)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("6_qjng1")
+
+[node name="UnavailablePanel" type="Panel" parent="."]
+visible = false
+offset_right = 800.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3ah4")
 
 [connection signal="pressed" from="Panel/ButtonPlay" to="." method="_on_button_play_pressed"]
