@@ -83,7 +83,19 @@ horizontal_scroll_mode = 0
 custom_minimum_size = Vector2(10, 14500)
 layout_mode = 2
 
-[node name="Button-global" type="Button" parent="." index="4"]
+[node name="ScrollContainerMinhas" type="ScrollContainer" parent="." index="4"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 248.0
+offset_right = 992.0
+offset_bottom = 538.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerMinhas" index="0"]
+custom_minimum_size = Vector2(10, 14500)
+layout_mode = 2
+
+[node name="Button-global" type="Button" parent="." index="5"]
 layout_mode = 0
 offset_left = 407.0
 offset_top = 202.0
@@ -102,7 +114,7 @@ toggle_mode = true
 button_pressed = true
 text = "Global"
 
-[node name="Button-local" type="Button" parent="." index="5"]
+[node name="Button-local" type="Button" parent="." index="6"]
 layout_mode = 0
 offset_left = 517.0
 offset_top = 202.0
@@ -120,7 +132,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_eapo0")
 toggle_mode = true
 text = "Local"
 
-[node name="Button-minhas" type="Button" parent="." index="6"]
+[node name="Button-minhas" type="Button" parent="." index="7"]
 layout_mode = 0
 offset_left = 627.0
 offset_top = 202.0

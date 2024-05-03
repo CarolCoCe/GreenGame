@@ -41,6 +41,9 @@ func setplayercurrentCity(value):
 	playercurrentCity = value
 	self.position = playercurrentCity.positionMap
 	playerChangedCity.emit(playercurrentCity)
+	
+func addActivityPlayer(activity):
+	activitiesPlayer.append(activity)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

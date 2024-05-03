@@ -40,7 +40,6 @@ func _ready():
 	activityPainel.connect("activityPlayObject",dealPlayActivity)	
 	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)	
 	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
-	quizQuestions.connect("quizEnded", dealEndQuiz)
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
 	var fileData = []
@@ -119,22 +118,24 @@ func dealPlayActivity(activity : Activity):
 			var newValue = player.getcoins() - activity.priceCoins
 			player.setcoins(newValue)
 			$"Label-coins".text = str(player.getcoins())
-			quizQuestions.startQuiz(activity.numQuestActivity)
+			var result = await quizQuestions.startQuiz(activity.numQuestActivity)
+			
+			quizQuestions.visible = false #trocar isso aqui na hora de colocar os ads ?
+			if result == -1: #wrong
+				quizWrongQuestion.show_alert()
+				activity.available = true
+				
+			elif result == 1: #quiz ok
+				activityStarted.show_alert()
+				player.addActivityPlayer(activity)
+				
+				#colocar a atividade como unavailable ok
+				#colocar a atividade em minhas do player ok
+				#soltar o timer da recompensa
+				#a Minhas atividades puxa de player
 		
 	else:
 		NoMoneyActivityAlert.show_alert()
-		
-func dealEndQuiz(result):
-	quizQuestions.visible = false #trocar isso aqui na hora de colocar os ads
-	if result == "wrong":
-		quizWrongQuestion.show_alert()
-	elif result == "ok":
-		activityStarted.show_alert()
-		
-		#colocar a atividade como unavailable
-		#colocar a atividade em minhas do player
-		# soltar o timer da recompensa
-		#a Minhas atividades puxa de player
 
 func _on_activity_list_button_pressed():
 	activityPainel.visible = true

@@ -54,6 +54,8 @@ func startQuiz (numberQuestions : int):
 	numQuestionsLeft = numberQuestions
 	nextQuestion()
 	#como fazer o return esperar o valor mudar para retorna-lo
+	while(resultQuiz == 0):
+		await get_tree().create_timer(1).timeout
 	return resultQuiz
 
 func nextQuestion():
@@ -63,7 +65,6 @@ func nextQuestion():
 		$Panel/Panel/questionText.text = questionChosen.question
 		answerExpected = questionChosen.answer
 	else :
-		quizEnded.emit("ok")
 		resultQuiz = 1
 
 func _on_button_false_pressed():
@@ -84,5 +85,4 @@ func _on_button_true_pressed():
 		
 func wrong():
 	numQuestionsLeft = 0
-	quizEnded.emit("wrong")
 	resultQuiz = -1
