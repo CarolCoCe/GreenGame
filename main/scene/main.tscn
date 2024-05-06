@@ -214,28 +214,21 @@ texture_under = ExtResource("14_ffqmr")
 texture_progress = ExtResource("13_ucqvj")
 
 [node name="painel_jornal" parent="." instance=ExtResource("15_0ef5n")]
-visible = false
 
 [node name="painel_plane_alert" parent="." instance=ExtResource("14_nfkeb")]
-visible = false
 
 [node name="painel_activity" parent="." instance=ExtResource("14_crgxr")]
-visible = false
 
 [node name="Painel_no_money_to_activity" parent="." instance=ExtResource("14_aur3v")]
-visible = false
 
 [node name="painel_questions" parent="." instance=ExtResource("15_batjv")]
-visible = false
 
 [node name="painel_wrong_question" parent="." instance=ExtResource("16_lbltt")]
-visible = false
 
 [node name="painel_activity_started" parent="." instance=ExtResource("17_1b15v")]
 visible = false
 
 [node name="Mini-tutorial" parent="." instance=ExtResource("19_iqwgw")]
-visible = false
 offset_left = 1.0
 offset_top = 4.0
 offset_right = 1153.0

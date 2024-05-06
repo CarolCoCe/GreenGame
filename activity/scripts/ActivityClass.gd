@@ -10,6 +10,7 @@ var rewardCoins : int
 var rewardKnowledgeGems : int
 var temperatureRise : float
 var timeToReady : int
+var timeLeft: Timer
 var rewardStory : String
 var city : String
 var available : bool = true
@@ -36,6 +37,7 @@ func _init(
 	self.timeToReady = p_timeToReady
 	self.rewardStory = p_rewardStory
 	self.city = p_city
+	
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():

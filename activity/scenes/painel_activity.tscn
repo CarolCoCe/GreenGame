@@ -70,6 +70,7 @@ horizontal_scroll_mode = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerGlobal" index="0"]
 custom_minimum_size = Vector2(10, 14500)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ScrollContainerLocal" type="ScrollContainer" parent="." index="3"]
 layout_mode = 0
@@ -80,8 +81,9 @@ offset_bottom = 538.0
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerLocal" index="0"]
-custom_minimum_size = Vector2(10, 14500)
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ScrollContainerMinhas" type="ScrollContainer" parent="." index="4"]
 layout_mode = 0
@@ -92,8 +94,9 @@ offset_bottom = 538.0
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerMinhas" index="0"]
-custom_minimum_size = Vector2(10, 14500)
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Button-global" type="Button" parent="." index="5"]
 layout_mode = 0

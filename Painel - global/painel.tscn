@@ -35,6 +35,7 @@ corner_radius_bottom_left = 30
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4ltj"]
 
 [node name="PainelGeral" type="Panel"]
+visible = false
 z_index = 3
 offset_right = 1152.0
 offset_bottom = 648.0

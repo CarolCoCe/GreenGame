@@ -40,10 +40,15 @@ func setplayercurrentCity(value):
 		move_and_slide()
 	playercurrentCity = value
 	self.position = playercurrentCity.positionMap
-	playerChangedCity.emit(playercurrentCity)
+	playerChangedCity.emit(self)
+	
+
+func getActivitiesPlayer():
+	return activitiesPlayer
 	
 func addActivityPlayer(activity):
 	activitiesPlayer.append(activity)
+	activity.timeLeft.start(activity.timeToReady)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

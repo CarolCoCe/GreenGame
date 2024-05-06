@@ -38,7 +38,7 @@ func _ready():
 	
 	worldMap.cityButtonPressed.connect(moving_player)	
 	activityPainel.connect("activityPlayObject",dealPlayActivity)	
-	player.connect("playerChangedCity", activityPainel.setPlayerCurrentCity)	
+	player.connect("playerChangedCity", activityPainel.getPlayer)	
 	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
