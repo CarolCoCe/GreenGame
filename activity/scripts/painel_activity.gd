@@ -104,7 +104,7 @@ func abaMinhas():
 	$ScrollContainerGlobal.visible = false
 	$ScrollContainerMinhas.visible = true
 	var activitiesFromPlayer = currentPlayer.getActivitiesPlayer()
-	
+	var listM = []
 	var sizeArray = activitiesFromPlayer.size()
 	var sizePag = sizeArray * 290
 	vboxMinhas.custom_minimum_size = Vector2(10,sizePag)
@@ -114,8 +114,31 @@ func abaMinhas():
 		var activity = i
 		var activityRect = createRect(activity, ym)
 		
+		var totalSeconds = activity.getTimeLeftInt()
+		if totalSeconds == 0 :
+			activityRect.setTime("Concluída")
+		else:
+			var minu = totalSeconds/60
+			var sec = totalSeconds%60
+			var time_string = "%02d:%02d" % [minu, sec]
+			activityRect.setTime("Tempo Restante: " + time_string)
+		
+		listM.append(activityRect)
 		vboxMinhas.add_child(activityRect)
 		ym = ym + 290
+		
+	while $ScrollContainerMinhas.visible:
+		for i in listM.size():
+			var totalSeconds = activitiesFromPlayer[i].getTimeLeftInt()
+			var activityRect = listM[i]
+			if totalSeconds == 0 :
+				activityRect.setTime("Concluída")
+			else:
+				var minu = totalSeconds/60
+				var sec = totalSeconds%60
+				var time_string = "%02d:%02d" % [minu, sec]
+				activityRect.setTime("Tempo Restante: " + time_string)
+			await get_tree().create_timer(0.5).timeout
 
 
 func createRect(activity : Activity, y : int):
@@ -138,8 +161,6 @@ func activityPlay(activityId):
 	self.visible = false
 	var activity = allActivities[activityId-1]
 	activityPlayObject.emit(activity)
-	print("chegou na activity play")
-	 #colocar um signal aqui pra emitir pra deal da main
 	
 
 func _on_back_button_pressed():

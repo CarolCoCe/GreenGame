@@ -15,7 +15,7 @@ func _ready():
 	_data_extraction(csv_file_path_questions)
 	$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
 
-func _process(delta):
+func _process(_delta):
 	$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
 
 func _data_extraction(csv_file_path_activities):
@@ -50,6 +50,7 @@ func pickUpRandomQuestion (deck, usedDeck): # Controls the used deck too
 	return randomQuestion
 
 func startQuiz (numberQuestions : int):
+	resultQuiz = 0
 	show_alert()
 	numQuestionsLeft = numberQuestions
 	nextQuestion()

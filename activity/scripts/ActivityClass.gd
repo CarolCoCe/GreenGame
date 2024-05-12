@@ -10,10 +10,12 @@ var rewardCoins : int
 var rewardKnowledgeGems : int
 var temperatureRise : float
 var timeToReady : int
-var timeLeft: Timer
+var timeLeft : Timer
 var rewardStory : String
 var city : String
 var available : bool = true
+
+signal activityFinished (activity: Activity)
 
 func _init(
 		p_idActivity : int,
@@ -37,9 +39,19 @@ func _init(
 	self.timeToReady = p_timeToReady
 	self.rewardStory = p_rewardStory
 	self.city = p_city
+	self.timeLeft = Timer.new()
+	self.timeLeft.wait_time = timeToReady
+	self.timeLeft.connect("timeout", timeLefTimeOut)
+	self.timeLeft.one_shot = true
+	add_child(timeLeft)
 	
-		
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func timeLefTimeOut():
+	print("timeout da atividade")
+	activityFinished.emit(self)
+
+func startTimer():
+	self.timeLeft.start()
+
+func getTimeLeftInt():
+	return int(timeLeft.time_left)
 

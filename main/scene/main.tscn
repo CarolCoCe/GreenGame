@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=33 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bwsrx51q8qjxp" path="res://Alerts/painel_activity_started.tscn" id="17_1b15v"]
 [ext_resource type="PackedScene" uid="uid://5vm8fci5y83u" path="res://tutorial/Scenes/mini_tutorial.tscn" id="19_iqwgw"]
 [ext_resource type="Texture2D" uid="uid://d3ntdeuer32wg" path="res://assets/buttons/icon-chat.png" id="20_gtdvr"]
+[ext_resource type="PackedScene" uid="uid://bclpfdi45sag3" path="res://Alerts/painel_activity_reward.tscn" id="24_4f87v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(0.2, 0.196078, 0.196078, 1)
@@ -233,6 +234,8 @@ offset_left = 1.0
 offset_top = 4.0
 offset_right = 1153.0
 offset_bottom = 652.0
+
+[node name="painel_activity_reward" parent="." instance=ExtResource("24_4f87v")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
 [connection signal="pressed" from="Button-mini-tutorial" to="." method="_on_buttonminitutorial_pressed"]

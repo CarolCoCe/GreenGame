@@ -12,24 +12,34 @@ var knowledgeGems
 var temperatureInfluence: float
 
 signal playerChangedCity (currentCityPlayer: City)
+signal activityFinishedPlayer (activity : Activity)
 
 func getflights():
 	return flights
 	
 func setflights(value):
 	flights = value
+
+func addflights(value):
+	flights = flights + value
 	
 func getcoins():
 	return coins
 	
 func setcoins(value):
 	coins = value
+
+func addcoins(value):
+	coins = coins + value
 	
 func getknowledgeGems():
 	return knowledgeGems
 	
 func setknowledgeGems(value):
 	knowledgeGems = value
+	
+func addknowledgeGems(value):
+	knowledgeGems = knowledgeGems + value
 
 func getplayercurrentCity():
 	return playercurrentCity
@@ -48,7 +58,12 @@ func getActivitiesPlayer():
 	
 func addActivityPlayer(activity):
 	activitiesPlayer.append(activity)
-	activity.timeLeft.start(activity.timeToReady)
+	add_child(activity)
+	activity.startTimer()
+	activity.connect("activityFinished", activityFinishedAlertMain)
+
+func activityFinishedAlertMain (activity : Activity):
+	activityFinishedPlayer.emit(activity)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

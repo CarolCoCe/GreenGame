@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://bclpfdi45sag3"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_jmic0"]
+[ext_resource type="Script" path="res://Alerts/painel_activity_reward.gd" id="2_t8fu8"]
+[ext_resource type="StyleBox" uid="uid://bliqds0mout3f" path="res://assets/Styles/GreenRect.tres" id="3_g4vvo"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="4_bd61m"]
+[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="5_ucmpe"]
+[ext_resource type="Texture2D" uid="uid://cuiophxp68y0d" path="res://assets/icons/512.png" id="6_hkhgo"]
+[ext_resource type="Texture2D" uid="uid://cd1anvues3yo6" path="res://assets/icons/Icon-kgem2.png" id="7_hbs11"]
+
+[node name="painel_activity_reward" instance=ExtResource("1_jmic0")]
+script = ExtResource("2_t8fu8")
+
+[node name="Title" parent="Panel" index="0"]
+offset_left = -200.0
+offset_top = 8.0
+offset_right = 209.0
+offset_bottom = -386.0
+theme_override_font_sizes/font_size = 25
+text = "Sua atividade está pronta!
+"
+
+[node name="Title2" type="Label" parent="Panel" index="1"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 64.0
+offset_right = 392.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_bd61m")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="Panel" index="3"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 152.0
+offset_right = 874.0
+offset_bottom = 384.0
+theme_override_styles/panel = ExtResource("3_g4vvo")
+
+[node name="story" type="Label" parent="Panel/Panel" index="0"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 768.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_bd61m")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="tempIncrease" type="Label" parent="Panel/Panel" index="1"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -273.0
+offset_top = 169.0
+offset_right = -177.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_bd61m")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="temperature-icon" type="Sprite2D" parent="Panel/Panel" index="2"]
+position = Vector2(96.025, 182.025)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_hkhgo")
+
+[node name="coins" type="Label" parent="Panel/Panel" index="3"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 169.0
+offset_right = 82.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_bd61m")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="Coin-emoji" type="Sprite2D" parent="Panel/Panel" index="4"]
+position = Vector2(333.025, 182.025)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("5_ucmpe")
+
+[node name="kgem" type="Label" parent="Panel/Panel" index="5"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 214.0
+offset_top = 169.0
+offset_right = 350.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_bd61m")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="Icon-kgem" type="Sprite2D" parent="Panel/Panel" index="6"]
+position = Vector2(576, 184)
+scale = Vector2(0.148047, 0.118359)
+texture = ExtResource("7_hbs11")

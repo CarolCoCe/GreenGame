@@ -9,6 +9,7 @@ extends Node2D
 @onready var quizQuestions = $painel_questions
 @onready var quizWrongQuestion = $painel_wrong_question
 @onready var activityStarted = $painel_activity_started
+@onready var rewardActivity = $painel_activity_reward
 
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
@@ -39,7 +40,9 @@ func _ready():
 	worldMap.cityButtonPressed.connect(moving_player)	
 	activityPainel.connect("activityPlayObject",dealPlayActivity)	
 	player.connect("playerChangedCity", activityPainel.getPlayer)	
+	player.connect("activityFinishedPlayer", dealActivityFinished)
 	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
+	
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
 	var fileData = []
@@ -84,14 +87,11 @@ func moving_player(cityDestiny : City):
 		
 	
 func _on_timer_timeout_rodada():
-	
-	var flightsAvailable =  player.getflights() + 2
-	player.setflights(flightsAvailable)
+	player.addflights(2)
 	$"Label-plane".text = str(player.getflights())
 	
-	var valuecoins = player.getcoins() + 5
-	player.setcoins(valuecoins)
-	$"Label-coins".text = str(player.getcoins())
+	player.addcoins(5)
+	$"Label-coins".text = str(player.getcoins()) 
 	
 	jornalPainel.show_jornal(globalTemperature)
 
@@ -100,23 +100,27 @@ func dealJornalConsequences (jornal : Jornal):
 	addGlobalTemperature(increaseTemp)
 	
 	if jornal.cityConsequence[0] == "":
-		var coins = player.getcoins()
-		coins = coins + jornal.coinsConsequence
-		player.setcoins(coins)
+		player.addcoins(jornal.coinsConsequence)
 	else:
 		for city in jornal.cityConsequence:
 			if player.playercurrentCity.nameCity == city:
-				var coins = player.getcoins()
-				coins = coins + jornal.coinsConsequence
-				player.setcoins(coins)
+				player.addcoins(jornal.coinsConsequence)
 	$"Label-coins".text = str(player.getcoins())
+	
+func dealActivityFinished(activity: Activity):
+	rewardActivity.show_reward(activity)
+	player.addcoins(activity.rewardCoins)
+	addGlobalTemperature(activity.temperatureRise)
+	player.addknowledgeGems(activity.rewardKnowledgeGems)
+	$"Label-coins".text = str(player.getcoins())
+	$"Label-kgem".text = str(player.getknowledgeGems())
+	
 	
 func dealPlayActivity(activity : Activity):
 	if player.coins >= activity.priceCoins:
 		if activity.available:
 			activity.available = false
-			var newValue = player.getcoins() - activity.priceCoins
-			player.setcoins(newValue)
+			player.addcoins(- activity.priceCoins)
 			$"Label-coins".text = str(player.getcoins())
 			var result = await quizQuestions.startQuiz(activity.numQuestActivity)
 			
