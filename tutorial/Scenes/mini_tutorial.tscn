@@ -23,15 +23,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_tggi3")
 theme_override_font_sizes/font_size = 21
 text = "O jogo acaba quando:
-A temperatura global alcança 4 ºC. Todos perdem.
-A temperatura global alcança 0 ºC. o ganhador é o jogador mais rico.
+A temperatura global alcança 4 ºC. Você perde.
+A temperatura global alcança 0 ºC. Você ganha.
 
 Para fazer uma atividade, você primeiro precisa ir até a cidade onde ela está, depois clicar no botão de atividades -> Local e clicar em fazer!
 
- VocÊ deve ter moedas suficientes para pagar e depois responder corretamente as perguntas. 
+ Você deve ter moedas suficientes para pagar e depois responder corretamente as perguntas. 
 
-se você não está conseguindo ir para uma cidade, provavelmente está sem aviões, espere ganhar mais ou compre na loja.
-
-"
+se você não está conseguindo ir para uma cidade, provavelmente está sem aviões, espere ganhar mais ou compre na loja."
 horizontal_alignment = 1
 autowrap_mode = 3

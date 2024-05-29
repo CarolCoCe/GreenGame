@@ -1,42 +1,100 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw6ko2nht41d0"]
+[gd_scene load_steps=10 format=3 uid="uid://dw6ko2nht41d0"]
 
 [ext_resource type="Texture2D" uid="uid://dlyf11seyhsvi" path="res://assets/backgrounds/fogo.png" id="1_hogop"]
+[ext_resource type="Script" path="res://GameOver/Lost.gd" id="1_qsxcu"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_0srji"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djbuc"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1uae"]
+bg_color = Color(0.478431, 0.941176, 0.313726, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm46r"]
+bg_color = Color(0.560784, 0.976471, 0.423529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hh6pg"]
+bg_color = Color(0.439216, 0.87451, 0.278431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puogq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2ie8"]
+
 [node name="Lost" type="Node2D"]
+script = ExtResource("1_qsxcu")
 
 [node name="Fogo" type="Sprite2D" parent="."]
 position = Vector2(577, 323)
 texture = ExtResource("1_hogop")
 
+[node name="Panel-branco" type="Panel" parent="."]
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 1080.0
+offset_bottom = 600.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_djbuc")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 126.0
-offset_top = 252.0
-offset_right = 1026.0
-offset_bottom = 521.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+offset_left = 104.0
+offset_top = 159.0
+offset_right = 1048.0
+offset_bottom = 462.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_0srji")
 theme_override_font_sizes/font_size = 30
-text = "Vocês vacilaram demais e agora o planeta tá pegando fogo e todo mundo perdeu e morreu!
+text = "As pessoas vacilaram demais e você não conseguiu compensar isso. Agora o planeta tá pegando fogo e todo mundo se lascou morreu!
 
-Independente de quem era a pessoa mais rica, nós não comemos ou respiramos dinheiro.
+Independente de quem tava rico, nós não comemos ou respiramos dinheiro.
 
-Espero que isso não se repita na vida real, hein?"
+Aqui você pode recomeçar o jogo, na vida real não, então espero que isso não se repita hein?"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 326.0
-offset_top = 125.0
-offset_right = 826.0
-offset_bottom = 167.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+offset_left = 317.0
+offset_top = 100.0
+offset_right = 817.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_0srji")
 theme_override_font_sizes/font_size = 41
 text = "Game (and life) OVER"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 392.0
+offset_top = 496.0
+offset_right = 768.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0srji")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1uae")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gm46r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hh6pg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_puogq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t2ie8")
+text = "Recomeçar"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

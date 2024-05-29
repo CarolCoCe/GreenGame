@@ -1,0 +1,167 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhr5m1rnmtb33"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_x8pf5"]
+[ext_resource type="Script" path="res://KGem/painel_kgem.gd" id="2_1rkpe"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_tipwq"]
+[ext_resource type="Texture2D" uid="uid://dqanm1fmjmcp0" path="res://assets/icons/icon-kgem.png" id="4_fmkju"]
+[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="5_lphpn"]
+[ext_resource type="Texture2D" uid="uid://cuiophxp68y0d" path="res://assets/icons/512.png" id="6_8egny"]
+[ext_resource type="Texture2D" uid="uid://c882nbshm1m7m" path="res://assets/arrows/arrow-kgm.png" id="7_5qyja"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04qfd"]
+bg_color = Color(0.580392, 0.313726, 0.878431, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_874wk"]
+bg_color = Color(0.636823, 0.400918, 0.924306, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbq22"]
+bg_color = Color(0.491288, 0.221003, 0.770047, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f0ae"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vx2s2"]
+
+[node name="Painel-kgem" instance=ExtResource("1_x8pf5")]
+visible = true
+script = ExtResource("2_1rkpe")
+
+[node name="Title" parent="Panel" index="0"]
+offset_left = -256.0
+offset_top = 35.0
+offset_right = 120.0
+offset_bottom = -359.0
+text = "Gerenciar gemas
+"
+
+[node name="Donate" type="Label" parent="." index="1"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 211.0
+offset_right = 984.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+text = "Deseja doar 1 gema do conhecimento para diminuir 0.25 ºC a temperatura?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Icon-kgem" type="Sprite2D" parent="." index="2"]
+position = Vector2(720, 159)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_fmkju")
+
+[node name="Sell" type="Label" parent="." index="3"]
+offset_left = 160.0
+offset_top = 391.0
+offset_right = 992.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+text = "Deseja trocar 1 gema do conhecimento por 8 moedas?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Icon-kgem2" type="Sprite2D" parent="." index="4"]
+position = Vector2(347, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_fmkju")
+
+[node name="Icon-kgem3" type="Sprite2D" parent="." index="5"]
+position = Vector2(347, 480)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_fmkju")
+
+[node name="Button-donate" type="Button" parent="." index="6"]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 288.0
+offset_right = 902.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_04qfd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_874wk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vbq22")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3f0ae")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vx2s2")
+text = "Confirmar"
+
+[node name="Button-sell" type="Button" parent="." index="7"]
+offset_left = 694.0
+offset_top = 456.0
+offset_right = 902.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_04qfd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_874wk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vbq22")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3f0ae")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vx2s2")
+text = "Confirmar"
+
+[node name="TwemojiCoin" type="Sprite2D" parent="." index="8"]
+position = Vector2(548, 475)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_lphpn")
+
+[node name="512" type="Sprite2D" parent="." index="9"]
+position = Vector2(615, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_8egny")
+
+[node name="Arrow-kgme-change" type="Sprite2D" parent="." index="10"]
+position = Vector2(432, 320)
+rotation = 3.14159
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_5qyja")
+
+[node name="Arrow-kgme-change2" type="Sprite2D" parent="." index="11"]
+position = Vector2(432, 477)
+rotation = 3.14159
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_5qyja")
+
+[node name="Donate2" type="Label" parent="." index="12"]
+offset_left = 470.0
+offset_top = 308.0
+offset_right = 590.0
+offset_bottom = 334.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+text = "- 0.25 ºC"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Donate3" type="Label" parent="." index="13"]
+offset_left = 473.0
+offset_top = 464.0
+offset_right = 522.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+text = "8"
+horizontal_alignment = 1
+autowrap_mode = 3

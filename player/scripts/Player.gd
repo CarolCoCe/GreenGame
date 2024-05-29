@@ -71,4 +71,3 @@ func _ready():
 	coins = 8
 	knowledgeGems = 0
 
-

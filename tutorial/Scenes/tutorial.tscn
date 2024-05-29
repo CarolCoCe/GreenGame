@@ -1,3 +1,137 @@
-[gd_scene format=3 uid="uid://bi4b7dnxnucbd"]
+[gd_scene load_steps=14 format=3 uid="uid://bi4b7dnxnucbd"]
+
+[ext_resource type="Script" path="res://tutorial/Scripts/tutorial.gd" id="1_b142m"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_3pt5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgmxw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14cdh"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s86m"]
+bg_color = Color(0.686275, 0.686275, 0.686275, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3s4dj"]
+bg_color = Color(0.509804, 0.509804, 0.509804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myyu1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qsevh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqlh8"]
+bg_color = Color(0.478431, 0.941176, 0.313726, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ha76"]
+bg_color = Color(0.572549, 0.980392, 0.439216, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mm4u"]
+bg_color = Color(0.403922, 0.807843, 0.262745, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pqvw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ccia0"]
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_b142m")
+
+[node name="Tutorial" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+
+[node name="all-background" type="Panel" parent="."]
+offset_right = 1160.0
+offset_bottom = 648.0
+
+[node name="Panel-branco" type="Panel" parent="."]
+offset_left = 248.0
+offset_top = 136.0
+offset_right = 1112.0
+offset_bottom = 536.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgmxw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 313.0
+offset_top = 181.0
+offset_right = 1049.0
+offset_bottom = 501.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3pt5r")
+theme_override_font_sizes/font_size = 19
+text = "Você nasceu em um lugar aleatório no mundo e essa é a situação atual:
+
+A Terra está 1.5 °C mais quente e essa temperatura não vai parar de aumentar sozinha!
+
+Ande pelo mundo com os aviões, use moedas e responda perguntas para começar atividades.
+Atividades geram moedas, gemas do conhecimento ou aumentam a temperatura global.
+
+Gemas do conhecimento são o único jeito de diminuir a temperatura global!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Skip-tutorial" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 560.0
+offset_right = 592.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3pt5r")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_14cdh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0s86m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3s4dj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_myyu1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qsevh")
+text = "Pular tutorial"
+
+[node name="Next" type="Button" parent="."]
+offset_left = 752.0
+offset_top = 552.0
+offset_right = 1024.0
+offset_bottom = 632.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3pt5r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_sqlh8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ha76")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0mm4u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7pqvw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ccia0")
+text = "ok"
+
+[connection signal="pressed" from="Skip-tutorial" to="." method="_on_skiptutorial_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

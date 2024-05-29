@@ -1,0 +1,201 @@
+[gd_scene load_steps=22 format=3 uid="uid://dj0nf8c427iiu"]
+
+[ext_resource type="Script" path="res://multiplayer/menu_choose_rooms.gd" id="1_7nm30"]
+[ext_resource type="PackedScene" uid="uid://bkqljm64dmb5f" path="res://player/scene/Player.tscn" id="2_tuvq6"]
+[ext_resource type="Texture2D" uid="uid://dm78rlk8msoqr" path="res://assets/backgrounds/menu-rooms.png" id="3_mj6du"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="4_4rxal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq620"]
+bg_color = Color(0, 0, 0, 0.337255)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5f1t7"]
+bg_color = Color(0.329412, 0.717647, 0.890196, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0w6v"]
+bg_color = Color(0.466667, 0.756863, 0.882353, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ectw0"]
+bg_color = Color(0.168627, 0.513726, 0.666667, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm168"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqijx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vw32"]
+bg_color = Color(0.858824, 0.054902, 0.345098, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pnch"]
+bg_color = Color(0.862745, 0.172549, 0.419608, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpw0j"]
+bg_color = Color(0.752941, 0.0627451, 0.309804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxmcl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_midh3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ftmw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oum0"]
+bg_color = Color(0.478431, 0.941176, 0.313726, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mv835"]
+bg_color = Color(0.560784, 0.976471, 0.423529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgutr"]
+bg_color = Color(0.439216, 0.87451, 0.278431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0rll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2eoi"]
+
+[node name="Menu-choose-rooms" type="Node2D"]
+script = ExtResource("1_7nm30")
+player_scene = ExtResource("2_tuvq6")
+
+[node name="Menu-rooms" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("3_mj6du")
+
+[node name="button-shade2" type="Panel" parent="."]
+offset_left = 288.0
+offset_top = 444.0
+offset_right = 864.0
+offset_bottom = 484.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jq620")
+
+[node name="create-room" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 163.0
+offset_right = 864.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4rxal")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_5f1t7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i0w6v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ectw0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cm168")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tqijx")
+text = "Criar Sala Privada"
+
+[node name="enter-room" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 354.0
+offset_right = 864.0
+offset_bottom = 474.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4rxal")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vw32")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3pnch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rpw0j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mxmcl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_midh3")
+text = "Entrar em sala privada"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player/scene/Player.tscn")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = 224.0
+offset_top = 120.0
+offset_right = 936.0
+offset_bottom = 536.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ftmw")
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 672.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4rxal")
+theme_override_font_sizes/font_size = 40
+text = "Criar sala privada"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Subtitle" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 102.0
+offset_right = 688.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4rxal")
+theme_override_font_sizes/font_size = 25
+text = "Copie o código e mande para suas besties jogarem com você"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 320.0
+offset_right = 472.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4rxal")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3oum0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mv835")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgutr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l0rll")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2eoi")
+text = "OK"
+
+[connection signal="pressed" from="create-room" to="." method="_on_createroom_pressed"]
+[connection signal="pressed" from="enter-room" to="." method="_on_enterroom_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

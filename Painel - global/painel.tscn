@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Painel - global/painel.gd" id="1_netya"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_5p6x3"]
-[ext_resource type="Texture2D" uid="uid://bjgkjetnepanv" path="res://assets/arrows buttons/Left.png" id="5_8r0a5"]
+[ext_resource type="Texture2D" uid="uid://bjgkjetnepanv" path="res://assets/arrows/Left.png" id="5_8r0a5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpsti"]
 bg_color = Color(1, 1, 1, 1)

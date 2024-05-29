@@ -25,12 +25,14 @@ func addGlobalTemperature(value : float):
 	$Termometro.value = globalTemperature
 	if (globalTemperature > 4):
 		get_tree().change_scene_to_file.bind("res://GameOver/Lost.tscn").call_deferred()
+	if (globalTemperature <= 0):
+		get_tree().change_scene_to_file.bind("res://GameOver/Won.tscn").call_deferred()
 	
-func getcommunityKnowledgeGems():
+func getCommunityKnowledgeGems():
 	return communityKnowledgeGems
 
-func setcommunityKnowledgeGems(value):
-	communityKnowledgeGems = value
+func addCommunityKnowledgeGems(value):
+	communityKnowledgeGems = communityKnowledgeGems + value
 		
 func _ready():
 	$"Label-plane".text = str(player.getflights())
@@ -133,10 +135,6 @@ func dealPlayActivity(activity : Activity):
 				activityStarted.show_alert()
 				player.addActivityPlayer(activity)
 				
-				#colocar a atividade como unavailable ok
-				#colocar a atividade em minhas do player ok
-				#soltar o timer da recompensa
-				#a Minhas atividades puxa de player
 		
 	else:
 		NoMoneyActivityAlert.show_alert()
