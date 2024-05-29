@@ -10,12 +10,15 @@ extends Node2D
 @onready var quizWrongQuestion = $painel_wrong_question
 @onready var activityStarted = $painel_activity_started
 @onready var rewardActivity = $painel_activity_reward
+@onready var kgemPainel = $"Painel-kgem"
 
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
 
 var globalTemperature : float = 1.25
 var communityKnowledgeGems : int
+var KGemTemperaturePower = -0.25
+var KGemPrice = 8
 
 func getGlobalTemperature():
 	return globalTemperature
@@ -38,12 +41,15 @@ func _ready():
 	$"Label-plane".text = str(player.getflights())
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())
+	$"Button-KGem".disabled = true
 	
 	worldMap.cityButtonPressed.connect(moving_player)	
 	activityPainel.connect("activityPlayObject",dealPlayActivity)	
 	player.connect("playerChangedCity", activityPainel.getPlayer)	
 	player.connect("activityFinishedPlayer", dealActivityFinished)
 	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
+	kgemPainel.connect("kgemDonated", dealKgemDonated)
+	kgemPainel.connect("kgemSold", dealKgemSold)
 	
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
@@ -116,6 +122,8 @@ func dealActivityFinished(activity: Activity):
 	player.addknowledgeGems(activity.rewardKnowledgeGems)
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())
+	if player.getknowledgeGems() > 0:
+		$"Button-KGem".disabled = false
 	
 	
 func dealPlayActivity(activity : Activity):
@@ -139,15 +147,35 @@ func dealPlayActivity(activity : Activity):
 	else:
 		NoMoneyActivityAlert.show_alert()
 
-func _on_activity_list_button_pressed():
-	activityPainel.visible = true
-	activityPainel._on_buttonlocal_pressed()
-	
+func dealKgemDonated():
+	if player.getknowledgeGems() > 0:
+		addGlobalTemperature(KGemTemperaturePower)
+		player.addknowledgeGems(-1)
+		$"Label-kgem".text = str(player.getknowledgeGems())
+	else:
+		$"Button-KGem".disabled = true
+		
+func dealKgemSold():
+	if player.getknowledgeGems() > 0:
+		player.addknowledgeGems(-1)
+		$"Label-kgem".text = str(player.getknowledgeGems())
+		player.addcoins(KGemPrice)
+		$"Label-coins".text = str(player.getcoins())
+	else:
+		$"Button-KGem".disabled = true
 
+	
+func _on_activity_list_button_pressed():
+	activityPainel.show()
+	activityPainel._on_buttonlocal_pressed()
 
 func _on_buttonminitutorial_pressed():
-	$"Mini-tutorial".visible = true
+	$"Mini-tutorial".show()
 
 
 func _on_termometro_value_changed(value):
 	$"Label -temp".text = str(value) + " ºC"
+
+
+func _on_button_k_gem_pressed():
+	kgemPainel.show()

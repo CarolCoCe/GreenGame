@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=37 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://5vm8fci5y83u" path="res://tutorial/Scenes/mini_tutorial.tscn" id="19_iqwgw"]
 [ext_resource type="Texture2D" uid="uid://d3ntdeuer32wg" path="res://assets/buttons/icon-chat.png" id="20_gtdvr"]
 [ext_resource type="PackedScene" uid="uid://bclpfdi45sag3" path="res://Alerts/painel_activity_reward.tscn" id="24_4f87v"]
+[ext_resource type="PackedScene" uid="uid://bhr5m1rnmtb33" path="res://KGem/painel_kgem.tscn" id="25_cprqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(0.2, 0.196078, 0.196078, 1)
@@ -101,9 +102,9 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("3_30847")
 
 [node name="Label-coins" type="Label" parent="."]
-offset_left = 821.0
+offset_left = 818.0
 offset_top = 15.0
-offset_right = 896.0
+offset_right = 926.0
 offset_bottom = 60.0
 theme_override_fonts/font = ExtResource("3_rt5r6")
 theme_override_font_sizes/font_size = 30
@@ -112,7 +113,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="icon-coin" type="Sprite2D" parent="."]
-position = Vector2(817, 38)
+position = Vector2(807, 38)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("5_wpqkt")
 
@@ -253,15 +254,18 @@ value = 1.25
 texture_under = ExtResource("14_ffqmr")
 texture_progress = ExtResource("13_ucqvj")
 
+[node name="painel_activity_reward" parent="." instance=ExtResource("24_4f87v")]
+
 [node name="painel_jornal" parent="." instance=ExtResource("15_0ef5n")]
+
+[node name="Painel-kgem" parent="." instance=ExtResource("25_cprqd")]
+visible = false
 
 [node name="painel_plane_alert" parent="." instance=ExtResource("14_nfkeb")]
 
 [node name="painel_activity" parent="." instance=ExtResource("14_crgxr")]
 
 [node name="Painel_no_money_to_activity" parent="." instance=ExtResource("14_aur3v")]
-
-[node name="painel_questions" parent="." instance=ExtResource("15_batjv")]
 
 [node name="painel_wrong_question" parent="." instance=ExtResource("16_lbltt")]
 
@@ -274,9 +278,10 @@ offset_top = 4.0
 offset_right = 1153.0
 offset_bottom = 652.0
 
-[node name="painel_activity_reward" parent="." instance=ExtResource("24_4f87v")]
+[node name="painel_questions" parent="." instance=ExtResource("15_batjv")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
 [connection signal="pressed" from="Button-mini-tutorial" to="." method="_on_buttonminitutorial_pressed"]
 [connection signal="pressed" from="Button-activity" to="." method="_on_activity_list_button_pressed"]
+[connection signal="pressed" from="Button-KGem" to="." method="_on_button_k_gem_pressed"]
 [connection signal="value_changed" from="Termometro" to="." method="_on_termometro_value_changed"]
