@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n5dc8ed72qqx"
-path="res://.godot/imported/player1.png-b4600e47b54359dcde03f8cba0daa8ab.ctex"
+uid="uid://cypcof8h4cceu"
+path="res://.godot/imported/sea.png-6249b83066f597ccb7d1fab8b3028210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/playerSkins/player1.png"
-dest_files=["res://.godot/imported/player1.png-b4600e47b54359dcde03f8cba0daa8ab.ctex"]
+source_file="res://MiniGames/FishingTrash/assets/sea.png"
+dest_files=["res://.godot/imported/sea.png-6249b83066f597ccb7d1fab8b3028210.ctex"]
 
 [params]
 

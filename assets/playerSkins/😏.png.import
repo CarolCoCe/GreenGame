@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c88p8yywdijqs"
-path="res://.godot/imported/icon-airplane.png-3dafeafe3017568381d7094d9a32335f.ctex"
+uid="uid://6qmwwxiu666w"
+path="res://.godot/imported/😏.png-4b0a92590f06f45bbcc5e1c10cdf9490.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/icon-airplane.png"
-dest_files=["res://.godot/imported/icon-airplane.png-3dafeafe3017568381d7094d9a32335f.ctex"]
+source_file="res://assets/playerSkins/😏.png"
+dest_files=["res://.godot/imported/😏.png-4b0a92590f06f45bbcc5e1c10cdf9490.ctex"]
 
 [params]
 

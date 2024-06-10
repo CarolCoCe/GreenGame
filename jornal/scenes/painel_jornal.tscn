@@ -10,16 +10,16 @@
 [node name="painel_jornal" instance=ExtResource("1_v4aqc")]
 script = ExtResource("2_c1r54")
 
-[node name="Rectangle13" type="Sprite2D" parent="." index="1"]
+[node name="Rectangle13" type="Sprite2D" parent="." index="2"]
 position = Vector2(412, 152)
 texture = ExtResource("3_0fwcq")
 
-[node name="Line2D" type="Line2D" parent="." index="2"]
+[node name="Line2D" type="Line2D" parent="." index="3"]
 points = PackedVector2Array(570, 215, 570, 520)
 width = 6.0
 default_color = Color(0, 0, 0, 1)
 
-[node name="Sorte-Story" type="Label" parent="." index="3"]
+[node name="Sorte-Story" type="Label" parent="." index="4"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -37,7 +37,7 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="City-consequence-sorte" type="Label" parent="." index="4"]
+[node name="City-consequence-sorte" type="Label" parent="." index="5"]
 layout_mode = 0
 offset_left = 135.0
 offset_top = 374.0
@@ -48,7 +48,7 @@ theme_override_fonts/font = ExtResource("4_tul35")
 theme_override_font_sizes/font_size = 15
 autowrap_mode = 3
 
-[node name="Terra-Story" type="Label" parent="." index="5"]
+[node name="Terra-Story" type="Label" parent="." index="6"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -66,7 +66,7 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="City-consequence-terra" type="Label" parent="." index="6"]
+[node name="City-consequence-terra" type="Label" parent="." index="7"]
 layout_mode = 0
 offset_left = 583.0
 offset_top = 374.0
@@ -77,7 +77,7 @@ theme_override_fonts/font = ExtResource("4_tul35")
 theme_override_font_sizes/font_size = 15
 autowrap_mode = 3
 
-[node name="tempIncrease-Sorte" type="Label" parent="." index="7"]
+[node name="tempIncrease-Sorte" type="Label" parent="." index="8"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -94,7 +94,7 @@ theme_override_fonts/font = ExtResource("4_tul35")
 theme_override_font_sizes/font_size = 25
 autowrap_mode = 3
 
-[node name="coins-Sorte" type="Label" parent="." index="8"]
+[node name="coins-Sorte" type="Label" parent="." index="9"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -111,7 +111,7 @@ theme_override_fonts/font = ExtResource("4_tul35")
 theme_override_font_sizes/font_size = 25
 autowrap_mode = 3
 
-[node name="tempIncrease-Terra" type="Label" parent="." index="9"]
+[node name="tempIncrease-Terra" type="Label" parent="." index="10"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -128,7 +128,7 @@ theme_override_fonts/font = ExtResource("4_tul35")
 theme_override_font_sizes/font_size = 25
 autowrap_mode = 3
 
-[node name="coins-Terra" type="Label" parent="." index="10"]
+[node name="coins-Terra" type="Label" parent="." index="11"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -145,22 +145,22 @@ theme_override_fonts/font = ExtResource("4_tul35")
 theme_override_font_sizes/font_size = 25
 autowrap_mode = 3
 
-[node name="TwemojiCoin-sorte" type="Sprite2D" parent="." index="11"]
+[node name="TwemojiCoin-sorte" type="Sprite2D" parent="." index="12"]
 position = Vector2(412, 502)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("5_70mak")
 
-[node name="TwemojiCoin2-terra" type="Sprite2D" parent="." index="12"]
+[node name="TwemojiCoin2-terra" type="Sprite2D" parent="." index="13"]
 position = Vector2(898, 502)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("5_70mak")
 
-[node name="temperature-icon-sorte" type="Sprite2D" parent="." index="13"]
+[node name="temperature-icon-sorte" type="Sprite2D" parent="." index="14"]
 position = Vector2(191, 498)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_ew8r5")
 
-[node name="temperature-icon-terra" type="Sprite2D" parent="." index="14"]
+[node name="temperature-icon-terra" type="Sprite2D" parent="." index="15"]
 position = Vector2(626, 498)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_ew8r5")

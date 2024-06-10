@@ -1,10 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=40 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
-[ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icons/icon-airplane.png" id="3_30847"]
 [ext_resource type="PackedScene" uid="uid://dr5uqoyqrk4q3" path="res://main/scene/worldMap.tscn" id="3_hjb3d"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_rt5r6"]
+[ext_resource type="Texture2D" uid="uid://cmf022y1eu6r7" path="res://assets/icons/✈️.png" id="4_7u65u"]
 [ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="5_wpqkt"]
 [ext_resource type="Texture2D" uid="uid://dqanm1fmjmcp0" path="res://assets/icons/icon-kgem.png" id="6_yggkq"]
 [ext_resource type="Texture2D" uid="uid://db2ayu2hawd7a" path="res://assets/icons/info-mini-tutorial.png" id="7_gf3sv"]
@@ -19,12 +19,15 @@
 [ext_resource type="PackedScene" uid="uid://d2if82ws416i5" path="res://Alerts/painel_plane_alert.tscn" id="14_nfkeb"]
 [ext_resource type="PackedScene" uid="uid://bcl7rinykxawp" path="res://jornal/scenes/painel_jornal.tscn" id="15_0ef5n"]
 [ext_resource type="PackedScene" uid="uid://d223mj1vryymg" path="res://questions/scenes/painel_questions.tscn" id="15_batjv"]
+[ext_resource type="PackedScene" uid="uid://vy53ggrl6tgi" path="res://Alerts/minigame_fishing_tutorial.tscn" id="16_3ppd4"]
 [ext_resource type="PackedScene" uid="uid://bnl4jsjha071f" path="res://Alerts/painel_wrong_question.tscn" id="16_lbltt"]
 [ext_resource type="PackedScene" uid="uid://bwsrx51q8qjxp" path="res://Alerts/painel_activity_started.tscn" id="17_1b15v"]
 [ext_resource type="PackedScene" uid="uid://5vm8fci5y83u" path="res://tutorial/Scenes/mini_tutorial.tscn" id="19_iqwgw"]
+[ext_resource type="PackedScene" uid="uid://c6le833p8vptv" path="res://Alerts/alert_no_k_gem.tscn" id="20_1mkve"]
 [ext_resource type="Texture2D" uid="uid://d3ntdeuer32wg" path="res://assets/buttons/icon-chat.png" id="20_gtdvr"]
 [ext_resource type="PackedScene" uid="uid://bclpfdi45sag3" path="res://Alerts/painel_activity_reward.tscn" id="24_4f87v"]
 [ext_resource type="PackedScene" uid="uid://bhr5m1rnmtb33" path="res://KGem/painel_kgem.tscn" id="25_cprqd"]
+[ext_resource type="PackedScene" uid="uid://076rqil3dob8" path="res://Menu/Scenes/menu_waiting_room.tscn" id="26_8qsto"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(0.2, 0.196078, 0.196078, 1)
@@ -81,9 +84,8 @@ modulate = Color(0.0627451, 0.0627451, 0.0627451, 1)
 offset_right = 1152.0
 offset_bottom = 74.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer-rodada" type="Timer" parent="."]
 wait_time = 60.0
-autostart = true
 
 [node name="Label-plane" type="Label" parent="."]
 offset_left = 672.0
@@ -97,9 +99,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon-plane" type="Sprite2D" parent="."]
-position = Vector2(668, 39)
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("3_30847")
+position = Vector2(661, 42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7u65u")
 
 [node name="Label-coins" type="Label" parent="."]
 offset_left = 818.0
@@ -254,34 +256,68 @@ value = 1.25
 texture_under = ExtResource("14_ffqmr")
 texture_progress = ExtResource("13_ucqvj")
 
+[node name="Minigame_fishing_tutorial" parent="." instance=ExtResource("16_3ppd4")]
+visible = false
+
 [node name="painel_activity_reward" parent="." instance=ExtResource("24_4f87v")]
+visible = false
+z_index = 3
 
 [node name="painel_jornal" parent="." instance=ExtResource("15_0ef5n")]
+visible = false
+z_index = 3
 
 [node name="Painel-kgem" parent="." instance=ExtResource("25_cprqd")]
 visible = false
+z_index = 3
 
 [node name="painel_plane_alert" parent="." instance=ExtResource("14_nfkeb")]
+visible = false
+z_index = 3
 
 [node name="painel_activity" parent="." instance=ExtResource("14_crgxr")]
+visible = false
+z_index = 3
+
+[node name="Alert_no_k_gem" parent="." instance=ExtResource("20_1mkve")]
+visible = false
+z_index = 3
 
 [node name="Painel_no_money_to_activity" parent="." instance=ExtResource("14_aur3v")]
+visible = false
+z_index = 3
 
 [node name="painel_wrong_question" parent="." instance=ExtResource("16_lbltt")]
+visible = false
+z_index = 3
 
 [node name="painel_activity_started" parent="." instance=ExtResource("17_1b15v")]
 visible = false
+z_index = 3
 
 [node name="Mini-tutorial" parent="." instance=ExtResource("19_iqwgw")]
+visible = false
+z_index = 3
 offset_left = 1.0
 offset_top = 4.0
 offset_right = 1153.0
 offset_bottom = 652.0
 
 [node name="painel_questions" parent="." instance=ExtResource("15_batjv")]
+visible = false
+z_index = 3
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout_rodada"]
+[node name="Timer-miniGame-Fishing" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[node name="menu_waiting_room" parent="." instance=ExtResource("26_8qsto")]
+visible = false
+z_index = 10
+
+[connection signal="timeout" from="Timer-rodada" to="." method="_on_timer_timeout_rodada"]
 [connection signal="pressed" from="Button-mini-tutorial" to="." method="_on_buttonminitutorial_pressed"]
 [connection signal="pressed" from="Button-activity" to="." method="_on_activity_list_button_pressed"]
 [connection signal="pressed" from="Button-KGem" to="." method="_on_button_k_gem_pressed"]
 [connection signal="value_changed" from="Termometro" to="." method="_on_termometro_value_changed"]
+[connection signal="timeout" from="Timer-miniGame-Fishing" to="." method="_on_timermini_game_fishing_timeout"]

@@ -14,6 +14,9 @@ var temperatureInfluence: float
 signal playerChangedCity (currentCityPlayer: City)
 signal activityFinishedPlayer (activity : Activity)
 
+func setPlayerSkin (value : String):
+	$PlayerEmoji.texture = load(value)
+
 func getflights():
 	return flights
 	

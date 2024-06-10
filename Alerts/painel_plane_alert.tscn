@@ -3,21 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_wlpts"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_tvkg4"]
 [ext_resource type="Script" path="res://Alerts/painel_plane_alert.gd" id="2_yu8u7"]
-[ext_resource type="Texture2D" uid="uid://c88p8yywdijqs" path="res://assets/icons/icon-airplane.png" id="3_nicc1"]
+[ext_resource type="Texture2D" uid="uid://cmf022y1eu6r7" path="res://assets/icons/✈️.png" id="4_j6ggp"]
 
 [node name="painel_plane_alert" instance=ExtResource("1_wlpts")]
 script = ExtResource("2_yu8u7")
 
-[node name="alert" type="Label" parent="." index="1"]
+[node name="alert" type="Label" parent="Panel" index="2"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -408.0
-offset_top = 177.0
+offset_top = 125.0
 offset_right = 409.0
-offset_bottom = -217.0
+offset_bottom = -238.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -28,7 +28,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Icon-airplane" type="Sprite2D" parent="." index="2"]
-position = Vector2(556, 437)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_nicc1")
+[node name="Icon-airplane" type="Sprite2D" parent="Panel" index="3"]
+position = Vector2(460, 333)
+texture = ExtResource("4_j6ggp")

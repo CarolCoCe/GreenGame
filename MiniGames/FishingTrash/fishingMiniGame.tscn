@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3 uid="uid://bkbelyt2ukw6h"]
+
+[ext_resource type="Script" path="res://MiniGames/FishingTrash/fishingMiniGame.gd" id="1_5fkyq"]
+[ext_resource type="Texture2D" uid="uid://cypcof8h4cceu" path="res://MiniGames/FishingTrash/assets/sea.png" id="2_g2l5n"]
+[ext_resource type="Script" path="res://MiniGames/FishingTrash/trash.gd" id="3_3dbr5"]
+[ext_resource type="Texture2D" uid="uid://din27h674kl1d" path="res://MiniGames/FishingTrash/assets/🥤.png" id="3_3yu7t"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="4_mphrw"]
+[ext_resource type="Texture2D" uid="uid://bhmtdgfe1j6qe" path="res://MiniGames/FishingTrash/assets/🗑️.png" id="5_jofv6"]
+[ext_resource type="Script" path="res://MiniGames/FishingTrash/playerBasket.gd" id="6_kwqxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mjky"]
+size = Vector2(64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78v36"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 0.533333)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4s7gq"]
+bg_color = Color(0.478431, 0.941176, 0.313726, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwo55"]
+size = Vector2(96, 96)
+
+[node name="FishingMiniGame" type="Node2D"]
+script = ExtResource("1_5fkyq")
+
+[node name="Sea" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+texture = ExtResource("2_g2l5n")
+
+[node name="trash" type="CharacterBody2D" parent="."]
+position = Vector2(920, 312)
+script = ExtResource("3_3dbr5")
+
+[node name="Sprite2D" type="Sprite2D" parent="trash"]
+position = Vector2(-2, 2)
+rotation = 0.647517
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_3yu7t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trash"]
+position = Vector2(-2, 3)
+shape = SubResource("RectangleShape2D_1mjky")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 131.0
+offset_top = 21.0
+offset_right = 290.0
+offset_bottom = 636.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mphrw")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/background = SubResource("StyleBoxFlat_78v36")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4s7gq")
+step = 1.0
+rounded = true
+fill_mode = 3
+
+[node name="TimeLeft" type="Label" parent="."]
+offset_left = 671.0
+offset_top = 27.0
+offset_right = 770.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("4_mphrw")
+theme_override_font_sizes/font_size = 50
+text = "00"
+
+[node name="time-text" type="Label" parent="."]
+offset_left = 384.0
+offset_top = 40.0
+offset_right = 635.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("4_mphrw")
+theme_override_font_sizes/font_size = 26
+text = "Tempo Restante:"
+
+[node name="time-text2" type="Label" parent="."]
+offset_left = 392.0
+offset_top = 173.0
+offset_right = 643.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("4_mphrw")
+theme_override_font_sizes/font_size = 26
+text = "Lixos pescados:"
+
+[node name="numTrash" type="Label" parent="."]
+offset_left = 672.0
+offset_top = 132.0
+offset_right = 790.0
+offset_bottom = 236.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_mphrw")
+theme_override_font_sizes/font_size = 60
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="playerBasket" type="CharacterBody2D" parent="."]
+position = Vector2(920, 448)
+script = ExtResource("6_kwqxq")
+
+[node name="Sprite2D" type="Sprite2D" parent="playerBasket"]
+texture = ExtResource("5_jofv6")
+
+[node name="detect" type="Area2D" parent="playerBasket"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerBasket/detect"]
+shape = SubResource("RectangleShape2D_nwo55")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 31.0
+one_shot = true
+
+[connection signal="body_entered" from="playerBasket/detect" to="playerBasket" method="_on_detect_body_entered"]
+[connection signal="body_exited" from="playerBasket/detect" to="playerBasket" method="_on_detect_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://vy53ggrl6tgi"]
+
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_oyfq1"]
+[ext_resource type="Script" path="res://Alerts/minigame_fishing_tutorial.gd" id="2_8u0bu"]
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_acjjj"]
+[ext_resource type="PackedScene" uid="uid://bkbelyt2ukw6h" path="res://MiniGames/FishingTrash/fishingMiniGame.tscn" id="3_2vs5y"]
+
+[node name="Minigame_fishing_tutorial" instance=ExtResource("1_oyfq1")]
+script = ExtResource("2_8u0bu")
+
+[node name="Title" parent="Panel" index="0"]
+offset_left = -286.0
+offset_right = 292.0
+text = "Vamos tirar lixo do mar!!!
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel" index="2"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 78.0
+offset_right = 877.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_acjjj")
+theme_override_font_sizes/font_size = 28
+text = "
+Para pescar, acompanhe o lixo com a cesta até que a barra de progresso alcance 100%.
+
+Para a cesta subir, clique com o botão esquerdo do mouse. Solte o botão para que ela desça até o fundo do mar.
+
+Para cada lixo retirado, você ganha 1 moeda, mas você só tem 30 segundos!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FishingMiniGame" parent="." index="2" instance=ExtResource("3_2vs5y")]
+visible = false

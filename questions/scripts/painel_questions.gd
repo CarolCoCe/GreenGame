@@ -15,9 +15,6 @@ func _ready():
 	_data_extraction(csv_file_path_questions)
 	$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
 
-func _process(_delta):
-	$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
-
 func _data_extraction(csv_file_path_activities):
 	var file = FileAccess.open(csv_file_path_activities, FileAccess.READ)
 	if file == null:
@@ -65,6 +62,9 @@ func nextQuestion():
 		var questionChosen = pickUpRandomQuestion(allQuestions,usedQuestions)
 		$Panel/Panel/questionText.text = questionChosen.question
 		answerExpected = questionChosen.answer
+		while $"Panel/Timer-questions".time_left > 0:
+			$"Panel/timer-label".text = str(int($"Panel/Timer-questions".time_left))
+			await get_tree().create_timer(0.5).timeout
 	else :
 		resultQuiz = 1
 

@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="1_dkued"]
 [ext_resource type="Texture2D" uid="uid://cx5vhbgqeyj1p" path="res://assets/icons/Vector.png" id="3_p05h3"]
 [ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="4_hal3u"]
-[ext_resource type="Texture2D" uid="uid://cxn3wlqolwe71" path="res://assets/icons/9004819_clock_time_alarm_schedule_icon.png" id="5_2ue70"]
+[ext_resource type="Texture2D" uid="uid://b4xdm46t6o83d" path="res://assets/icons/🕒.png" id="5_2l4qt"]
 [ext_resource type="Texture2D" uid="uid://bxyebhvqsxay4" path="res://assets/icons/Polygon 4.png" id="6_1hppx"]
-[ext_resource type="Texture2D" uid="uid://bl27468ai3pw0" path="res://assets/icons/134192_information_question_icon.png" id="6_qjng1"]
+[ext_resource type="Texture2D" uid="uid://cvg6kocg6j52r" path="res://assets/icons/❔.png" id="7_8jxbt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa8tm"]
 bg_color = Color(0.380392, 0.67451, 0.266667, 1)
@@ -94,8 +94,8 @@ texture = ExtResource("4_hal3u")
 
 [node name="clock icon" type="Sprite2D" parent="Panel"]
 position = Vector2(46, 155)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("5_2ue70")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2l4qt")
 
 [node name="ButtonPlay" type="Button" parent="Panel"]
 visible = false
@@ -114,8 +114,8 @@ expand_icon = true
 
 [node name="134192InformationQuestionIcon" type="Sprite2D" parent="Panel"]
 position = Vector2(46, 203)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("6_qjng1")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_8jxbt")
 
 [node name="UnavailablePanel" type="Panel" parent="."]
 visible = false

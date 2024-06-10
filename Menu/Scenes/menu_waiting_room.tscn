@@ -1,9 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://076rqil3dob8"]
+[gd_scene load_steps=30 format=3 uid="uid://076rqil3dob8"]
 
 [ext_resource type="Script" path="res://Menu/Scripts/menu_waiting_room.gd" id="1_s218n"]
 [ext_resource type="Texture2D" uid="uid://bnyrox6vaanqp" path="res://assets/backgrounds/splash 2.png" id="1_x83bv"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_uw3fm"]
-[ext_resource type="Texture2D" uid="uid://n5dc8ed72qqx" path="res://assets/playerSkins/player1.png" id="3_763px"]
+[ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="5_1eo4o"]
+[ext_resource type="Texture2D" uid="uid://q42i34ljmhj7" path="res://assets/playerSkins/😁.png" id="6_brio7"]
+[ext_resource type="Texture2D" uid="uid://c400w5kv4j5o0" path="res://assets/playerSkins/😍.png" id="7_spcvi"]
+[ext_resource type="Texture2D" uid="uid://36uavctqfm3p" path="res://assets/playerSkins/😈.png" id="8_qyjg2"]
+[ext_resource type="Texture2D" uid="uid://lcp2vdwylrkm" path="res://assets/playerSkins/😡.png" id="9_xuupe"]
+[ext_resource type="Texture2D" uid="uid://dag3l5brervkt" path="res://assets/playerSkins/😵.png" id="10_kkn87"]
+[ext_resource type="Texture2D" uid="uid://can26f4x81aii" path="res://assets/playerSkins/🥰.png" id="11_5vb1r"]
+[ext_resource type="Texture2D" uid="uid://dxyhq7alre4d2" path="res://assets/playerSkins/🤑.png" id="12_l81ui"]
+[ext_resource type="Texture2D" uid="uid://djpveimoqchgu" path="res://assets/playerSkins/🤨.png" id="13_2kkfp"]
+[ext_resource type="Texture2D" uid="uid://cwyysm58vuhlg" path="res://assets/playerSkins/🤡.png" id="14_pmmcr"]
+[ext_resource type="Texture2D" uid="uid://mhaa7g5yph4" path="res://assets/playerSkins/😘.png" id="15_ls123"]
+[ext_resource type="Texture2D" uid="uid://6qmwwxiu666w" path="res://assets/playerSkins/😏.png" id="16_qn0oo"]
+[ext_resource type="Texture2D" uid="uid://dxxk5y08rmy6v" path="res://assets/playerSkins/👽.png" id="17_hcrcf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pywme"]
 bg_color = Color(0.6, 0.6, 0.6, 0.643137)
@@ -69,6 +81,13 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1nq2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjc3q"]
+bg_color = Color(0.588235, 0.396078, 0.941176, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="menu_waiting_room" type="Node2D"]
 script = ExtResource("1_s218n")
 
@@ -77,10 +96,10 @@ position = Vector2(576, 324)
 texture = ExtResource("1_x83bv")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 400.0
-offset_top = 552.0
+offset_left = 384.0
+offset_top = 593.0
 offset_right = 744.0
-offset_bottom = 595.0
+offset_bottom = 636.0
 theme_override_styles/background = SubResource("StyleBoxFlat_pywme")
 theme_override_styles/fill = SubResource("StyleBoxFlat_caht6")
 max_value = 5.0
@@ -88,24 +107,25 @@ step = 1.0
 show_percentage = false
 
 [node name="Choose emoji" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 440.0
-offset_right = 704.0
-offset_bottom = 512.0
+offset_left = 416.0
+offset_top = 456.0
+offset_right = 706.0
+offset_bottom = 528.0
 theme_override_fonts/font = ExtResource("2_uw3fm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gufu0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_32sqj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h3tcm")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_u742v")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b8ksw")
-text = "Escolha seu emoji"
-icon = ExtResource("3_763px")
+text = "Escolha seu personagem"
+icon = ExtResource("6_brio7")
+expand_icon = true
 
 [node name="Start" type="Button" parent="."]
-offset_left = 392.0
-offset_top = 536.0
-offset_right = 768.0
-offset_bottom = 608.0
+offset_left = 376.0
+offset_top = 560.0
+offset_right = 752.0
+offset_bottom = 632.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -120,4 +140,108 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_7o5vi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v1nq2")
 text = "Vamos começar"
 
+[node name="PainelGeral" parent="." instance=ExtResource("5_1eo4o")]
+
+[node name="Panel2" type="Panel" parent="PainelGeral"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 184.0
+offset_right = 976.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjc3q")
+
+[node name="Label" type="Label" parent="PainelGeral"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 131.0
+offset_right = 880.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uw3fm")
+theme_override_font_sizes/font_size = 41
+text = "Escolha seu personagem:"
+
+[node name="GridContainer" type="GridContainer" parent="PainelGeral"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 224.0
+offset_right = 957.0
+offset_bottom = 504.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 6
+
+[node name="Button" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("6_brio7")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("7_spcvi")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("8_qyjg2")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("9_xuupe")
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("10_kkn87")
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("11_5vb1r")
+icon_alignment = 1
+
+[node name="Button7" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("12_l81ui")
+icon_alignment = 1
+
+[node name="Button8" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("13_2kkfp")
+icon_alignment = 1
+
+[node name="Button9" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("14_pmmcr")
+icon_alignment = 1
+
+[node name="Button10" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("15_ls123")
+icon_alignment = 1
+
+[node name="Button11" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("16_qn0oo")
+icon_alignment = 1
+
+[node name="Button12" type="Button" parent="PainelGeral/GridContainer"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+icon = ExtResource("17_hcrcf")
+icon_alignment = 1
+
+[connection signal="pressed" from="Choose emoji" to="." method="_on_choose_emoji_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

@@ -11,6 +11,9 @@ extends Node2D
 @onready var activityStarted = $painel_activity_started
 @onready var rewardActivity = $painel_activity_reward
 @onready var kgemPainel = $"Painel-kgem"
+@onready var menuWaitingRoom = $menu_waiting_room
+@onready var miniGameFishing = $Minigame_fishing_tutorial
+@onready var alertNoKGem = $Alert_no_k_gem
 
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
@@ -36,12 +39,19 @@ func getCommunityKnowledgeGems():
 
 func addCommunityKnowledgeGems(value):
 	communityKnowledgeGems = communityKnowledgeGems + value
+	
+func changePlayerSkin(playerSkinString):
+	player.setPlayerSkin(playerSkinString)
+	$"Timer-rodada".start()
+	$"Timer-miniGame-Fishing".start()
+	menuWaitingRoom.hide()
 		
 func _ready():
+	$menu_waiting_room.show()
+	
 	$"Label-plane".text = str(player.getflights())
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())
-	$"Button-KGem".disabled = true
 	
 	worldMap.cityButtonPressed.connect(moving_player)	
 	activityPainel.connect("activityPlayObject",dealPlayActivity)	
@@ -50,6 +60,9 @@ func _ready():
 	jornalPainel.connect("jornalConsequences", dealJornalConsequences)
 	kgemPainel.connect("kgemDonated", dealKgemDonated)
 	kgemPainel.connect("kgemSold", dealKgemSold)
+	menuWaitingRoom.connect("playerChoseSkin", changePlayerSkin)
+	miniGameFishing.connect("coinsEarnedFishing", fishingMiniGameEnded)
+	
 	
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
@@ -122,9 +135,6 @@ func dealActivityFinished(activity: Activity):
 	player.addknowledgeGems(activity.rewardKnowledgeGems)
 	$"Label-coins".text = str(player.getcoins())
 	$"Label-kgem".text = str(player.getknowledgeGems())
-	if player.getknowledgeGems() > 0:
-		$"Button-KGem".disabled = false
-	
 	
 func dealPlayActivity(activity : Activity):
 	if player.coins >= activity.priceCoins:
@@ -153,7 +163,7 @@ func dealKgemDonated():
 		player.addknowledgeGems(-1)
 		$"Label-kgem".text = str(player.getknowledgeGems())
 	else:
-		$"Button-KGem".disabled = true
+		alertNoKGem.show()
 		
 func dealKgemSold():
 	if player.getknowledgeGems() > 0:
@@ -162,7 +172,7 @@ func dealKgemSold():
 		player.addcoins(KGemPrice)
 		$"Label-coins".text = str(player.getcoins())
 	else:
-		$"Button-KGem".disabled = true
+		alertNoKGem.show()
 
 	
 func _on_activity_list_button_pressed():
@@ -179,3 +189,16 @@ func _on_termometro_value_changed(value):
 
 func _on_button_k_gem_pressed():
 	kgemPainel.show()
+
+
+func _on_timermini_game_fishing_timeout():
+	$"Timer-rodada".paused = true
+	miniGameFishing.show()
+
+func fishingMiniGameEnded(coinsGained):
+	player.addcoins(coinsGained)
+	$"Label-coins".text = str(player.getcoins())
+	$"Timer-rodada".paused = false
+	
+	$"Timer-miniGame-Fishing".free()
+	$menu_waiting_room.free()
