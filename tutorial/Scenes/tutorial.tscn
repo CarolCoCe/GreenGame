@@ -1,7 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi4b7dnxnucbd"]
+[gd_scene load_steps=22 format=3 uid="uid://bi4b7dnxnucbd"]
 
 [ext_resource type="Script" path="res://tutorial/Scripts/tutorial.gd" id="1_b142m"]
+[ext_resource type="Texture2D" uid="uid://dm78rlk8msoqr" path="res://assets/backgrounds/menu-rooms.png" id="2_jvkgq"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_3pt5r"]
+[ext_resource type="Texture2D" uid="uid://pnqwurhc8457" path="res://assets/buttons/icon-store.png" id="4_eabbb"]
+[ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/buttons/Rectangle 65.png" id="5_adphf"]
+[ext_resource type="Texture2D" uid="uid://3ctwbge6f7ur" path="res://assets/buttons/Vector.png" id="6_61sur"]
+[ext_resource type="Texture2D" uid="uid://cmf022y1eu6r7" path="res://assets/icons/✈️.png" id="7_2q75v"]
+[ext_resource type="Texture2D" uid="uid://dqanm1fmjmcp0" path="res://assets/icons/icon-kgem.png" id="8_nhl0r"]
+[ext_resource type="Texture2D" uid="uid://dnnawuio3n54y" path="res://assets/termometro.png" id="9_2ssro"]
+[ext_resource type="Texture2D" uid="uid://db2ayu2hawd7a" path="res://assets/icons/info-mini-tutorial.png" id="10_kpw4i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgmxw"]
 bg_color = Color(1, 1, 1, 1)
@@ -62,6 +70,10 @@ corner_radius_bottom_left = 20
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_b142m")
 
+[node name="Menu-rooms" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_jvkgq")
+
 [node name="Tutorial" type="Sprite2D" parent="."]
 position = Vector2(576, 323)
 
@@ -70,17 +82,17 @@ offset_right = 1160.0
 offset_bottom = 648.0
 
 [node name="Panel-branco" type="Panel" parent="."]
-offset_left = 248.0
-offset_top = 136.0
-offset_right = 1112.0
-offset_bottom = 536.0
+offset_left = 120.0
+offset_top = 94.0
+offset_right = 1024.0
+offset_bottom = 494.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vgmxw")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 313.0
-offset_top = 181.0
-offset_right = 1049.0
-offset_bottom = 501.0
+offset_left = 248.0
+offset_top = 126.0
+offset_right = 936.0
+offset_bottom = 470.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_3pt5r")
 theme_override_font_sizes/font_size = 19
@@ -96,10 +108,10 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Skip-tutorial" type="Button" parent="."]
-offset_left = 384.0
-offset_top = 560.0
-offset_right = 592.0
-offset_bottom = 624.0
+offset_left = 131.0
+offset_top = 544.0
+offset_right = 339.0
+offset_bottom = 608.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -116,9 +128,9 @@ text = "Pular tutorial"
 
 [node name="Next" type="Button" parent="."]
 offset_left = 752.0
-offset_top = 552.0
+offset_top = 536.0
 offset_right = 1024.0
-offset_bottom = 632.0
+offset_bottom = 616.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -132,6 +144,61 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0mm4u")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7pqvw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ccia0")
 text = "ok"
+
+[node name="Icon-store" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(180, 170)
+texture = ExtResource("4_eabbb")
+
+[node name="Rectangle65" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(182, 291)
+scale = Vector2(2, 2)
+texture = ExtResource("5_adphf")
+
+[node name="Vector" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(183, 410)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_61sur")
+
+[node name="✈️" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(183, 410)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_2q75v")
+
+[node name="Icon-kgem" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(188, 302)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_nhl0r")
+
+[node name="Termometro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(180, 170.5)
+scale = Vector2(0.325, 0.733333)
+texture = ExtResource("9_2ssro")
+
+[node name="Info-mini-tutorial" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(188, 277)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_kpw4i")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 256.0
+offset_top = 368.0
+offset_right = 904.0
+offset_bottom = 443.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3pt5r")
+theme_override_font_sizes/font_size = 35
+text = "Bom Jogo! Boa sorte, você vai precisar!"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Skip-tutorial" to="." method="_on_skiptutorial_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

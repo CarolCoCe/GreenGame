@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bp2ppe726u58s"]
+[gd_scene load_steps=41 format=3 uid="uid://bp2ppe726u58s"]
 
 [ext_resource type="Script" path="res://main/scripts/main.gd" id="1_nm1lt"]
 [ext_resource type="Texture2D" uid="uid://2tfblqeljmnr" path="res://assets/backgrounds/Imagem real mapa azul.png" id="2_tqvjy"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bclpfdi45sag3" path="res://Alerts/painel_activity_reward.tscn" id="24_4f87v"]
 [ext_resource type="PackedScene" uid="uid://bhr5m1rnmtb33" path="res://KGem/painel_kgem.tscn" id="25_cprqd"]
 [ext_resource type="PackedScene" uid="uid://076rqil3dob8" path="res://Menu/Scenes/menu_waiting_room.tscn" id="26_8qsto"]
+[ext_resource type="PackedScene" uid="uid://bg8alnqs6bcy2" path="res://store/scenes/store_painel.tscn" id="28_rj37i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0tia"]
 bg_color = Color(0.2, 0.196078, 0.196078, 1)
@@ -307,6 +308,9 @@ offset_bottom = 652.0
 visible = false
 z_index = 3
 
+[node name="Store-painel" parent="." instance=ExtResource("28_rj37i")]
+visible = false
+
 [node name="Timer-miniGame-Fishing" type="Timer" parent="."]
 wait_time = 90.0
 one_shot = true
@@ -317,6 +321,7 @@ z_index = 10
 
 [connection signal="timeout" from="Timer-rodada" to="." method="_on_timer_timeout_rodada"]
 [connection signal="pressed" from="Button-mini-tutorial" to="." method="_on_buttonminitutorial_pressed"]
+[connection signal="pressed" from="Button-store" to="." method="_on_buttonstore_pressed"]
 [connection signal="pressed" from="Button-activity" to="." method="_on_activity_list_button_pressed"]
 [connection signal="pressed" from="Button-KGem" to="." method="_on_button_k_gem_pressed"]
 [connection signal="value_changed" from="Termometro" to="." method="_on_termometro_value_changed"]

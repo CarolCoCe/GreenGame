@@ -41,12 +41,36 @@ corner_radius_bottom_left = 15
 script = ExtResource("2_1rkpe")
 
 [node name="Title" parent="Panel" index="0"]
-offset_left = -256.0
-offset_top = 35.0
-offset_right = 120.0
-offset_bottom = -359.0
+offset_left = -169.0
+offset_top = 25.0
+offset_right = 207.0
+offset_bottom = -369.0
 text = "Gerenciar gemas
 "
+
+[node name="Donate3" type="Label" parent="Panel" index="2"]
+offset_left = 184.0
+offset_top = 364.0
+offset_right = 233.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Donate4" type="Label" parent="Panel" index="3"]
+offset_left = 184.0
+offset_top = 207.0
+offset_right = 233.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tipwq")
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Donate" type="Label" parent="." index="2"]
 layout_mode = 0
@@ -62,8 +86,8 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Icon-kgem" type="Sprite2D" parent="." index="3"]
-position = Vector2(720, 159)
-scale = Vector2(0.25, 0.25)
+position = Vector2(380, 154)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_fmkju")
 
 [node name="Sell" type="Label" parent="." index="4"]

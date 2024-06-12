@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo5hcldoio8m3"]
+
+[ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="1_ptp6l"]
+[ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="2_s0ju2"]
+[ext_resource type="Texture2D" uid="uid://b4xdm46t6o83d" path="res://assets/icons/🕒.png" id="3_77tqj"]
+[ext_resource type="Texture2D" uid="uid://bjgkjetnepanv" path="res://assets/arrows/Left.png" id="4_m8vmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4fvv"]
+bg_color = Color(0.835294, 0.407843, 0.0980392, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opjsw"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.65098)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0waj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_noikl"]
+
+[node name="OrangeRect" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 400.0
+offset_bottom = 176.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4fvv")
+
+[node name="price" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 25.0
+offset_right = 93.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("1_ptp6l")
+theme_override_font_sizes/font_size = 20
+text = "20"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="product" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 26.0
+offset_right = 370.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("1_ptp6l")
+theme_override_font_sizes/font_size = 20
+text = "30"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="price icon" type="Sprite2D" parent="Panel"]
+position = Vector2(60, 76)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_s0ju2")
+
+[node name="product icon" type="Sprite2D" parent="Panel"]
+position = Vector2(339, 76)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_77tqj")
+
+[node name="exchange" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 28.0
+offset_right = 252.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("1_ptp6l")
+theme_override_font_sizes/font_size = 20
+text = "para ganhar:"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_top = 129.0
+offset_right = 400.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("1_ptp6l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_opjsw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0waj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_noikl")
+text = "Comprar e ver vídeo"
+
+[node name="Left" type="Sprite2D" parent="Panel"]
+position = Vector2(198, 95)
+rotation = 3.14159
+scale = Vector2(1.02225, 0.721909)
+texture = ExtResource("4_m8vmg")

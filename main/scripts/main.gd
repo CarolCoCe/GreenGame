@@ -14,6 +14,7 @@ extends Node2D
 @onready var menuWaitingRoom = $menu_waiting_room
 @onready var miniGameFishing = $Minigame_fishing_tutorial
 @onready var alertNoKGem = $Alert_no_k_gem
+@onready var storePainel = $"Store-painel"
 
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
@@ -194,6 +195,9 @@ func _on_button_k_gem_pressed():
 func _on_timermini_game_fishing_timeout():
 	$"Timer-rodada".paused = true
 	miniGameFishing.show()
+
+func _on_buttonstore_pressed():
+	storePainel.show()
 
 func fishingMiniGameEnded(coinsGained):
 	player.addcoins(coinsGained)
