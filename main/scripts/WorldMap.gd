@@ -29,22 +29,6 @@ func add_city_connection (cityA : City, cityB : City):
 		cityA.connections.append(cityB)
 		cityB.connections.append(cityA)
 		
-		#draw the lines, unless is LA-Tokyo
-		if !((cityA.nameCity == "Los Angeles" and cityB.nameCity == "Tóquio") or (cityB.nameCity == "Los Angeles" and cityA.nameCity == "Tóquio")):
-			var lineFlights = Line2D.new()
-			lineFlights.points = [cityA.positionMap, cityB.positionMap]
-			lineFlights.width = 2
-			add_child(lineFlights)
-
-		else:
-			var lineFlights1 = Line2D.new()
-			var lineFlights2 = Line2D.new()
-			lineFlights1.points = [cityA.positionMap, Vector2(0,cityB.positionMap.y)]
-			lineFlights2.points = [cityB.positionMap, Vector2(1153,cityA.positionMap.y)]
-			lineFlights1.width = 2
-			lineFlights2.width = 2
-			add_child(lineFlights1)
-			add_child(lineFlights2)
 	
 func find_city_by_name(cityName: String):
 	return cityWorldMap.get(cityName)

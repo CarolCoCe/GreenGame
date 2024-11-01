@@ -1,19 +1,18 @@
 extends Node2D
-var playerSkin = "res://assets/playerSkins/😁.png"
+var playerSkin = "res://assets/playerSkins/skin1.png"
 
 var emoji_options = {
-	"PainelGeral/GridContainer/Button": "res://assets/playerSkins/😁.png",
-	"PainelGeral/GridContainer/Button2": "res://assets/playerSkins/😍.png",
-	"PainelGeral/GridContainer/Button3": "res://assets/playerSkins/😈.png",
-	"PainelGeral/GridContainer/Button4": "res://assets/playerSkins/😡.png",
-	"PainelGeral/GridContainer/Button5": "res://assets/playerSkins/😵.png",
-	"PainelGeral/GridContainer/Button6": "res://assets/playerSkins/🥰.png",
-	"PainelGeral/GridContainer/Button7": "res://assets/playerSkins/🤑.png",
-	"PainelGeral/GridContainer/Button8": "res://assets/playerSkins/🤨.png",
-	"PainelGeral/GridContainer/Button9": "res://assets/playerSkins/🤡.png",
-	"PainelGeral/GridContainer/Button10": "res://assets/playerSkins/😘.png",
-	"PainelGeral/GridContainer/Button11": "res://assets/playerSkins/😏.png",
-	"PainelGeral/GridContainer/Button12": "res://assets/playerSkins/👽.png"
+	"PainelGeral/GridContainer/Button": "res://assets/playerSkins/skin1.png",
+	"PainelGeral/GridContainer/Button2": "res://assets/playerSkins/skin2.png",
+	"PainelGeral/GridContainer/Button3": "res://assets/playerSkins/skin3.png",
+	"PainelGeral/GridContainer/Button4": "res://assets/playerSkins/skin4.png",
+	"PainelGeral/GridContainer/Button5": "res://assets/playerSkins/skin5.png",
+	"PainelGeral/GridContainer/Button6": "res://assets/playerSkins/skin6.png",
+	"PainelGeral/GridContainer/Button7": "res://assets/playerSkins/skin7.png",
+	"PainelGeral/GridContainer/Button8": "res://assets/playerSkins/skin8.png",
+	"PainelGeral/GridContainer/Button9": "res://assets/playerSkins/skin9.png",
+	"PainelGeral/GridContainer/Button10": "res://assets/playerSkins/skin10.png"
+
 }
 
 signal playerChoseSkin (playerSkin)

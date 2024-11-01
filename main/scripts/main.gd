@@ -15,6 +15,12 @@ extends Node2D
 @onready var miniGameFishing = $Minigame_fishing_tutorial
 @onready var alertNoKGem = $Alert_no_k_gem
 @onready var storePainel = $"Store-painel"
+@onready var miniGameRestaurant = $minigame_restaurant_tutorial
+
+@onready var backgroundGrey = load("res://assets/backgrounds/Imagem real - cinza.png")
+@onready var backgroundRed = load("res://assets/backgrounds/Imagem real - vermelho.png")
+@onready var backgroundOrange = load("res://assets/backgrounds/Imagem real - laranja.png")
+@onready var backgroundYellow = load("res://assets/backgrounds/Imagem real - amarelo.png")
 
 
 var csv_file_path_cities: String = "res://Data/Mapa/Lista de atividades - Mapa.csv"
@@ -29,10 +35,20 @@ func getGlobalTemperature():
 
 func addGlobalTemperature(value : float):
 	globalTemperature = globalTemperature + value
+	if value > 0:
+		$"Temp increase - AudioStreamPlayer2D".play()
 	$Termometro.value = globalTemperature
+	if (globalTemperature < 1):
+		$JogoGsd.texture = backgroundYellow
+	elif (globalTemperature < 2):
+		$JogoGsd.texture = backgroundOrange
+	elif (globalTemperature < 3):
+		$JogoGsd.texture = backgroundRed
+	elif (globalTemperature < 4):
+		$JogoGsd.texture = backgroundGrey
 	if (globalTemperature > 4):
 		get_tree().change_scene_to_file.bind("res://GameOver/Lost.tscn").call_deferred()
-	if (globalTemperature <= 0):
+	elif (globalTemperature <= 0):
 		get_tree().change_scene_to_file.bind("res://GameOver/Won.tscn").call_deferred()
 	
 func getCommunityKnowledgeGems():
@@ -45,10 +61,12 @@ func changePlayerSkin(playerSkinString):
 	player.setPlayerSkin(playerSkinString)
 	$"Timer-rodada".start()
 	$"Timer-miniGame-Fishing".start()
+	$"Timer-Restaurant-minigame".start()
 	menuWaitingRoom.hide()
 		
 func _ready():
 	$menu_waiting_room.show()
+	
 	
 	$"Label-plane".text = str(player.getflights())
 	$"Label-coins".text = str(player.getcoins())
@@ -63,7 +81,9 @@ func _ready():
 	kgemPainel.connect("kgemSold", dealKgemSold)
 	menuWaitingRoom.connect("playerChoseSkin", changePlayerSkin)
 	miniGameFishing.connect("coinsEarnedFishing", fishingMiniGameEnded)
-	
+	storePainel.connect("storeBought", dealStore)
+	miniGameRestaurant.connect("coinsEarnedRestaurant", restaurantMiniGameEnded)
+
 	
 	
 	var file = FileAccess.open(csv_file_path_cities, FileAccess.READ)
@@ -106,6 +126,7 @@ func moving_player(cityDestiny : City):
 		player.setplayercurrentCity(cityDestiny)
 	else:
 		planeAlert.show_alert()
+		$"Wrong question- AudioStreamPlayer2D".play()
 		
 	
 func _on_timer_timeout_rodada():
@@ -130,6 +151,7 @@ func dealJornalConsequences (jornal : Jornal):
 	$"Label-coins".text = str(player.getcoins())
 	
 func dealActivityFinished(activity: Activity):
+	$"Activity Reward - AudioStreamPlayer2D".play()
 	rewardActivity.show_reward(activity)
 	player.addcoins(activity.rewardCoins)
 	addGlobalTemperature(activity.temperatureRise)
@@ -147,16 +169,19 @@ func dealPlayActivity(activity : Activity):
 			
 			quizQuestions.visible = false #trocar isso aqui na hora de colocar os ads ?
 			if result == -1: #wrong
+				$"Wrong question- AudioStreamPlayer2D".play()
 				quizWrongQuestion.show_alert()
 				activity.available = true
 				
 			elif result == 1: #quiz ok
+				$"Activity started- AudioStreamPlayer2D".play()
 				activityStarted.show_alert()
 				player.addActivityPlayer(activity)
 				
 		
 	else:
 		NoMoneyActivityAlert.show_alert()
+		$"Wrong question- AudioStreamPlayer2D".play()
 
 func dealKgemDonated():
 	if player.getknowledgeGems() > 0:
@@ -175,6 +200,25 @@ func dealKgemSold():
 	else:
 		alertNoKGem.show()
 
+func dealStore(coins, flights, orangeRect):
+	if coins < 0: 
+		if player.coins >= abs(coins):
+			player.addcoins(coins)
+			$"Label-coins".text = str(player.getcoins())
+			player.addflights(flights)
+			$"Label-plane".text = str(player.getflights())
+		else:
+			NoMoneyActivityAlert.show_alert()
+			$"Wrong question- AudioStreamPlayer2D".play()
+	elif flights < 0:
+		if player.flights >= abs(flights):
+			player.addflights(flights)
+			$"Label-plane".text = str(player.getflights())
+			player.addcoins(coins)
+			$"Label-coins".text = str(player.getcoins())
+		else:
+			planeAlert.show_alert()
+			$"Wrong question- AudioStreamPlayer2D".play()
 	
 func _on_activity_list_button_pressed():
 	activityPainel.show()
@@ -195,14 +239,30 @@ func _on_button_k_gem_pressed():
 func _on_timermini_game_fishing_timeout():
 	$"Timer-rodada".paused = true
 	miniGameFishing.show()
+	
 
 func _on_buttonstore_pressed():
 	storePainel.show()
 
 func fishingMiniGameEnded(coinsGained):
+	$"Activity Reward - AudioStreamPlayer2D".play()
 	player.addcoins(coinsGained)
 	$"Label-coins".text = str(player.getcoins())
 	$"Timer-rodada".paused = false
 	
 	$"Timer-miniGame-Fishing".free()
 	$menu_waiting_room.free()
+	
+func _on_timer_restaurantminigame_timeout():
+	$"Timer-rodada".paused = true
+	$minigame_restaurant_tutorial.show()
+	
+func restaurantMiniGameEnded(coinsGained):
+	$"Activity Reward - AudioStreamPlayer2D".play()
+	player.addcoins(coinsGained)
+	$"Label-coins".text = str(player.getcoins())
+	$"Timer-rodada".paused = false
+	
+	$Minigame_fishing_tutorial.free()
+	$"Timer-Restaurant-minigame".free()
+	

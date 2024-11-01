@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://MiniGames/FishingTrash/fishingMiniGame.gd" id="1_5fkyq"]
 [ext_resource type="Texture2D" uid="uid://cypcof8h4cceu" path="res://MiniGames/FishingTrash/assets/sea.png" id="2_g2l5n"]
 [ext_resource type="Script" path="res://MiniGames/FishingTrash/trash.gd" id="3_3dbr5"]
-[ext_resource type="Texture2D" uid="uid://din27h674kl1d" path="res://MiniGames/FishingTrash/assets/🥤.png" id="3_3yu7t"]
+[ext_resource type="Texture2D" uid="uid://bxc2u3v2pivlq" path="res://MiniGames/FishingTrash/assets/lixo lata.png" id="4_eff2e"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="4_mphrw"]
-[ext_resource type="Texture2D" uid="uid://bhmtdgfe1j6qe" path="res://MiniGames/FishingTrash/assets/🗑️.png" id="5_jofv6"]
 [ext_resource type="Script" path="res://MiniGames/FishingTrash/playerBasket.gd" id="6_kwqxq"]
+[ext_resource type="Texture2D" uid="uid://de10ft2ixhmmk" path="res://MiniGames/FishingTrash/assets/cesta.png" id="7_yinox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mjky"]
-size = Vector2(64, 64)
+size = Vector2(64, 67)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78v36"]
 bg_color = Color(0.203922, 0.203922, 0.203922, 0.533333)
@@ -40,13 +40,12 @@ position = Vector2(920, 312)
 script = ExtResource("3_3dbr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="trash"]
-position = Vector2(-2, 2)
-rotation = 0.647517
+position = Vector2(-1, 2)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_3yu7t")
+texture = ExtResource("4_eff2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trash"]
-position = Vector2(-2, 3)
+position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_1mjky")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -106,7 +105,7 @@ position = Vector2(920, 448)
 script = ExtResource("6_kwqxq")
 
 [node name="Sprite2D" type="Sprite2D" parent="playerBasket"]
-texture = ExtResource("5_jofv6")
+texture = ExtResource("7_yinox")
 
 [node name="detect" type="Area2D" parent="playerBasket"]
 

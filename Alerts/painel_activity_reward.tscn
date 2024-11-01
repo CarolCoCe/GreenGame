@@ -7,16 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="5_ucmpe"]
 [ext_resource type="Texture2D" uid="uid://cuiophxp68y0d" path="res://assets/icons/512.png" id="6_hkhgo"]
 [ext_resource type="Texture2D" uid="uid://dqanm1fmjmcp0" path="res://assets/icons/icon-kgem.png" id="7_s3ggv"]
-[ext_resource type="Texture2D" uid="uid://parhjjf4wtj1" path="res://assets/icons/👏.png" id="8_n80hf"]
+[ext_resource type="Texture2D" uid="uid://bla0dsgxid8ov" path="res://assets/icons/palmas.png" id="8_78nqg"]
 
 [node name="painel_activity_reward" instance=ExtResource("1_jmic0")]
 script = ExtResource("2_t8fu8")
 
 [node name="Title" parent="Panel" index="0"]
 offset_left = -200.0
-offset_top = 8.0
+offset_top = 11.0
 offset_right = 209.0
-offset_bottom = -386.0
+offset_bottom = -383.0
 theme_override_font_sizes/font_size = 25
 text = "Sua atividade está pronta!
 "
@@ -126,7 +126,12 @@ position = Vector2(576, 184)
 scale = Vector2(0.2, 0.159)
 texture = ExtResource("7_s3ggv")
 
-[node name="👏" type="Sprite2D" parent="." index="2"]
-position = Vector2(816, 136)
+[node name="👏" type="Sprite2D" parent="Panel" index="4"]
+position = Vector2(727, 35)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_n80hf")
+texture = ExtResource("8_78nqg")
+
+[node name="👏2" type="Sprite2D" parent="Panel" index="5"]
+position = Vector2(232, 35)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_78nqg")

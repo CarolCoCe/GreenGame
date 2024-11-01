@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw6ko2nht41d0"]
+[gd_scene load_steps=11 format=3 uid="uid://dw6ko2nht41d0"]
 
 [ext_resource type="Texture2D" uid="uid://dlyf11seyhsvi" path="res://assets/backgrounds/fogo.png" id="1_hogop"]
 [ext_resource type="Script" path="res://GameOver/Lost.gd" id="1_qsxcu"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_0srji"]
+[ext_resource type="AudioStream" uid="uid://dmyy1ih2rbyum" path="res://assets/sound effects/GAMEOVER.wav" id="4_q2iyc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djbuc"]
 bg_color = Color(1, 1, 1, 1)
@@ -96,5 +97,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hh6pg")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_puogq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_t2ie8")
 text = "Recomeçar"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_q2iyc")
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

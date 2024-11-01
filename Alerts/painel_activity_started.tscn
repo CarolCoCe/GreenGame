@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_3bia8"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_ubynd"]
-[ext_resource type="Texture2D" uid="uid://parhjjf4wtj1" path="res://assets/icons/👏.png" id="3_wfaqy"]
+[ext_resource type="Texture2D" uid="uid://bla0dsgxid8ov" path="res://assets/icons/palmas.png" id="3_rgni7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rqjj"]
 bg_color = Color(0.380392, 0.67451, 0.266667, 1)
@@ -54,9 +54,9 @@ autowrap_mode = 3
 [node name="👏" type="Sprite2D" parent="." index="2"]
 position = Vector2(670, 201)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_wfaqy")
+texture = ExtResource("3_rgni7")
 
 [node name="👏2" type="Sprite2D" parent="." index="3"]
-position = Vector2(491, 201)
+position = Vector2(481, 201)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_wfaqy")
+texture = ExtResource("3_rgni7")

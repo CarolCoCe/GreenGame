@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvaqx5uk2t5hc"]
+[gd_scene load_steps=21 format=3 uid="uid://dvaqx5uk2t5hc"]
 
 [ext_resource type="Texture2D" uid="uid://cugescst5j0rj" path="res://assets/backgrounds/bg_menu.png" id="1_6lp8l"]
 [ext_resource type="Script" path="res://Menu/Scripts/menu_start.gd" id="1_7js0h"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_aj05r"]
+[ext_resource type="Texture2D" uid="uid://cx5vhbgqeyj1p" path="res://assets/icons/Vector.png" id="4_dtqr7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jwvt"]
 
@@ -23,6 +24,23 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssfi0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghpfc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kb7t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaymy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ah3wu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2ps5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cp6fo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mibc"]
+bg_color = Color(0.376471, 0.376471, 0.376471, 0.521569)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="MenuStart" type="Node2D"]
 script = ExtResource("1_7js0h")
@@ -106,5 +124,39 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ssfi0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ghpfc")
 text = "tutorial"
 
+[node name="ButtonCredits" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 584.0
+offset_right = 208.0
+offset_bottom = 624.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0kb7t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oaymy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ah3wu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r2ps5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cp6fo")
+icon = ExtResource("4_dtqr7")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = 40.0
+offset_top = 488.0
+offset_right = 344.0
+offset_bottom = 574.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mibc")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("2_aj05r")
+text = "Agradecimentos à Gabi, Aline e principalmente Fabi"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_button_credits_pressed"]

@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dm78rlk8msoqr" path="res://assets/backgrounds/menu-rooms.png" id="2_jvkgq"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="3_3pt5r"]
 [ext_resource type="Texture2D" uid="uid://pnqwurhc8457" path="res://assets/buttons/icon-store.png" id="4_eabbb"]
-[ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/buttons/Rectangle 65.png" id="5_adphf"]
+[ext_resource type="Texture2D" uid="uid://2tk2kav6s7pa" path="res://assets/icons/icon activity.png" id="5_2ncka"]
 [ext_resource type="Texture2D" uid="uid://3ctwbge6f7ur" path="res://assets/buttons/Vector.png" id="6_61sur"]
-[ext_resource type="Texture2D" uid="uid://cmf022y1eu6r7" path="res://assets/icons/✈️.png" id="7_2q75v"]
+[ext_resource type="Texture2D" uid="uid://chwtc0ectg0pj" path="res://assets/icons/aviao.png" id="7_2tl2y"]
 [ext_resource type="Texture2D" uid="uid://dqanm1fmjmcp0" path="res://assets/icons/icon-kgem.png" id="8_nhl0r"]
 [ext_resource type="Texture2D" uid="uid://dnnawuio3n54y" path="res://assets/termometro.png" id="9_2ssro"]
 [ext_resource type="Texture2D" uid="uid://db2ayu2hawd7a" path="res://assets/icons/info-mini-tutorial.png" id="10_kpw4i"]
@@ -153,8 +153,7 @@ texture = ExtResource("4_eabbb")
 [node name="Rectangle65" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(182, 291)
-scale = Vector2(2, 2)
-texture = ExtResource("5_adphf")
+texture = ExtResource("5_2ncka")
 
 [node name="Vector" type="Sprite2D" parent="."]
 visible = false
@@ -166,7 +165,7 @@ texture = ExtResource("6_61sur")
 visible = false
 position = Vector2(183, 410)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("7_2q75v")
+texture = ExtResource("7_2tl2y")
 
 [node name="Icon-kgem" type="Sprite2D" parent="."]
 visible = false
@@ -183,7 +182,7 @@ texture = ExtResource("9_2ssro")
 [node name="Info-mini-tutorial" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(188, 277)
+position = Vector2(238, 277)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("10_kpw4i")
 

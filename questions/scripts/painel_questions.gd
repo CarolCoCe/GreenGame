@@ -73,6 +73,7 @@ func _on_button_false_pressed():
 	if answerExpected == "F":
 		numQuestionsLeft = numQuestionsLeft - 1
 		nextQuestion()
+		$AudioStreamPlayer2D.play()
 	else:
 		wrong()
 
@@ -81,6 +82,7 @@ func _on_button_true_pressed():
 	if answerExpected == "V":
 		numQuestionsLeft = numQuestionsLeft - 1
 		nextQuestion()
+		$AudioStreamPlayer2D.play()
 	else:
 		wrong()
 		

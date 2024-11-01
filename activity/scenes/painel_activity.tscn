@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://kp3ag6exrchi"]
+[gd_scene load_steps=15 format=3 uid="uid://kp3ag6exrchi"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_p7imp"]
 [ext_resource type="Script" path="res://activity/scripts/painel_activity.gd" id="2_fqmtk"]
-[ext_resource type="Texture2D" uid="uid://chdudd6ypx4y" path="res://assets/buttons/Rectangle 65.png" id="3_qqucq"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="6_rd41e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx7jm"]
@@ -54,12 +53,7 @@ corner_radius_bottom_right = 10
 [node name="painel_activity" instance=ExtResource("1_p7imp")]
 script = ExtResource("2_fqmtk")
 
-[node name="Rectangle65" type="Sprite2D" parent="." index="2"]
-position = Vector2(432, 150)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("3_qqucq")
-
-[node name="ScrollContainerGlobal" type="ScrollContainer" parent="." index="3"]
+[node name="ScrollContainerGlobal" type="ScrollContainer" parent="." index="2"]
 layout_mode = 0
 offset_left = 175.0
 offset_top = 248.0
@@ -72,7 +66,7 @@ custom_minimum_size = Vector2(10, 14500)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainerLocal" type="ScrollContainer" parent="." index="4"]
+[node name="ScrollContainerLocal" type="ScrollContainer" parent="." index="3"]
 layout_mode = 0
 offset_left = 175.0
 offset_top = 248.0
@@ -85,7 +79,7 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainerMinhas" type="ScrollContainer" parent="." index="5"]
+[node name="ScrollContainerMinhas" type="ScrollContainer" parent="." index="4"]
 layout_mode = 0
 offset_left = 175.0
 offset_top = 248.0
@@ -98,7 +92,7 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button-global" type="Button" parent="." index="6"]
+[node name="Button-global" type="Button" parent="." index="5"]
 layout_mode = 0
 offset_left = 407.0
 offset_top = 202.0
@@ -117,7 +111,7 @@ toggle_mode = true
 button_pressed = true
 text = "Global"
 
-[node name="Button-local" type="Button" parent="." index="7"]
+[node name="Button-local" type="Button" parent="." index="6"]
 layout_mode = 0
 offset_left = 517.0
 offset_top = 202.0
@@ -135,7 +129,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_eapo0")
 toggle_mode = true
 text = "Local"
 
-[node name="Button-minhas" type="Button" parent="." index="8"]
+[node name="Button-minhas" type="Button" parent="." index="7"]
 layout_mode = 0
 offset_left = 627.0
 offset_top = 202.0

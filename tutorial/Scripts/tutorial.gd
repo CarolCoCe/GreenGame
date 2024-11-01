@@ -42,7 +42,7 @@ Clique neste ícone para doar ou trocar suas gemas do conhecimento por moedas"
 		$Rectangle65.hide()
 		$Vector.hide()
 		
-		newText = "Este termômetro indicará o quanto a Terra está superaquecida. Lembre-se de que para ganhar, você precisa zerar este termômetro! Se o temometro marcar 4.0 °C você perde.
+		newText = "Este termômetro indicará o quanto a Terra está superaquecida. Lembre-se de que para ganhar, você precisa zerar este termômetro! Se o termômetro marcar 4.0 °C você perde.
 
 
 São as gemas do conhecimento doadas que abaixam a temperatura. Você consegue ganhá-las se fizer atividades!

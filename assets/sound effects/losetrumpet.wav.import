@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxl73ao8pcvhd"
+path="res://.godot/imported/losetrumpet.wav-3ca6dc30c7bdd123b50e3c213da706ce.sample"
+
+[deps]
+
+source_file="res://assets/sound effects/losetrumpet.wav"
+dest_files=["res://.godot/imported/losetrumpet.wav-3ca6dc30c7bdd123b50e3c213da706ce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

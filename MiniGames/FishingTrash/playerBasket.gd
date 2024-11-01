@@ -4,7 +4,7 @@ var speed = 60.0
 var maxVelocity = 600.0
 var bounce = 1.5
 var currentTimeDown = 1
-var currentTimeUp = 1
+var currentTimeUp = 0.5
 var gravity = 0.02
 
 var min_position = 100

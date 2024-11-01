@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2if82ws416i5"]
+[gd_scene load_steps=6 format=3 uid="uid://d2if82ws416i5"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_wlpts"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_tvkg4"]
 [ext_resource type="Script" path="res://Alerts/painel_plane_alert.gd" id="2_yu8u7"]
-[ext_resource type="Texture2D" uid="uid://cmf022y1eu6r7" path="res://assets/icons/✈️.png" id="4_j6ggp"]
+[ext_resource type="Texture2D" uid="uid://chwtc0ectg0pj" path="res://assets/icons/aviao.png" id="4_dtai0"]
+[ext_resource type="Texture2D" uid="uid://pnqwurhc8457" path="res://assets/buttons/icon-store.png" id="5_6kdgo"]
 
 [node name="painel_plane_alert" instance=ExtResource("1_wlpts")]
 script = ExtResource("2_yu8u7")
+
+[node name="Title" parent="Panel" index="0"]
+offset_right = 96.0
+horizontal_alignment = 1
 
 [node name="alert" type="Label" parent="Panel" index="2"]
 layout_mode = 1
@@ -15,19 +20,29 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -408.0
-offset_top = 125.0
+offset_top = 87.0
 offset_right = 409.0
-offset_bottom = -238.0
+offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_tvkg4")
-theme_override_font_sizes/font_size = 36
-text = "Você não tem voos suficientes para ir para esta cidade ainda!"
+theme_override_font_sizes/font_size = 28
+text = "Você não tem voos suficientes para isto! 
+
+Tente comprar mais voos na loja
+
+ou aguarde para receber seus voos mensais junto com o seu salário!
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Icon-airplane" type="Sprite2D" parent="Panel" index="3"]
-position = Vector2(460, 333)
-texture = ExtResource("4_j6ggp")
+position = Vector2(480, 374)
+texture = ExtResource("4_dtai0")
+
+[node name="Icon-store" type="Sprite2D" parent="." index="2"]
+position = Vector2(888, 280)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_6kdgo")

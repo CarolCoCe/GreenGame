@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bemq4w1sjg5wy"]
+[gd_scene load_steps=7 format=3 uid="uid://bemq4w1sjg5wy"]
 
 [ext_resource type="PackedScene" uid="uid://e41uscdwo833" path="res://Painel - global/painel.tscn" id="1_hu8fd"]
 [ext_resource type="Script" path="res://Alerts/painel_no_money_to_activity.gd" id="2_bo8lu"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_n0uyo"]
 [ext_resource type="Texture2D" uid="uid://thhkd2iyw3pa" path="res://assets/icons/twemoji_coin.png" id="3_jhhcd"]
+[ext_resource type="Texture2D" uid="uid://pnqwurhc8457" path="res://assets/buttons/icon-store.png" id="4_0lexk"]
+[ext_resource type="Texture2D" uid="uid://3ctwbge6f7ur" path="res://assets/buttons/Vector.png" id="6_toy61"]
 
 [node name="Painel_no_money_to_activity" instance=ExtResource("1_hu8fd")]
 script = ExtResource("2_bo8lu")
@@ -22,13 +24,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n0uyo")
-theme_override_font_sizes/font_size = 36
-text = "Você não tem moedas suficientes para começar esta atividade ainda!"
+theme_override_font_sizes/font_size = 27
+text = "Você não tem moedas suficientes para isto!
+
+Tente trocar voos na loja
+
+Vender gemas do conhecimento
+
+ou aguarde para receber seu salário!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Icon-store" type="Sprite2D" parent="alert" index="0"]
+position = Vector2(656, 95)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_0lexk")
+
 [node name="Icon-coins" type="Sprite2D" parent="." index="3"]
-position = Vector2(556, 437)
+position = Vector2(576, 472)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_jhhcd")
+
+[node name="Vector" type="Sprite2D" parent="." index="4"]
+position = Vector2(864, 336)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_toy61")

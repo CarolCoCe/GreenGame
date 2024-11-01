@@ -8,3 +8,7 @@ func _on_play_pressed():
 
 func _on_tutorial_pressed():
 	get_tree().change_scene_to_file("res://tutorial/Scenes/tutorial.tscn")
+
+
+func _on_button_credits_pressed():
+	$Panel.show()

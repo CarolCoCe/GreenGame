@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4cxfee6jgo6d"]
+[gd_scene load_steps=11 format=3 uid="uid://d4cxfee6jgo6d"]
 
 [ext_resource type="Script" path="res://GameOver/Won.gd" id="1_2nayf"]
 [ext_resource type="Texture2D" uid="uid://d2oaep1a56ksj" path="res://assets/backgrounds/Splash.png" id="1_r1u5c"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_cpp8w"]
+[ext_resource type="AudioStream" uid="uid://nyxivn7vfr6y" path="res://assets/sound effects/Won!.wav" id="4_41gfu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_705pp"]
 bg_color = Color(1, 1, 1, 1)
@@ -85,5 +86,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xvm3n")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_3sa08")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2xkhw")
 text = "Recomeçar"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_41gfu")
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

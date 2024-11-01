@@ -1,7 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://cphyl0b8m5ypf"]
+[gd_scene load_steps=34 format=3 uid="uid://cphyl0b8m5ypf"]
 
-[ext_resource type="Texture2D" uid="uid://cg5h0635nppia" path="res://MiniGames/Restaurant/assets/background restaurant.png" id="1_iygvb"]
+[ext_resource type="Texture2D" uid="uid://cqt4fvj23755i" path="res://MiniGames/Restaurant/assets/restaurant.png" id="1_1j41e"]
+[ext_resource type="Script" path="res://MiniGames/Restaurant/restaurant.gd" id="1_ome48"]
 [ext_resource type="FontFile" uid="uid://x68u5rsd0n4f" path="res://assets/fonts/Bungee-Regular.ttf" id="2_kuwoe"]
+[ext_resource type="Texture2D" uid="uid://du5mq2atu76u8" path="res://MiniGames/Restaurant/assets/queijo.png" id="4_cslpm"]
+[ext_resource type="Texture2D" uid="uid://c34nvm54g2s75" path="res://MiniGames/Restaurant/assets/cenoura.png" id="5_a4s8c"]
+[ext_resource type="Texture2D" uid="uid://cvq3xdike0um1" path="res://MiniGames/Restaurant/assets/ervilha.png" id="6_dqv3m"]
+[ext_resource type="Texture2D" uid="uid://brr2tcwsd1et7" path="res://MiniGames/Restaurant/assets/batataFrita.png" id="7_0ao0v"]
+[ext_resource type="Texture2D" uid="uid://dmd356c3bi3tj" path="res://MiniGames/Restaurant/assets/carne.png" id="8_7gaub"]
+[ext_resource type="Texture2D" uid="uid://ch4hsw1pskj74" path="res://MiniGames/Restaurant/assets/milho.png" id="9_ss6cs"]
+[ext_resource type="Texture2D" uid="uid://bq5dp5riplmiy" path="res://MiniGames/Restaurant/assets/banana.png" id="10_62ehu"]
+[ext_resource type="Texture2D" uid="uid://cyhvgn5vhadyw" path="res://MiniGames/Restaurant/assets/bacon.png" id="11_c3omh"]
+[ext_resource type="Texture2D" uid="uid://ba1edgsvw6wr3" path="res://MiniGames/Restaurant/assets/tomate.png" id="12_1vu3j"]
+[ext_resource type="Texture2D" uid="uid://cior5vep3t6qr" path="res://MiniGames/Restaurant/assets/alface.png" id="13_m2xku"]
+[ext_resource type="Texture2D" uid="uid://dybbl52e5g3s0" path="res://MiniGames/Restaurant/assets/peixe.png" id="14_0f1mb"]
+[ext_resource type="Texture2D" uid="uid://d0gpalpciyieb" path="res://MiniGames/Restaurant/assets/pao.png" id="15_aoo85"]
+[ext_resource type="Texture2D" uid="uid://dgmgf6p1lw6d0" path="res://MiniGames/Restaurant/assets/macarrao.png" id="16_afjk5"]
+[ext_resource type="Texture2D" uid="uid://2boit4kfh1xc" path="res://MiniGames/Restaurant/assets/falafel.png" id="17_cs0yu"]
+[ext_resource type="Texture2D" uid="uid://ca2dm0glxkawh" path="res://MiniGames/Restaurant/assets/frango.png" id="18_07m7p"]
+[ext_resource type="Texture2D" uid="uid://co8xghixgy61f" path="res://MiniGames/Restaurant/assets/arroz.png" id="19_eu7sr"]
+[ext_resource type="Texture2D" uid="uid://cqp1e15bu37uu" path="res://MiniGames/Restaurant/assets/brocolis.png" id="20_gxyie"]
+[ext_resource type="Texture2D" uid="uid://wksrmfwb066f" path="res://MiniGames/Restaurant/assets/ovo.png" id="21_noukn"]
+[ext_resource type="Texture2D" uid="uid://o6is7dsuvcdb" path="res://MiniGames/Restaurant/assets/feijao.png" id="22_mnand"]
+[ext_resource type="Texture2D" uid="uid://bia1fq620oi15" path="res://MiniGames/Restaurant/assets/pepino.png" id="23_34cif"]
+[ext_resource type="Texture2D" uid="uid://c1vta76gccsr5" path="res://MiniGames/Restaurant/assets/panela.png" id="24_paf31"]
+[ext_resource type="Texture2D" uid="uid://8oo68pnhcm0s" path="res://assets/icons/relogio.png" id="25_3ayfw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41fy8"]
+bg_color = Color(0.478431, 0.941176, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kea3l"]
+bg_color = Color(0.478431, 0.941176, 0.313726, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkpwc"]
 bg_color = Color(0.478431, 0.941176, 0.313726, 1)
@@ -28,29 +57,42 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_goam2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1t3s"]
+
 [node name="Restaurant" type="Node2D"]
+script = ExtResource("1_ome48")
 
 [node name="BackgroundRestaurant" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-texture = ExtResource("1_iygvb")
+position = Vector2(577, 322)
+texture = ExtResource("1_1j41e")
 
 [node name="ProgressBarProtein" type="ProgressBar" parent="."]
-offset_left = 16.0
-offset_top = 596.0
-offset_right = 273.0
-offset_bottom = 623.0
+offset_left = 175.0
+offset_top = 573.0
+offset_right = 432.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_41fy8")
+max_value = 20.0
 
 [node name="ProgressBarFiber" type="ProgressBar" parent="."]
-offset_left = 20.0
-offset_top = 519.0
-offset_right = 271.0
-offset_bottom = 546.0
+offset_left = 179.0
+offset_top = 509.0
+offset_right = 430.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kea3l")
+max_value = 10.0
 
-[node name="Start" type="Button" parent="."]
-offset_left = 876.0
-offset_top = 534.0
-offset_right = 1109.0
-offset_bottom = 606.0
+[node name="Ready" type="Button" parent="."]
+offset_left = 886.0
+offset_top = 498.0
+offset_right = 1119.0
+offset_bottom = 570.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -66,10 +108,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_goam2")
 text = "Pronto!"
 
 [node name="Fibras" type="Label" parent="."]
-offset_left = 23.0
-offset_top = 495.0
-offset_right = 268.0
-offset_bottom = 518.0
+offset_left = 182.0
+offset_top = 485.0
+offset_right = 427.0
+offset_bottom = 508.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_kuwoe")
@@ -79,10 +121,10 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="."]
-offset_left = 18.0
-offset_top = 571.0
-offset_right = 270.0
-offset_bottom = 594.0
+offset_left = 177.0
+offset_top = 548.0
+offset_right = 429.0
+offset_bottom = 571.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_kuwoe")
@@ -90,3 +132,539 @@ theme_override_font_sizes/font_size = 20
 text = "Proteínas:"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Cheese" type="Button" parent="."]
+offset_left = 79.0
+offset_top = 137.0
+offset_right = 164.0
+offset_bottom = 212.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("4_cslpm")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Carrot" type="Button" parent="."]
+offset_left = 168.0
+offset_top = 137.0
+offset_right = 253.0
+offset_bottom = 212.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("5_a4s8c")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Peas" type="Button" parent="."]
+offset_left = 258.0
+offset_top = 137.0
+offset_right = 343.0
+offset_bottom = 212.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("6_dqv3m")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Fries" type="Button" parent="."]
+offset_left = 347.0
+offset_top = 137.0
+offset_right = 432.0
+offset_bottom = 212.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("7_0ao0v")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Beef" type="Button" parent="."]
+offset_left = 438.0
+offset_top = 137.0
+offset_right = 523.0
+offset_bottom = 212.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("8_7gaub")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Corn" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 360.0
+offset_right = 149.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("9_ss6cs")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Banana" type="Button" parent="."]
+offset_left = 153.0
+offset_top = 360.0
+offset_right = 238.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("10_62ehu")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Bacon" type="Button" parent="."]
+offset_left = 243.0
+offset_top = 360.0
+offset_right = 328.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("11_c3omh")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Tomatoes" type="Button" parent="."]
+offset_left = 332.0
+offset_top = 360.0
+offset_right = 417.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("12_1vu3j")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Lettuce" type="Button" parent="."]
+offset_left = 423.0
+offset_top = 360.0
+offset_right = 508.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("13_m2xku")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Fish" type="Button" parent="."]
+offset_left = 664.0
+offset_top = 136.0
+offset_right = 749.0
+offset_bottom = 211.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("14_0f1mb")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Bread" type="Button" parent="."]
+offset_left = 753.0
+offset_top = 136.0
+offset_right = 838.0
+offset_bottom = 211.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("15_aoo85")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pasta" type="Button" parent="."]
+offset_left = 843.0
+offset_top = 136.0
+offset_right = 928.0
+offset_bottom = 211.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("16_afjk5")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Falafel" type="Button" parent="."]
+offset_left = 932.0
+offset_top = 136.0
+offset_right = 1017.0
+offset_bottom = 211.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("17_cs0yu")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Chicken" type="Button" parent="."]
+offset_left = 1023.0
+offset_top = 136.0
+offset_right = 1108.0
+offset_bottom = 211.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("18_07m7p")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Rice" type="Button" parent="."]
+offset_left = 659.0
+offset_top = 360.0
+offset_right = 744.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("19_eu7sr")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Broccoli" type="Button" parent="."]
+offset_left = 748.0
+offset_top = 360.0
+offset_right = 833.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("20_gxyie")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Egg" type="Button" parent="."]
+offset_left = 838.0
+offset_top = 360.0
+offset_right = 923.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("21_noukn")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Beans" type="Button" parent="."]
+offset_left = 927.0
+offset_top = 360.0
+offset_right = 1012.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("22_mnand")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Cocumber" type="Button" parent="."]
+offset_left = 1018.0
+offset_top = 360.0
+offset_right = 1103.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1t3s")
+icon = ExtResource("23_34cif")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="🥣" type="Sprite2D" parent="."]
+position = Vector2(575, 489)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("24_paf31")
+
+[node name="🕒" type="Sprite2D" parent="."]
+position = Vector2(96, 72)
+texture = ExtResource("25_3ayfw")
+
+[node name="timeLeft" type="Label" parent="."]
+offset_left = 144.0
+offset_top = 48.0
+offset_right = 253.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.870588, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 50
+text = "30"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names1" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 216.0
+offset_right = 168.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Queijo
+
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names2" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 216.0
+offset_right = 256.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Cenoura
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names3" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 216.0
+offset_right = 352.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Ervilha"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names4" type="Label" parent="."]
+offset_left = 344.0
+offset_top = 216.0
+offset_right = 440.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "batata frita"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names5" type="Label" parent="."]
+offset_left = 440.0
+offset_top = 216.0
+offset_right = 536.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Carne
+bovina
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names6" type="Label" parent="."]
+offset_left = 656.0
+offset_top = 216.0
+offset_right = 752.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Peixe"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names7" type="Label" parent="."]
+offset_left = 744.0
+offset_top = 216.0
+offset_right = 840.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Pão"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names8" type="Label" parent="."]
+offset_left = 838.0
+offset_top = 216.0
+offset_right = 934.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 16
+text = "Macarrão"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names9" type="Label" parent="."]
+offset_left = 933.0
+offset_top = 216.0
+offset_right = 1029.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 16
+text = "Falafel
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names10" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 216.0
+offset_right = 1120.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Frango "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names11" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 440.0
+offset_right = 152.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Milho"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names12" type="Label" parent="."]
+offset_left = 144.0
+offset_top = 440.0
+offset_right = 240.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Banana"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names13" type="Label" parent="."]
+offset_left = 240.0
+offset_top = 440.0
+offset_right = 336.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 16
+text = "Bacon"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names14" type="Label" parent="."]
+offset_left = 328.0
+offset_top = 440.0
+offset_right = 424.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Tomate"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names15" type="Label" parent="."]
+offset_left = 424.0
+offset_top = 440.0
+offset_right = 520.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Alface"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names16" type="Label" parent="."]
+offset_left = 648.0
+offset_top = 440.0
+offset_right = 744.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Arroz "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names17" type="Label" parent="."]
+offset_left = 736.0
+offset_top = 440.0
+offset_right = 832.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Brócolis "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names18" type="Label" parent="."]
+offset_left = 832.0
+offset_top = 440.0
+offset_right = 928.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 16
+text = "Ovo"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names19" type="Label" parent="."]
+offset_left = 920.0
+offset_top = 440.0
+offset_right = 1016.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Feijão "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Names20" type="Label" parent="."]
+offset_left = 1016.0
+offset_top = 440.0
+offset_right = 1112.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kuwoe")
+theme_override_font_sizes/font_size = 17
+text = "Pepino"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 31.0
+one_shot = true
+
+[connection signal="pressed" from="Ready" to="." method="plateFinished"]
+[connection signal="timeout" from="Timer" to="." method="plateFinished"]

@@ -1,15 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://0hf5r3xns6vf"]
 
-[ext_resource type="Texture2D" uid="uid://ni7q01smjd5l" path="res://assets/buttons/white-button_0001.png" id="1_thrhq"]
-[ext_resource type="Texture2D" uid="uid://bninkufixdu44" path="res://assets/buttons/white-button_0003.png" id="2_kgole"]
-[ext_resource type="Texture2D" uid="uid://evjvfyuhijln" path="res://assets/buttons/white-button_0002.png" id="3_phg4j"]
+[ext_resource type="Texture2D" uid="uid://b5tlnf30qpc35" path="res://assets/buttons/⚪.png" id="1_axwop"]
+[ext_resource type="Texture2D" uid="uid://7g704s4q22qo" path="res://assets/buttons/⚫.png" id="2_eicyr"]
+[ext_resource type="Texture2D" uid="uid://c0t3eljarlu2p" path="res://assets/buttons/🔵.png" id="3_rfplk"]
 
 [node name="CityButton" type="TextureButton"]
 z_index = 1
 offset_right = 640.0
 offset_bottom = 640.0
 scale = Vector2(0.028, 0.028)
-texture_normal = ExtResource("1_thrhq")
-texture_pressed = ExtResource("2_kgole")
-texture_hover = ExtResource("3_phg4j")
-stretch_mode = 3
+texture_normal = ExtResource("1_axwop")
+texture_pressed = ExtResource("2_eicyr")
+texture_hover = ExtResource("3_rfplk")
+ignore_texture_size = true
+stretch_mode = 5

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://beun6ttwdakn8"
+path="res://.godot/imported/flame.ogg-56f0f3c17994e0b65ffe5f3690e2b18f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound effects/flame.ogg"
+dest_files=["res://.godot/imported/flame.ogg-56f0f3c17994e0b65ffe5f3690e2b18f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

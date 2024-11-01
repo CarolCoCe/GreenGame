@@ -29,11 +29,11 @@ func caught_trash():
 	update_label()
 	$ProgressBar.value = 0
 	if (numtrashsCought % 2 == 0):
-		$trash/Sprite2D.texture = load("res://MiniGames/FishingTrash/assets/🪥.png")
+		$trash/Sprite2D.texture = load("res://MiniGames/FishingTrash/assets/lixo escova.png")
 	elif (numtrashsCought % 3 == 0 or numtrashsCought == 1):
-		$trash/Sprite2D.texture = load("res://MiniGames/FishingTrash/assets/🧃.png")
+		$trash/Sprite2D.texture = load("res://MiniGames/FishingTrash/assets/lixo suco.png")
 	else:
-		$trash/Sprite2D.texture = load("res://MiniGames/FishingTrash/assets/🥤.png")
+		$trash/Sprite2D.texture = load("res://MiniGames/FishingTrash/assets/lixo lata.png")
 
 func update_label():
 	$numTrash.text = str(numtrashsCought)

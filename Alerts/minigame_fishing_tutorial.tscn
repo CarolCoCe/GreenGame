@@ -9,27 +9,33 @@
 script = ExtResource("2_8u0bu")
 
 [node name="Title" parent="Panel" index="0"]
-offset_left = -286.0
-offset_right = 292.0
+offset_left = -326.0
+offset_top = 8.0
+offset_right = 321.0
+offset_bottom = -349.0
+theme_override_font_sizes/font_size = 39
 text = "Vamos tirar lixo do mar!!!
 "
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Panel" index="2"]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 78.0
-offset_right = 877.0
+offset_left = 31.0
+offset_top = 91.0
+offset_right = 924.0
 offset_bottom = 424.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_acjjj")
-theme_override_font_sizes/font_size = 28
-text = "
-Para pescar, acompanhe o lixo com a cesta até que a barra de progresso alcance 100%.
+theme_override_font_sizes/font_size = 24
+text = "Como Pescar o Lixo?
 
-Para a cesta subir, clique com o botão esquerdo do mouse. Solte o botão para que ela desça até o fundo do mar.
+Controle a Cesta: Clique e segure o botão esquerdo para subir a cesta; solte para descer.
 
-Para cada lixo retirado, você ganha 1 moeda, mas você só tem 30 segundos!"
+Pesque o Lixo: Mantenha a cesta alinhada com o lixo até a barra de progresso atingir 100%.
+
+Ganhe Moedas: Cada lixo capturado vale 1 moeda.
+
+Corra Contra o Tempo: Você tem 30 segundos para pescar o máximo possível!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
